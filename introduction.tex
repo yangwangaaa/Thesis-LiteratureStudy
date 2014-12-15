@@ -7,18 +7,33 @@ Statistics by International Federation of Robotics (IFR) [1] shows that the glob
 
 Meanwhile, there is also a growing interests in applying robots to relatively new applications such as 3D printing, architecture, and art. For instance, research done by Gramazio et. al [2] aims to push the capability of industrial robots to make the direct fabrication based on CAD model a reality. The advantage of using robots over conventional CNC machines lies on their flexibility, easy-to-adapt feature, and high degree of freedom (DOF) to enable execution of difficult configuration in 3D space. These aforementioned applications demands high precision since a minuscule of error could lead to a defect product or even worse, a disaster. Therefore, a precise, accurate reference tracking capability is inevitable.
 
-In order to achieve this, a tracking controller is needed. However, robots are identical with non-linearities, noises, and external disturbances that are difficult to model, let alone compensate. This unknown properties hinders the controller to perform optimally, leading to poor tracking accuracy.
+In order to achieve this, a tracking controller is needed. However, robots are identical with non-linearities, noises, and external disturbances that are difficult to model, let alone compensate. This unknown properties often hinders the controller to perform optimally. A class of controllers which solely depends on the system's model will surely suffer a poor tracking accuracy. The natural answer to this problem is to introduce a controller capable of adjusting its parameter overtime by comparing the reference to the actual trajectory. By doing so, the controller will have an extra degree of freedom to compensate for the unknown properties hence improves the tracking quality. The controller of such characteristic belongs to the class of adaptive controller.
 
-In order to 
+In this thesis, we will propose a method to improve the performance of nominal controller by using reinforcement learning. RL can
 
 
 
 \section{Problem Definition}
 The fundamental problem in this literature study concerns with the non-optimal performance of nominal controller with respect to reference tracking task. Therefore the research question can be raised as follows.
 
-\textit{"Can we integrate Reinforcement Learning technique to a nominal controller in a certain structure such that reference tracking performance of the controlled system significantly improves?"}
+\textit{"Is it possible to integrate Reinforcement Learning technique to a nominal controller in a certain structure such that reference tracking performance of the controlled system significantly improves?"}
+
+While conducting a research, it is considered wise to restrict oneself to a simpler context, but still captures the essential elements of the original problem. Therefore, in answering this question, some general assumptions are made.
+
+\begin{enumerate}
+	\item The system to be controlled is fully actuated
+	\item The system to be controlled is both controllable and observable
+	\item Nominal, stabilizing controller is available	
+\end{enumerate}
 
 \section{Goal of the Thesis}
+
+The goal of this thesis are as follows:
+\begin{enumerate}
+\item To provide a general framework of improving tracking control using reinforcement learning
+\item To apply and compare existing method of RL for tracking application to the 3D printing robotic setup
+\item To come up with modification of improvement of previous methods
+\end{enumerate}
 
 \section{Literature Study Approach}
 

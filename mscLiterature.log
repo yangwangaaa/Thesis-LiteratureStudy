@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  15 DEC 2014 12:57
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  15 DEC 2014 16:28
 entering extended mode
 **mscLiterature.tex
 
@@ -851,13 +851,13 @@ Package rerunfilecheck Info: File `mscLiterature.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 82.
  ) 
 Here is how much of TeX's memory you used:
- 10912 strings out of 493921
- 167776 string characters out of 3144864
+ 10918 strings out of 493921
+ 167812 string characters out of 3144864
  264286 words of memory out of 3000000
  13819 multiletter control sequences out of 15000+200000
  78765 words of font info for 57 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 43i,15n,45p,765b,1716s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,15n,45p,812b,1716s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program F
 iles (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files (x86)/
 MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files (x86)/MiKTeX 2.9/
@@ -875,9 +875,9 @@ les (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files (x86)
 /MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9
 /fonts/type1/public/lm/lmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
 1/urw/bookman/ubkl8a.pfb>
-Output written on mscLiterature.pdf (34 pages, 1146342 bytes).
+Output written on mscLiterature.pdf (34 pages, 1148139 bytes).
 PDF statistics:
- 461 PDF objects out of 1000 (max. 8388607)
- 93 named destinations out of 1000 (max. 500000)
+ 468 PDF objects out of 1000 (max. 8388607)
+ 99 named destinations out of 1000 (max. 500000)
  365 words of extra memory for PDF output out of 10000 (max. 10000000)
 
