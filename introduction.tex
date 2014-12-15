@@ -1,15 +1,22 @@
 %
 % Introduction
 \chapter{Introduction} \label{chap::intro}
-Reference or trajectory tracking is one of the most basic task in robotics. Given a desired path/trajectory, the robot must be able to follow it as quickly as possible with minimum error. In order to achieve this, a controller is needed. However, robots are identical with non-linearities, noises, and external disturbances that are difficult to model, let alone identify. This unknown properties often hinders the controller to perform optimally.
+Reference or trajectory tracking is one of the building blocks to perform a complex task in robotics. Given a desired path/trajectory, the robot must be able to follow it as quickly as possible with minimum error. Capability to perform this precise tracking is crucial for robots that are to be deployed at manufacturing industries such as semiconductor, automotive, and recently, the emerging application of 3D printing. 
 
-In order to
+Statistics by International Federation of Robotics (IFR) [1] shows that the global sales of industrial robots continues to increase steadily. In 2014, it is expected that the total number of industrial robots installed reaches 205,000 units, a rise of approximately 15 \% from previous year. The survey points out that the mature markets such as automotive, electronics, and metal are responsible for such growth. 
 
+Meanwhile, there is also a growing interests in applying robots to relatively new applications such as 3D printing, architecture, and art. For instance, research done by Gramazio et. al [2] aims to push the capability of industrial robots to make the direct fabrication based on CAD model a reality. The advantage of using robots over conventional CNC machines lies on their flexibility, easy-to-adapt feature, and high degree of freedom (DOF) to enable execution of difficult configuration in 3D space. These aforementioned applications demands high precision since a minuscule of error could lead to a defect product or even worse, a disaster. Therefore, a precise, accurate reference tracking capability is inevitable.
 
+In order to achieve this, a tracking controller is needed. However, robots are identical with non-linearities, noises, and external disturbances that are difficult to model, let alone compensate. This unknown properties hinders the controller to perform optimally, leading to poor tracking accuracy.
+
+In order to 
 
 
 
 \section{Problem Definition}
+The fundamental problem in this literature study concerns with the non-optimal performance of nominal controller with respect to reference tracking task. Therefore the research question can be raised as follows.
+
+\textit{"Can we integrate Reinforcement Learning technique to a nominal controller in a certain structure such that reference tracking performance of the controlled system significantly improves?"}
 
 \section{Goal of the Thesis}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  13 DEC 2014 20:41
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  15 DEC 2014 12:57
 entering extended mode
 **mscLiterature.tex
 
@@ -727,20 +727,20 @@ LaTeX Font Info:    Font shape `OML/lmr/m/it' in size <10.95> not available
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
  Forms and Guide\DCSC Literature Style\introduction.tex"
 Chapter 1.
-) [1
+[1
 
 
 
 
-]
+]) [2]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
- Forms and Guide\DCSC Literature Style\rl_prelim.tex" [2
+ Forms and Guide\DCSC Literature Style\rl_prelim.tex"
+Chapter 2.
+) [3
 
 
 
 ]
-Chapter 2.
-) [3]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
  Forms and Guide\DCSC Literature Style\survey.tex" [4
 
@@ -857,7 +857,7 @@ Here is how much of TeX's memory you used:
  13819 multiletter control sequences out of 15000+200000
  78765 words of font info for 57 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 43i,15n,45p,416b,1716s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,15n,45p,765b,1716s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program F
 iles (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files (x86)/
 MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files (x86)/MiKTeX 2.9/
@@ -875,7 +875,7 @@ les (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files (x86)
 /MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9
 /fonts/type1/public/lm/lmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
 1/urw/bookman/ubkl8a.pfb>
-Output written on mscLiterature.pdf (34 pages, 1139349 bytes).
+Output written on mscLiterature.pdf (34 pages, 1146342 bytes).
 PDF statistics:
  461 PDF objects out of 1000 (max. 8388607)
  93 named destinations out of 1000 (max. 500000)
