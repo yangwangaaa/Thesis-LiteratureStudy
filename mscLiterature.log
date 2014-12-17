@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  17 DEC 2014 19:05
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  17 DEC 2014 20:43
 entering extended mode
 **mscLiterature.tex
 
@@ -738,6 +738,12 @@ en
 although it is yet undefined on input line 12.
 Package acronym Info: Label `acro:PD' newly defined as it shall be overridden
 although it is yet undefined on input line 12.
+
+Overfull \hbox (11.06972pt too wide) in paragraph at lines 12--13
+[]\T1/lmr/m/n/10.95 In this the-sis, a method to im-prove the per-for-mance of 
+nom-i-nal con-troller by us-ing [][][]Reinforcement
+ []
+
 [1
 
 
@@ -751,9 +757,9 @@ although it is yet undefined on input line 12.
 
 ]
 Chapter 2.
+Package acronym Info: Label `acro:RL' overridden on input line 2.
 Package acronym Info: Label `acro:MDP' newly defined as it shall be overridden
 although it is yet undefined on input line 2.
-Package acronym Info: Label `acro:RL' overridden on input line 2.
 ) [5] [6]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
  Forms and Guide\DCSC Literature Style\survey.tex"
@@ -865,13 +871,13 @@ Package rerunfilecheck Info: File `mscLiterature.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 83.
  ) 
 Here is how much of TeX's memory you used:
- 11025 strings out of 493921
- 169260 string characters out of 3144864
- 265506 words of memory out of 3000000
- 13884 multiletter control sequences out of 15000+200000
+ 11027 strings out of 493921
+ 169278 string characters out of 3144864
+ 265556 words of memory out of 3000000
+ 13886 multiletter control sequences out of 15000+200000
  78958 words of font info for 57 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 43i,15n,45p,1617b,1716s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,15n,45p,1594b,1716s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program F
 iles (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files (x86)/
 MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files (x86)/MiKTeX 2.9/font
@@ -891,9 +897,9 @@ type1/public/lm/lmssbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
 lic/lm/lmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy
 8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/P
 rogram Files (x86)/MiKTeX 2.9/fonts/type1/urw/bookman/ubkl8a.pfb>
-Output written on mscLiterature.pdf (38 pages, 1191104 bytes).
+Output written on mscLiterature.pdf (38 pages, 1191595 bytes).
 PDF statistics:
- 586 PDF objects out of 1000 (max. 8388607)
+ 588 PDF objects out of 1000 (max. 8388607)
  138 named destinations out of 1000 (max. 500000)
  373 words of extra memory for PDF output out of 10000 (max. 10000000)
 
