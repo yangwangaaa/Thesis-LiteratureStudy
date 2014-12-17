@@ -1,0 +1,66 @@
+\begin{thebibliography}{10}
+
+\bibitem{IFR2014}
+I.~F. of~Robotics~(IFR), ``Industrial robot statistics,'' {\em World Robotics
+  2014 Industrial Robots}, 2014.
+
+\bibitem{Helm2014}
+V.~Helm, J.~Willmann, F.~Gramazio, and M.~Kohler, ``In-situ robotic
+  fabrication: Advanced digital manufacturing beyond the laboratory,'' {\em
+  Springer Tracts in Advanced Robotics 2014}, 2014.
+
+\bibitem{Lloret2014}
+E.~Lloret, A.~R. Shahabb, M.~Linus, R.~J. Flatt, F.~Gramazio, M.~Kohler, and
+  S.~Langenberg, ``Complex concrete structures: Merging existing casting
+  techniques with digital fabrication,'' {\em Computer-Aided Design}, 2014.
+
+\bibitem{Kiumarsi20141167}
+B.~Kiumarsi, F.~L. Lewis, H.~Modares, A.~Karimpour, and M.-B. Naghibi-Sistani,
+  ``Reinforcement q-learning for optimal tracking control of linear
+  discrete-time systems with unknown dynamics,'' {\em Automatica}, vol.~50,
+  no.~4, pp.~1167 -- 1175, 2014.
+
+\bibitem{Kiumarsi6760476}
+B.~Kiumarsi-Khomartash, F.~Lewis, M.-B. Naghibi-Sistani, and A.~Karimpour,
+  ``Optimal tracking control for linear discrete-time systems using
+  reinforcement learning,'' in {\em Decision and Control (CDC), 2013 IEEE 52nd
+  Annual Conference on}, pp.~3845--3850, Dec 2013.
+
+\bibitem{Kiumarsi6918527}
+B.~Kiumarsi and F.~Lewis, ``Actor-critic-based optimal tracking for partially
+  unknown nonlinear discrete-time systems,'' {\em Neural Networks and Learning
+  Systems, IEEE Transactions on}, vol.~PP, no.~99, pp.~1--1, 2014.
+
+\bibitem{Lewis5227780}
+F.~Lewis and D.~Vrabie, ``Reinforcement learning and adaptive dynamic
+  programming for feedback control,'' {\em Circuits and Systems Magazine,
+  IEEE}, vol.~9, pp.~32--50, Third 2009.
+
+\bibitem{Modares20141780}
+H.~Modares and F.~L. Lewis, ``Optimal tracking control of nonlinear
+  partially-unknown constrained-input systems using integral reinforcement
+  learning,'' {\em Automatica}, vol.~50, no.~7, pp.~1780 -- 1792, 2014.
+
+\bibitem{Modares6760477}
+H.~Modares and F.~Lewis, ``Online solution to the linear quadratic tracking
+  problem of continuous-time systems using reinforcement learning,'' in {\em
+  Decision and Control (CDC), 2013 IEEE 52nd Annual Conference on},
+  pp.~3851--3856, Dec 2013.
+
+\bibitem{Efe2014}
+Y.~E. Bayiz and R.~Babuska, ``Nonlinear disturbance compensation and. reference
+  tracking via reinforcement. learning with fuzzy approximators,'' {\em 19th
+  IFAC World Congress}, 2010.
+
+\bibitem{Buchli2010}
+J.~Buchli, E.~Theodorou, F.~Stulp, and S.~Schaal, ``Variable impedance
+  control-a reinforcement learning approach,'' {\em Robotics: Science and
+  Systems}, 2010.
+
+\bibitem{Buchli6037312}
+F.~Stulp, J.~Buchli, A.~Ellmer, M.~Mistry, E.~Theodorou, and S.~Schaal,
+  ``Reinforcement learning of impedance control in stochastic force fields,''
+  in {\em Development and Learning (ICDL), 2011 IEEE International Conference
+  on}, vol.~2, pp.~1--6, Aug 2011.
+
+\end{thebibliography}
