@@ -1,8 +1,17 @@
 \chapter{Reinforcement Learning Preliminaries}
-This chapter is dedicated to present a concise theory of reinforcement learning. The first subsection will explain the basics of markov decision process \ac{MDP}, a general framework used for \ac{RL} problem. Subsequently, an intuition of value and policy iteration will be built in section \ref{sec:value_iter}. The third section will present the extension of  \ac{RL} for continuous space. Finally, section \ref{sec:actor} will discuss the actor-critic structure which is a natural representation for control system problem.
+This chapter is dedicated to present a concise theory of reinforcement learning. The first subsection will explain the basics of \ac{MDP}, a general framework used for \ac{RL} problem. Subsequently, an intuition of value and policy iteration will be built in section \ref{sec:value_iter}. The third section will present the extension of  \ac{RL} for continuous space. Finally, section \ref{sec:actor} will discuss the actor-critic structure which is a natural representation for control system problem.
+
+\section{The Principle of Maximizing Cumulative Reward}
+The nature of \ac{RL} is inspired by how living organisms learn to reach their desired goals by acting on the environment, observe the changes that occur, and reward their action accordingly. O if tThe idea of \ac{RL} is to 
 
 \section{Markov Decision Process}
-This chapter will cover figures and math. 
+\ac{MDP} is defined as a tuple which satisfies Markov property. The detailed explanation of this property can be found on \cite{sutton1998reinforcement} section 3.5 but the main idea is that to determine the probability of a state at certain time, it is sufficient to know only the state of previous time instant. This probability is mathematically denoted in Equation \eqref{eq:markov}.
+
+\begin{equation}
+	\text{Pr}\{x_{t+1} = x', r_{t+1} = r| x_t, u_t \}
+	\label{eq:markov}
+\end{equation}
+where $x$ denotes state, $u$ denotes action, and $r$ denotes immediate reward obtained upon applying the input on the corresponding state.
 
 \section{Value and Policy Iteration} \label{sec:value_iter}
 

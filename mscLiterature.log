@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  16 DEC 2014 23:26
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  17 DEC 2014 19:05
 entering extended mode
 **mscLiterature.tex
 
@@ -575,14 +575,14 @@ LaTeX Font Info:    Try loading font information for T1+lmss on input line 43.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\t1lmss.fd"
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<STYLESTUFF/COVER.jpg, id=175, 601.38965pt x 844.87071pt>
+<STYLESTUFF/COVER.jpg, id=179, 601.38965pt x 844.87071pt>
 File: STYLESTUFF/COVER.jpg Graphic file (type jpg)
 
 <use STYLESTUFF/COVER.jpg>
 Package pdftex.def Info: STYLESTUFF/COVER.jpg used on input line 43.
 (pdftex.def)             Requested size: 597.5157pt x 845.1007pt.
 
-<STYLESTUFF/TU_LOGO.png, id=176, 145.71439pt x 42.42851pt>
+<STYLESTUFF/TU_LOGO.png, id=180, 145.71439pt x 42.42851pt>
 File: STYLESTUFF/TU_LOGO.png Graphic file (type png)
 
 <use STYLESTUFF/TU_LOGO.png>
@@ -643,7 +643,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 43.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [3]
-<STYLESTUFF/EXAMPLELOGO.png, id=200, 227.6505pt x 168.3891pt>
+<STYLESTUFF/EXAMPLELOGO.png, id=204, 227.6505pt x 168.3891pt>
 File: STYLESTUFF/EXAMPLELOGO.png Graphic file (type png)
 
 <use STYLESTUFF/EXAMPLELOGO.png>
@@ -654,7 +654,7 @@ File: STYLESTUFF/TU_LOGO.png Graphic file (type png)
 Package pdftex.def Info: STYLESTUFF/TU_LOGO.png used on input line 43.
 (pdftex.def)             Requested size: 145.714pt x 42.4284pt.
 
-<STYLESTUFF/DCSC.png, id=201, 227.6505pt x 72.27pt>
+<STYLESTUFF/DCSC.png, id=205, 227.6505pt x 72.27pt>
 File: STYLESTUFF/DCSC.png Graphic file (type png)
  <use STYLESTUFF/DCSC.png>
 Package pdftex.def Info: STYLESTUFF/DCSC.png used on input line 43.
@@ -754,13 +754,9 @@ Chapter 2.
 Package acronym Info: Label `acro:MDP' newly defined as it shall be overridden
 although it is yet undefined on input line 2.
 Package acronym Info: Label `acro:RL' overridden on input line 2.
-) [5]
+) [5] [6]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
- Forms and Guide\DCSC Literature Style\survey.tex" [6
-
-
-
-]
+ Forms and Guide\DCSC Literature Style\survey.tex"
 Chapter 3.
 Package acronym Info: Label `acro:DCSC' newly defined as it shall be overridden
 
@@ -771,7 +767,11 @@ Overfull \hbox (1.01585pt too wide) in paragraph at lines 14--14
 nt Learn-
  []
 
-) [7]
+) [7
+
+
+
+]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
  Forms and Guide\DCSC Literature Style\simulation.tex" [8
 
@@ -861,38 +861,39 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 83.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 83.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 83.
 Package rerunfilecheck Info: File `mscLiterature.out' has not changed.
-(rerunfilecheck)             Checksum: 49706620790D1269E464EA3C032FB039;3215.
+(rerunfilecheck)             Checksum: 5983ED1766BAC55E5488D307EE84255A;3308.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 83.
  ) 
 Here is how much of TeX's memory you used:
- 11013 strings out of 493921
- 169087 string characters out of 3144864
- 265376 words of memory out of 3000000
- 13877 multiletter control sequences out of 15000+200000
- 78765 words of font info for 57 fonts, out of 3000000 for 9000
+ 11025 strings out of 493921
+ 169260 string characters out of 3144864
+ 265506 words of memory out of 3000000
+ 13884 multiletter control sequences out of 15000+200000
+ 78958 words of font info for 57 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  43i,15n,45p,1617b,1716s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files (x86)/MiKT
-eX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files (x86)/MiKTeX 2.9/font
-s/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips
+iles (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files (x86)/
+MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files (x86)/MiKTeX 2.9/font
+s/enc/dvips/lm/lm-mathit.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips
 /fontname/8r.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmbx1
 0.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/
 Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Program Fil
 es (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmmi12.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
-ts/type1/public/lm/lmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
-lic/lm/lmr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr8.
-pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmss10.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/lm/lmss12.pfb><C:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
-ts/type1/public/lm/lmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
-blic/lm/lmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/bookman/u
-bkl8a.pfb>
-Output written on mscLiterature.pdf (38 pages, 1181338 bytes).
+KTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
+ts/type1/public/lm/lmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
+lic/lm/lmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr17
+.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/lm/lmss10.pfb><C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/public/lm/lmss12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
+type1/public/lm/lmssbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
+lic/lm/lmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy
+8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/urw/bookman/ubkl8a.pfb>
+Output written on mscLiterature.pdf (38 pages, 1191104 bytes).
 PDF statistics:
- 561 PDF objects out of 1000 (max. 8388607)
- 134 named destinations out of 1000 (max. 500000)
- 365 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 586 PDF objects out of 1000 (max. 8388607)
+ 138 named destinations out of 1000 (max. 500000)
+ 373 words of extra memory for PDF output out of 10000 (max. 10000000)
 

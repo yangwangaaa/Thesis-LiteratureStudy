@@ -18,13 +18,13 @@ The fundamental problem in this literature study concerns with the non-optimal p
 
 \textit{"Is it possible to integrate Reinforcement Learning technique to a nominal controller in a certain structure such that reference tracking performance of the controlled system significantly improves?"}
 
-While conducting a research, it is considered wise to restrict oneself to a simpler context, but still captures the essential elements of the original problem. Therefore, in answering this question, some general assumptions are made.
+While conducting a research, it is often wise to restrict oneself to a simple context, but still captures the essential elements of the original problem \cite{einstein}. Therefore, in answering this question, some simplifying assumptions are made.
 
 \begin{enumerate}
 	\item The system to be controlled is fully actuated
-	\item The system to be controlled is both controllable and observable
+	\item The system to be controlled is observable. This assumption is necessary in order to satisfy Markov property \cite{sutton1998reinforcement}.
 	\item Nominal, stabilizing controller is available	
-	\item Identification reveals some information about the system, but not adequate in order to design an accurate reference tracking controller.
+	\item Identification reveals some information about the system, but alone is not adequate to design an accurate reference tracking controller.
 \end{enumerate}
 
 \section{Goal of the Thesis}

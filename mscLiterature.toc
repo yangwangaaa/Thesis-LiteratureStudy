@@ -7,11 +7,12 @@
 \contentsline {section}{\numberline {1-4}Outline}{3}{section.1.4}
 \contentsline {section}{\numberline {1-5}Nomenclature}{3}{section.1.5}
 \contentsline {chapter}{\numberline {2}Reinforcement Learning Preliminaries}{5}{chapter.2}
-\contentsline {section}{\numberline {2-1}Markov Decision Process}{5}{section.2.1}
-\contentsline {section}{\numberline {2-2}Value and Policy Iteration}{5}{section.2.2}
-\contentsline {section}{\numberline {2-3}Reinforcement Learning for Continuous Space}{5}{section.2.3}
-\contentsline {subsection}{\numberline {2-3-1}Function Approximation}{5}{subsection.2.3.1}
-\contentsline {section}{\numberline {2-4}Actor-Critic Structure}{5}{section.2.4}
+\contentsline {section}{\numberline {2-1}The Principle of Maximizing Cumulative Reward}{5}{section.2.1}
+\contentsline {section}{\numberline {2-2}Markov Decision Process}{5}{section.2.2}
+\contentsline {section}{\numberline {2-3}Value and Policy Iteration}{6}{section.2.3}
+\contentsline {section}{\numberline {2-4}Reinforcement Learning for Continuous Space}{6}{section.2.4}
+\contentsline {subsection}{\numberline {2-4-1}Function Approximation}{6}{subsection.2.4.1}
+\contentsline {section}{\numberline {2-5}Actor-Critic Structure}{6}{section.2.5}
 \contentsline {chapter}{\numberline {3}Reinforcement Learning for Tracking Problem: A Survey}{7}{chapter.3}
 \contentsline {section}{\numberline {3-1}Dynamic Tuning via Reinforcement Learning}{7}{section.3.1}
 \contentsline {subsection}{\numberline {3-1-1}Case Study: PI Tuning using Reinforcement Learning}{7}{subsection.3.1.1}

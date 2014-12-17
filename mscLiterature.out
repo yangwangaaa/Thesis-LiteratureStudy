@@ -14,30 +14,31 @@
 \BOOKMARK [1][-]{section.1.4}{Outline}{chapter.1}% 14
 \BOOKMARK [1][-]{section.1.5}{Nomenclature}{chapter.1}% 15
 \BOOKMARK [0][-]{chapter.2}{Reinforcement Learning Preliminaries}{mainmatter_anchor.-1}% 16
-\BOOKMARK [1][-]{section.2.1}{Markov Decision Process}{chapter.2}% 17
-\BOOKMARK [1][-]{section.2.2}{Value and Policy Iteration}{chapter.2}% 18
-\BOOKMARK [1][-]{section.2.3}{Reinforcement Learning for Continuous Space}{chapter.2}% 19
-\BOOKMARK [2][-]{subsection.2.3.1}{Function Approximation}{section.2.3}% 20
-\BOOKMARK [1][-]{section.2.4}{Actor-Critic Structure}{chapter.2}% 21
-\BOOKMARK [0][-]{chapter.3}{Reinforcement Learning for Tracking Problem: A Survey}{mainmatter_anchor.-1}% 22
-\BOOKMARK [1][-]{section.3.1}{Dynamic Tuning via Reinforcement Learning}{chapter.3}% 23
-\BOOKMARK [2][-]{subsection.3.1.1}{Case Study: PI Tuning using Reinforcement Learning}{section.3.1}% 24
-\BOOKMARK [1][-]{section.3.2}{Nonlinear Compensation for Tracking via Reinforcement Learning}{chapter.3}% 25
-\BOOKMARK [2][-]{subsection.3.2.1}{Case Study: 1-DOF Robot Gravity Compensation}{section.3.2}% 26
-\BOOKMARK [1][-]{section.3.3}{Reinforcement Learning for Optimal Tracking Control}{chapter.3}% 27
-\BOOKMARK [1][-]{section.3.4}{Self-Proposed Controller [tentative]}{chapter.3}% 28
-\BOOKMARK [0][-]{chapter.4}{Simulation \046 Verification}{mainmatter_anchor.-1}% 29
-\BOOKMARK [1][-]{section.4.1}{Simulated Setup}{chapter.4}% 30
-\BOOKMARK [1][-]{section.4.2}{Simulation Result and Analysis}{chapter.4}% 31
-\BOOKMARK [1][-]{section.4.3}{Discussion}{chapter.4}% 32
-\BOOKMARK [0][-]{chapter.5}{Future Work and Experiments Plan}{mainmatter_anchor.-1}% 33
-\BOOKMARK [1][-]{section.5.1}{Experimental Setup: UR5 Robot}{chapter.5}% 34
-\BOOKMARK [0][-]{chapter.6}{Conclusion}{mainmatter_anchor.-1}% 35
-\BOOKMARK [-1][]{apdx_anchor.-1}{Appendices}{}% 36
-\BOOKMARK [0][-]{appendix.A}{Appendix}{apdx_anchor.-1}% 37
-\BOOKMARK [1][-]{section.A.1}{Simulation Program}{appendix.A}% 38
-\BOOKMARK [2][-]{subsection.A.1.1}{A MATLAB listing}{section.A.1}% 39
-\BOOKMARK [-1][]{backmatter_anchor.-1}{Back Matter}{}% 40
-\BOOKMARK [0][-]{appendix*.16}{Glossary}{backmatter_anchor.-1}% 41
-\BOOKMARK [1][-]{section*.17}{List of Acronyms}{appendix*.16}% 42
-\BOOKMARK [1][-]{section*.19}{List of Symbols}{appendix*.16}% 43
+\BOOKMARK [1][-]{section.2.1}{The Principle of Maximizing Cumulative Reward}{chapter.2}% 17
+\BOOKMARK [1][-]{section.2.2}{Markov Decision Process}{chapter.2}% 18
+\BOOKMARK [1][-]{section.2.3}{Value and Policy Iteration}{chapter.2}% 19
+\BOOKMARK [1][-]{section.2.4}{Reinforcement Learning for Continuous Space}{chapter.2}% 20
+\BOOKMARK [2][-]{subsection.2.4.1}{Function Approximation}{section.2.4}% 21
+\BOOKMARK [1][-]{section.2.5}{Actor-Critic Structure}{chapter.2}% 22
+\BOOKMARK [0][-]{chapter.3}{Reinforcement Learning for Tracking Problem: A Survey}{mainmatter_anchor.-1}% 23
+\BOOKMARK [1][-]{section.3.1}{Dynamic Tuning via Reinforcement Learning}{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.1.1}{Case Study: PI Tuning using Reinforcement Learning}{section.3.1}% 25
+\BOOKMARK [1][-]{section.3.2}{Nonlinear Compensation for Tracking via Reinforcement Learning}{chapter.3}% 26
+\BOOKMARK [2][-]{subsection.3.2.1}{Case Study: 1-DOF Robot Gravity Compensation}{section.3.2}% 27
+\BOOKMARK [1][-]{section.3.3}{Reinforcement Learning for Optimal Tracking Control}{chapter.3}% 28
+\BOOKMARK [1][-]{section.3.4}{Self-Proposed Controller [tentative]}{chapter.3}% 29
+\BOOKMARK [0][-]{chapter.4}{Simulation \046 Verification}{mainmatter_anchor.-1}% 30
+\BOOKMARK [1][-]{section.4.1}{Simulated Setup}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.2}{Simulation Result and Analysis}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.3}{Discussion}{chapter.4}% 33
+\BOOKMARK [0][-]{chapter.5}{Future Work and Experiments Plan}{mainmatter_anchor.-1}% 34
+\BOOKMARK [1][-]{section.5.1}{Experimental Setup: UR5 Robot}{chapter.5}% 35
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{mainmatter_anchor.-1}% 36
+\BOOKMARK [-1][]{apdx_anchor.-1}{Appendices}{}% 37
+\BOOKMARK [0][-]{appendix.A}{Appendix}{apdx_anchor.-1}% 38
+\BOOKMARK [1][-]{section.A.1}{Simulation Program}{appendix.A}% 39
+\BOOKMARK [2][-]{subsection.A.1.1}{A MATLAB listing}{section.A.1}% 40
+\BOOKMARK [-1][]{backmatter_anchor.-1}{Back Matter}{}% 41
+\BOOKMARK [0][-]{appendix*.16}{Glossary}{backmatter_anchor.-1}% 42
+\BOOKMARK [1][-]{section*.17}{List of Acronyms}{appendix*.16}% 43
+\BOOKMARK [1][-]{section*.19}{List of Symbols}{appendix*.16}% 44
