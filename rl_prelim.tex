@@ -2,10 +2,21 @@
 This chapter is dedicated to present a concise theory of reinforcement learning. The first section will show how a certain goal can be formalized as a reward maximization -- one of the ideas which serves as a basic foundation of \ac{RL}. Section \ref{sec:mdp} explains the basics of \ac{MDP}, a general framework used in \ac{RL} problem. Subsequently, an intuition of value and policy iteration will be developed in section \ref{sec:value_iter}. The fourth section will present the extension of \ac{RL} for continuous space. Finally, section \ref{sec:actor} will discuss the actor-critic structure which is a natural representation for control system problem.
 
 \section{The Principle of Maximizing Cumulative Reward}
-The nature of \ac{RL} is inspired by the way living organisms learn to reach their desired goals by first acting on the environment, observe the changes that occur, and reward their action accordingly. if tThe idea of \ac{RL} is to 
+The nature of \ac{RL} is inspired by the way living organisms learn to reach their desired goals by first acting on the environment, observe the changes that occur, and reward their action accordingly. One example is a circus lion that is tasked to perform acrobatic show while its trainer observing the progress. If the lion successfully executes the task, it will be rewarded with snacks. Conversely, punishment will be inflicted whenever it fails. The lion initially has no idea of how to perform the task. However through trial and error, it will follow its instinct to increase the frequency of receiving rewards while trying its best to avoid punishments. In a certain duration of training, the circus lion will finally be able to perform the task flawlessly. 
+
+Now we will formalize above illustration for robotics application. A robot can be described by its states $x_k$ with subscript $k$ denoting time instance. Applying an action $u_k$ will bring the robot to state $x_{k+1}$ with immediate reward $r_{k+1}$. At $k+1$ the robot applies $u_{k+1}$ which yields state $x_{k+2}$ and $r_{k+2}$. This action-state-update iteration is run for infinite time instances. The goal is defined as maximization of cumulative reward the robot receives. In control domain, rewards is usually replaced with cost. Therefore the goal is defined as minimization problem.
 
 \section{Markov Decision Process} \label{sec:mdp}
-\ac{MDP} is defined as a tuple which satisfies Markov property. The detailed explanation of this property can be found on \cite{sutton1998reinforcement} section 3.5 but the main idea is that to determine the probability of a state at certain time, it is sufficient to know only the state of previous time instant. This probability is mathematically denoted in Equation \eqref{eq:markov}.
+\ac{MDP} is defined as a tuple $\left<X, U, f, \rho \right>$ which satisfies Markov property \cite{babuskaRL}. The elements of the tuple are:
+\begin{itemize}
+	\item $X$ is the state space
+	\item $U$ is the action space
+	\item $f :X \times U \rightarrow X$ is the state transition function (system dynamics) 
+	\item $\rho:X \times U \rightarrow \mathbb{R}$ is the reward function
+\end{itemize}
+
+In control, $f$ represents the system dynamics 
+The detailed explanation of Markov property can be found on \cite{sutton1998reinforcement} section 3.5 but the main idea is that to determine the probability of a state at certain time, it is sufficient to know only the state of previous time instance. This probability is mathematically denoted in Equation \eqref{eq:markov}.
 
 \begin{equation}
 	\text{Pr}\{x_{t+1} = x', r_{t+1} = r| x_t, u_t \}
@@ -16,7 +27,6 @@ where $x$ denotes state, $u$ denotes action, and $r$ denotes immediate reward ob
 \section{Value and Policy Iteration} \label{sec:value_iter}
 
 \section{Reinforcement Learning for Continuous Space}
-\subsection{Function Approximation}
 
 
 \section{Actor-Critic Structure} \label{sec:actor}

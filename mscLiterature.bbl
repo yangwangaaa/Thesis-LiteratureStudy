@@ -14,21 +14,11 @@ E.~Lloret, A.~R. Shahabb, M.~Linus, R.~J. Flatt, F.~Gramazio, M.~Kohler, and
   S.~Langenberg, ``Complex concrete structures: Merging existing casting
   techniques with digital fabrication,'' {\em Computer-Aided Design}, 2014.
 
-\bibitem{Kiumarsi6760476}
-B.~Kiumarsi-Khomartash, F.~Lewis, M.-B. Naghibi-Sistani, and A.~Karimpour,
-  ``Optimal tracking control for linear discrete-time systems using
-  reinforcement learning,'' in {\em Decision and Control (CDC), 2013 IEEE 52nd
-  Annual Conference on}, pp.~3845--3850, Dec 2013.
-
-\bibitem{Lewis5227780}
-F.~Lewis and D.~Vrabie, ``Reinforcement learning and adaptive dynamic
-  programming for feedback control,'' {\em Circuits and Systems Magazine,
-  IEEE}, vol.~9, pp.~32--50, Third 2009.
-
-\bibitem{Modares20141780}
-H.~Modares and F.~L. Lewis, ``Optimal tracking control of nonlinear
-  partially-unknown constrained-input systems using integral reinforcement
-  learning,'' {\em Automatica}, vol.~50, no.~7, pp.~1780 -- 1792, 2014.
+\bibitem{Kiumarsi20141167}
+B.~Kiumarsi, F.~L. Lewis, H.~Modares, A.~Karimpour, and M.-B. Naghibi-Sistani,
+  ``Reinforcement q-learning for optimal tracking control of linear
+  discrete-time systems with unknown dynamics,'' {\em Automatica}, vol.~50,
+  no.~4, pp.~1167 -- 1175, 2014.
 
 \bibitem{Modares6760477}
 H.~Modares and F.~Lewis, ``Online solution to the linear quadratic tracking
@@ -36,11 +26,11 @@ H.~Modares and F.~Lewis, ``Online solution to the linear quadratic tracking
   Decision and Control (CDC), 2013 IEEE 52nd Annual Conference on},
   pp.~3851--3856, Dec 2013.
 
-\bibitem{Kiumarsi20141167}
-B.~Kiumarsi, F.~L. Lewis, H.~Modares, A.~Karimpour, and M.-B. Naghibi-Sistani,
-  ``Reinforcement q-learning for optimal tracking control of linear
-  discrete-time systems with unknown dynamics,'' {\em Automatica}, vol.~50,
-  no.~4, pp.~1167 -- 1175, 2014.
+\bibitem{Kiumarsi6760476}
+B.~Kiumarsi-Khomartash, F.~Lewis, M.-B. Naghibi-Sistani, and A.~Karimpour,
+  ``Optimal tracking control for linear discrete-time systems using
+  reinforcement learning,'' in {\em Decision and Control (CDC), 2013 IEEE 52nd
+  Annual Conference on}, pp.~3845--3850, Dec 2013.
 
 \bibitem{Kiumarsi6918527}
 B.~Kiumarsi and F.~Lewis, ``Actor-critic-based optimal tracking for partially
@@ -71,5 +61,8 @@ A.~Einstein, ``On the method of theoretical physics,'' vol.~1, pp.~163--169,
 R.~S. Sutton and A.~G. Barto, {\em Reinforcement learning: An introduction},
   vol.~28.
 \newblock MIT press, 1998.
+
+\bibitem{babuskaRL}
+R.~Babuska, ``Sc4081 knowledge-based control systems lecture slide,''
 
 \end{thebibliography}
