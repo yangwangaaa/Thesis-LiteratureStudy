@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  19 DEC 2014 13:56
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  9 JAN 2015 18:35
 entering extended mode
 **mscLiterature.tex
 
@@ -867,14 +867,14 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 83.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 83.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 83.
 Package rerunfilecheck Info: File `mscLiterature.out' has not changed.
-(rerunfilecheck)             Checksum: D0206130E7F8835110B778E177AC7FAB;2950.
+(rerunfilecheck)             Checksum: E94686919F0EC2A3E0CF44CDDC8E1FBD;2930.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 83.
  ) 
 Here is how much of TeX's memory you used:
- 11017 strings out of 493921
- 169102 string characters out of 3144864
- 265503 words of memory out of 3000000
- 13881 multiletter control sequences out of 15000+200000
+ 11019 strings out of 493921
+ 169130 string characters out of 3144864
+ 265579 words of memory out of 3000000
+ 13883 multiletter control sequences out of 15000+200000
  78958 words of font info for 57 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  43i,15n,45p,1594b,1716s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -898,9 +898,9 @@ lic/lm/lmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy
 8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/P
 rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/bookman/ubkl8a.pfb>
-Output written on mscLiterature.pdf (38 pages, 1196098 bytes).
+Output written on mscLiterature.pdf (38 pages, 1197260 bytes).
 PDF statistics:
- 571 PDF objects out of 1000 (max. 8388607)
+ 573 PDF objects out of 1000 (max. 8388607)
  133 named destinations out of 1000 (max. 500000)
  341 words of extra memory for PDF output out of 10000 (max. 10000000)
 
