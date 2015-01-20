@@ -65,4 +65,10 @@ R.~S. Sutton and A.~G. Barto, {\em Reinforcement learning: An introduction},
 \bibitem{babuskaRL}
 R.~Babuska, ``Sc4081 knowledge-based control systems lecture slide,''
 
+\bibitem{Bertsekas}
+D.~Bertsekas, ``Neuro-dynamic programming: An overview and recent results,'' in
+  {\em Operations Research Proceedings 2006} (K.-H. Waldmann and U.~Stocker,
+  eds.), vol.~2006 of {\em Operations Research Proceedings}, pp.~71--72,
+  Springer Berlin Heidelberg, 2007.
+
 \end{thebibliography}

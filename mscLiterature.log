@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  9 JAN 2015 18:35
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  20 JAN 2015 00:36
 entering extended mode
 **mscLiterature.tex
 
@@ -473,7 +473,54 @@ Package hyperref Info: Option `bookmarksopen' set `true' on input line 1417.
 Writing nomenclature file mscLiterature.nlo
 \@indexfile=\write5
 Writing index file mscLiterature.idx
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithm2e\algorithm2e.sty"
+Package: algorithm2e 2013/01/06 v5.00 algorithms environments
+\c@AlgoLine=\count126
 
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\xspace.sty"
+Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
+)
+********************************************************
+Package `algorithm2e' Release 5.0 -- january 06 2013 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (cfiorio@um2.fr)
+********************************************************
+\skiptotal=\skip67
+\skiplinenumber=\skip68
+\skiprule=\skip69
+\skiphlne=\skip70
+\skiptext=\skip71
+\skiplength=\skip72
+\algomargin=\skip73
+\skipalgocfslide=\skip74
+\algowidth=\dimen144
+\inoutsize=\dimen145
+\inoutindent=\dimen146
+\interspacetitleruled=\dimen147
+\interspacealgoruled=\dimen148
+\interspacetitleboxruled=\dimen149
+\algocf@inoutbox=\box30
+\algocf@inputbox=\box31
+\AlCapSkip=\skip75
+\AlCapHSkip=\skip76
+\algoskipindent=\skip77
+\algocf@nlbox=\box32
+\algocf@hangingbox=\box33
+\algocf@untilbox=\box34
+\algocf@skipuntil=\skip78
+\algocf@capbox=\box35
+\algoheightruledefault=\skip79
+\algoheightrule=\skip80
+\algotitleheightruledefault=\skip81
+\algotitleheightrule=\skip82
+\c@algocfline=\count127
+\c@algocfproc=\count128
+\c@algocf=\count129
+\algocf@algoframe=\box36
+\algocf@algobox=\box37
+)
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
  Forms and Guide\DCSC Literature Style\mscLiterature.aux"
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
@@ -500,93 +547,93 @@ Writing index file mscLiterature.idx
  Forms and Guide\DCSC Literature Style\app_back.aux")
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
  Forms and Guide\DCSC Literature Style\glossary.aux"))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 37.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count126
-\scratchdimen=\dimen144
-\scratchbox=\box30
-\nofMPsegments=\count127
-\nofMParguments=\count128
+\scratchcounter=\count130
+\scratchdimen=\dimen150
+\scratchbox=\box38
+\nofMPsegments=\count131
+\nofMParguments=\count132
 \everyMPshowfont=\toks28
-\MPscratchCnt=\count129
-\MPscratchDim=\dimen145
-\MPnumerator=\count130
-\makeMPintoPDFobject=\count131
+\MPscratchCnt=\count133
+\MPscratchDim=\dimen151
+\MPnumerator=\count134
+\makeMPintoPDFobject=\count135
 \everyMPtoPDFconversion=\toks29
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\AtBeginShipoutBox=\box31
-\c@lstlisting=\count132
-Package hyperref Info: Link coloring ON on input line 35.
+\AtBeginShipoutBox=\box39
+\c@lstlisting=\count136
+Package hyperref Info: Link coloring ON on input line 37.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count133
+\c@section@level=\count137
 )
-LaTeX Info: Redefining \ref on input line 35.
-LaTeX Info: Redefining \pageref on input line 35.
-LaTeX Info: Redefining \nameref on input line 35.
+LaTeX Info: Redefining \ref on input line 37.
+LaTeX Info: Redefining \pageref on input line 37.
+LaTeX Info: Redefining \nameref on input line 37.
 
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
  Forms and Guide\DCSC Literature Style\mscLiterature.out")
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
  Forms and Guide\DCSC Literature Style\mscLiterature.out")
 \@outlinefile=\write6
-LaTeX Font Info:    Try loading font information for T1+pbk on input line 43.
+LaTeX Font Info:    Try loading font information for T1+pbk on input line 45.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1pbk.fd"
 File: t1pbk.fd 2001/06/04 font definitions for T1/pbk.
 )
 LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <24.88> not available
-(Font)              Font shape `T1/pbk/l/n' tried instead on input line 43.
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 45.
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--43
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
 []\T1/pbk/l/n/24.88 Reinforcement Learn-ing for
  []
 
 LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <14.4> not available
-(Font)              Font shape `T1/pbk/l/n' tried instead on input line 43.
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 43.
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 45.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 45.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\t1lmss.fd"
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<STYLESTUFF/COVER.jpg, id=163, 601.38965pt x 844.87071pt>
+<STYLESTUFF/COVER.jpg, id=159, 601.38965pt x 844.87071pt>
 File: STYLESTUFF/COVER.jpg Graphic file (type jpg)
 
 <use STYLESTUFF/COVER.jpg>
-Package pdftex.def Info: STYLESTUFF/COVER.jpg used on input line 43.
+Package pdftex.def Info: STYLESTUFF/COVER.jpg used on input line 45.
 (pdftex.def)             Requested size: 597.5157pt x 845.1007pt.
 
-<STYLESTUFF/TU_LOGO.png, id=164, 145.71439pt x 42.42851pt>
+<STYLESTUFF/TU_LOGO.png, id=160, 145.71439pt x 42.42851pt>
 File: STYLESTUFF/TU_LOGO.png Graphic file (type png)
 
 <use STYLESTUFF/TU_LOGO.png>
-Package pdftex.def Info: STYLESTUFF/TU_LOGO.png used on input line 43.
+Package pdftex.def Info: STYLESTUFF/TU_LOGO.png used on input line 45.
 (pdftex.def)             Requested size: 145.714pt x 42.4284pt.
  [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
@@ -598,74 +645,74 @@ ft - MSc System & Control/Graduation Project (Thesis)/Thesis Forms and Guide/DC
 SC Literature Style/STYLESTUFF/TU_LOGO.png>] [2
 
 ]
-LaTeX Font Info:    Try loading font information for OML+lmr on input line 43.
+LaTeX Font Info:    Try loading font information for OML+lmr on input line 45.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omllmr.fd"
 File: omllmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 43.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 45.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OML/lmr/m/it' in size <14.4> not available
-(Font)              Font shape `OML/lmm/m/it' tried instead on input line 43.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 43.
+(Font)              Font shape `OML/lmm/m/it' tried instead on input line 45.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 45.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 43.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 45.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 43.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 45.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 43.
+(Font)              <10.95> on input line 45.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 43.
+(Font)              <8> on input line 45.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 43.
-LaTeX Font Info:    Try loading font information for U+msa on input line 43.
+(Font)              <6> on input line 45.
+LaTeX Font Info:    Try loading font information for U+msa on input line 45.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 43.
+LaTeX Font Info:    Try loading font information for U+msb on input line 45.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [3]
-<STYLESTUFF/EXAMPLELOGO.png, id=188, 227.6505pt x 168.3891pt>
+<STYLESTUFF/EXAMPLELOGO.png, id=184, 227.6505pt x 168.3891pt>
 File: STYLESTUFF/EXAMPLELOGO.png Graphic file (type png)
 
 <use STYLESTUFF/EXAMPLELOGO.png>
-Package pdftex.def Info: STYLESTUFF/EXAMPLELOGO.png used on input line 43.
+Package pdftex.def Info: STYLESTUFF/EXAMPLELOGO.png used on input line 45.
 (pdftex.def)             Requested size: 150.0pt x 110.95471pt.
 File: STYLESTUFF/TU_LOGO.png Graphic file (type png)
  <use STYLESTUFF/TU_LOGO.png>
-Package pdftex.def Info: STYLESTUFF/TU_LOGO.png used on input line 43.
+Package pdftex.def Info: STYLESTUFF/TU_LOGO.png used on input line 45.
 (pdftex.def)             Requested size: 145.714pt x 42.4284pt.
 
-<STYLESTUFF/DCSC.png, id=189, 227.6505pt x 72.27pt>
+<STYLESTUFF/DCSC.png, id=185, 227.6505pt x 72.27pt>
 File: STYLESTUFF/DCSC.png Graphic file (type png)
  <use STYLESTUFF/DCSC.png>
-Package pdftex.def Info: STYLESTUFF/DCSC.png used on input line 43.
+Package pdftex.def Info: STYLESTUFF/DCSC.png used on input line 45.
 (pdftex.def)             Requested size: 126.00015pt x 40.0pt.
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 43.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 45.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 43.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 45.
  [4 <D:/Dropbox/TU Delft - MSc System & Control/Graduation Project (Thesis)/The
 sis Forms and Guide/DCSC Literature Style/STYLESTUFF/EXAMPLELOGO.png (PNG copy)
 > <D:/Dropbox/TU Delft - MSc System & Control/Graduation Project (Thesis)/Thesi
@@ -760,7 +807,19 @@ Chapter 2.
 Package acronym Info: Label `acro:RL' overridden on input line 2.
 Package acronym Info: Label `acro:MDP' newly defined as it shall be overridden
 although it is yet undefined on input line 2.
-[5]) [6]
+[5] [6]
+Package acronym Info: Label `acro:DP' newly defined as it shall be overridden
+although it is yet undefined on input line 88.
+Package acronym Info: Label `acro:TD' newly defined as it shall be overridden
+although it is yet undefined on input line 91.
+ <actorCritic2.png, id=418, 367.97475pt x 228.25275pt>
+File: actorCritic2.png Graphic file (type png)
+
+<use actorCritic2.png>
+Package pdftex.def Info: actorCritic2.png used on input line 95.
+(pdftex.def)             Requested size: 265.59494pt x 164.74933pt.
+ [7]) [8 <D:/Dropbox/TU Delft - MSc System & Control/Graduation Project (Thesis
+)/Thesis Forms and Guide/DCSC Literature Style/actorCritic2.png>]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
  Forms and Guide\DCSC Literature Style\survey.tex"
 Chapter 3.
@@ -773,37 +832,37 @@ Overfull \hbox (1.01585pt too wide) in paragraph at lines 14--14
 nt Learn-
  []
 
-) [7
+) [9
 
 
 
 ]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
- Forms and Guide\DCSC Literature Style\simulation.tex" [8
+ Forms and Guide\DCSC Literature Style\simulation.tex" [10
 
 
 
 ]
 Chapter 4.
-) [9]
+) [11]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
- Forms and Guide\DCSC Literature Style\implementation.tex" [10
+ Forms and Guide\DCSC Literature Style\implementation.tex" [12
 
 
 
 ]
 Chapter 5.
-) [11]
+) [13]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
- Forms and Guide\DCSC Literature Style\conclusion.tex" [12
+ Forms and Guide\DCSC Literature Style\conclusion.tex" [14
 
 
 
 ]
 Chapter 6.
-) [13]
+) [15]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
- Forms and Guide\DCSC Literature Style\app_back.tex" [14
+ Forms and Guide\DCSC Literature Style\app_back.tex" [16
 
 
 
@@ -816,27 +875,27 @@ LaTeX Font Info:    Try loading font information for T1+lmtt on input line 1.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-))) [15] [16
+))) [17] [18
 
 
 ]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
- Forms and Guide\DCSC Literature Style\mscLiterature.bbl" [17
+ Forms and Guide\DCSC Literature Style\mscLiterature.bbl" [19
 
-]) [18]
+]) [20]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
  Forms and Guide\DCSC Literature Style\glossary.tex"
 No file mscLiterature.nls.
-) [19
+) [21
 
 
-] [20
+] [22
 
 
 ]
 No file mscLiterature.ind.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 83.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 83.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 85.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 85.
 
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
  Forms and Guide\DCSC Literature Style\mscLiterature.aux"
@@ -864,43 +923,46 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 83.
  Forms and Guide\DCSC Literature Style\app_back.aux")
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
  Forms and Guide\DCSC Literature Style\glossary.aux"))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 83.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 83.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 85.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 85.
 Package rerunfilecheck Info: File `mscLiterature.out' has not changed.
-(rerunfilecheck)             Checksum: E94686919F0EC2A3E0CF44CDDC8E1FBD;2930.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 83.
+(rerunfilecheck)             Checksum: 64D8F2B71A91F59B27AC9BD9589B1389;2839.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 85.
  ) 
 Here is how much of TeX's memory you used:
- 11019 strings out of 493921
- 169130 string characters out of 3144864
- 265579 words of memory out of 3000000
- 13883 multiletter control sequences out of 15000+200000
- 78958 words of font info for 57 fonts, out of 3000000 for 9000
+ 12361 strings out of 493921
+ 188152 string characters out of 3144864
+ 307862 words of memory out of 3000000
+ 15201 multiletter control sequences out of 15000+200000
+ 81726 words of font info for 58 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 43i,15n,45p,1594b,1716s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,18n,45p,1594b,1716s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files (x86)/
-MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files (x86)/MiKTeX 2.9/font
-s/enc/dvips/lm/lm-mathit.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips
-/fontname/8r.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmbx1
-0.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmmi12.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
-ts/type1/public/lm/lmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
-lic/lm/lmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr17
-.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/lm/lmss10.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/lm/lmss12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/lm/lmssbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
-lic/lm/lmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy
-8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/bookman/ubkl8a.pfb>
-Output written on mscLiterature.pdf (38 pages, 1197260 bytes).
+iles (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files (x86)/
+MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Program Files (x86)/MiKTeX 2.9/
+fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/d
+vips/lm/lm-rm.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8
+r.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/public/lm/lmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
+ublic/lm/lmmi6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmm
+i8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/public/lm/lmri10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
+/lm/lmss10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmss12.
+pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/urw/bookman/ubkl8a.pfb>
+Output written on mscLiterature.pdf (40 pages, 1237912 bytes).
 PDF statistics:
- 573 PDF objects out of 1000 (max. 8388607)
- 133 named destinations out of 1000 (max. 500000)
- 341 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 623 PDF objects out of 1000 (max. 8388607)
+ 150 named destinations out of 1000 (max. 500000)
+ 338 words of extra memory for PDF output out of 10000 (max. 10000000)
 
