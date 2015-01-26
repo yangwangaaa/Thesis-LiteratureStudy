@@ -71,4 +71,26 @@ D.~Bertsekas, ``Neuro-dynamic programming: An overview and recent results,'' in
   eds.), vol.~2006 of {\em Operations Research Proceedings}, pp.~71--72,
   Springer Berlin Heidelberg, 2007.
 
+\bibitem{Abbeel}
+A.~Coates, P.~Abbeel, and A.~Ng, ``Autonomous helicopter flight using
+  reinforcement learning,'' in {\em Encyclopedia of Machine Learning}
+  (C.~Sammut and G.~Webb, eds.), pp.~53--61, Springer US, 2010.
+
+\bibitem{NIPS2007_3253}
+J.~Z. Kolter, P.~Abbeel, and A.~Y. Ng, ``Hierarchical apprenticeship learning
+  with application to quadruped locomotion,'' in {\em Advances in Neural
+  Information Processing Systems 20} (J.~Platt, D.~Koller, Y.~Singer, and
+  S.~Roweis, eds.), pp.~769--776, Curran Associates, Inc., 2008.
+
+\bibitem{4543641}
+S.~Ross, B.~Chaib-draa, and J.~Pineau, ``Bayesian reinforcement learning in
+  continuous pomdps with application to robot navigation,'' in {\em Robotics
+  and Automation, 2008. ICRA 2008. IEEE International Conference on},
+  pp.~2845--2851, May 2008.
+
+\bibitem{126844}
+R.~Sutton, A.~Barto, and R.~J. Williams, ``Reinforcement learning is direct
+  adaptive optimal control,'' {\em Control Systems, IEEE}, vol.~12, pp.~19--22,
+  April 1992.
+
 \end{thebibliography}

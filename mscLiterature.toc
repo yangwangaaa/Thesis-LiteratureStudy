@@ -12,10 +12,9 @@
 \contentsline {section}{\numberline {2-4}Policy and value iteration}{7}{section.2.4}
 \contentsline {section}{\numberline {2-5}Actor Critic Methods}{7}{section.2.5}
 \contentsline {chapter}{\numberline {3}Reinforcement Learning for Tracking Problem: A Survey}{9}{chapter.3}
-\contentsline {section}{\numberline {3-1}Dynamic Tuning via Reinforcement Learning}{9}{section.3.1}
-\contentsline {section}{\numberline {3-2}Nonlinear Compensation for Tracking via Reinforcement Learning}{9}{section.3.2}
-\contentsline {section}{\numberline {3-3}Reinforcement Learning for Optimal Tracking Control}{9}{section.3.3}
-\contentsline {section}{\numberline {3-4}Self-Proposed Controller [tentative]}{9}{section.3.4}
+\contentsline {section}{\numberline {3-1}Reinforcement Learning for Optimal Tracking Control}{9}{section.3.1}
+\contentsline {section}{\numberline {3-2}Dynamic Tuning via Reinforcement Learning}{10}{section.3.2}
+\contentsline {section}{\numberline {3-3}Nonlinear Compensation for Tracking via Reinforcement Learning}{10}{section.3.3}
 \contentsline {chapter}{\numberline {4}Simulation \& Verification}{11}{chapter.4}
 \contentsline {section}{\numberline {4-1}Simulated Setup}{11}{section.4.1}
 \contentsline {section}{\numberline {4-2}Simulation Result and Analysis}{11}{section.4.2}
@@ -25,6 +24,6 @@
 \contentsline {chapter}{\numberline {A}Appendix}{17}{appendix.A}
 \contentsline {section}{\numberline {A-1}Simulation Program}{17}{section.A.1}
 \contentsline {subsection}{\numberline {A-1-1}A MATLAB listing}{17}{subsection.A.1.1}
-\contentsline {chapter}{\hbox to\@tempdima {\hfil }Glossary}{21}{appendix*.19}
-\contentsline {section}{\hbox to\@tempdima {\hfil }List of Acronyms}{21}{section*.20}
-\contentsline {section}{\hbox to\@tempdima {\hfil }List of Symbols}{21}{section*.22}
+\contentsline {chapter}{\hbox to\@tempdima {\hfil }Glossary}{21}{appendix*.20}
+\contentsline {section}{\hbox to\@tempdima {\hfil }List of Acronyms}{21}{section*.21}
+\contentsline {section}{\hbox to\@tempdima {\hfil }List of Symbols}{21}{section*.23}

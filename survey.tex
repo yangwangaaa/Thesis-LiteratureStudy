@@ -1,22 +1,23 @@
 %
 % A Real Chapter
 \chapter{Reinforcement Learning for Tracking Problem: A Survey} \label{chap::survey}
+Despite the success of \ac{RL} in many robotics problem (e.g. learning to fly \cite{Abbeel}, walk \cite{NIPS2007_3253} and navigate \cite{4543641}), the application of \ac{RL} for tracking control is not a widely explored topic. Over the spans of the literature survey, author finds several attempts to exploits \ac{RL} for tracking problem, which can be categorized into 3 different approaches: dynamic tuning, \ac{RL} for optimal control, and \ac{RL} for nonlinear additive compensator. 
 
-This is real chapter for \ac{DCSC}, ok? We will use it as a demo for the different headings you can use to structure your text.
+This chapter covers the foundational theory of the 3 aforementioned approaches. The main idea, advantages, limitations and ease of implementation are the key issues which will be discussed. These issue will serve as the basis of the argument to choose one method for later implementation. The chapter starts in Section \ref{sec:rl_lqt} by providing explanation about optimal tracking control using \ac{RL}. Section \ref{sec:dytun} deals with the so called dynamic tuning -- a class of gain scheduling which makes use of \ac{RL}. The third method, presented in Section \ref{sec:nl_comp}, is a relatively new approach which employs \ac{RL} to learn additive input compensation.
 
+\section{Reinforcement Learning for Optimal Tracking Control} \label{sec:rl_lqt}
+This method is initiated and developed by Lewis et. al. which aims to solve the tracking by \ac{RL} problem from dynamic programming perspective. The method uses optimal control, a branch of control theory whose root is closely related to dynamic programming \cite{126844}. The method starts from the downside of optimal tracking control which requires the solution of non-causal differential equation. It turns out that by modifying the cost function and the state of the optimal control, a causal representation can be obtained, followed by \ac{RL} to asymptotically solve for the solution . 
 
-\section{Dynamic Tuning via Reinforcement Learning}
+To provide an easier comparison between the standard optimal control solution with \ac{RL}-based one, this section starts by formulating the optimal tracking problem and deriving the solution. Next, the modified formulation of optimal control which allows the causal formulation of infinite horizon optimal control problem is discussed. Following is the policy iteration algorithms to solve the optimal control. In this section, only discrete-time \ac{LQT} problem is considered. Although the extension to non-linear and continuous time optimal control problem is not straightforward, the main idea is actually very similar.
+
+\section{Dynamic Tuning via Reinforcement Learning} \label{sec:dytun}
 This is the first section .
 
 %\subsection{Case Study: PI Tuning using Reinforcement Learning}
 This is the subsection of the first section.
 
-\section{Nonlinear Compensation for Tracking via Reinforcement Learning}
-This is second section.
-%\subsection{Case Study: 1-DOF Robot Gravity Compensation}
 
-\section{Reinforcement Learning for Optimal Tracking Control}
+\section{Nonlinear Compensation for Tracking via Reinforcement Learning} \label{sec:nl_comp}
 This is third section.
-
-\section{Self-Proposed Controller [tentative]}
+%\subsection{Case Study: 1-DOF Robot Gravity Compensation}
 
