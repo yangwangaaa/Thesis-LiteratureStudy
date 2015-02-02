@@ -88,9 +88,44 @@ S.~Ross, B.~Chaib-draa, and J.~Pineau, ``Bayesian reinforcement learning in
   and Automation, 2008. ICRA 2008. IEEE International Conference on},
   pp.~2845--2851, May 2008.
 
+\bibitem{4048052}
+S.~Arimoto, S.~Kawamura, and F.~Miyazaki, ``Bettering operation of dynamic
+  systems by learning: A new control theory for servomechanism or mechatronics
+  systems,'' in {\em Decision and Control, 1984. The 23rd IEEE Conference on},
+  pp.~1064--1069, Dec 1984.
+
+\bibitem{299157}
+D.~Kim and S.~Kim, ``An iterative learning control method with application for
+  cnc machine tools,'' in {\em Industry Applications Society Annual Meeting,
+  1993., Conference Record of the 1993 IEEE}, pp.~2106--2111 vol.3, Oct 1993.
+
+\bibitem{1044377}
+M.~Norrlof and S.~Gunnarsson, ``Experimental comparison of some classical
+  iterative learning control algorithms,'' {\em Robotics and Automation, IEEE
+  Transactions on}, vol.~18, pp.~636--641, Aug 2002.
+
 \bibitem{126844}
 R.~Sutton, A.~Barto, and R.~J. Williams, ``Reinforcement learning is direct
   adaptive optimal control,'' {\em Control Systems, IEEE}, vol.~12, pp.~19--22,
   April 1992.
+
+\bibitem{lewis1995optimal}
+F.~L. Lewis and V.~L. Syrmos, {\em Optimal control}.
+\newblock John Wiley \& Sons, 1995.
+
+\bibitem{1099755}
+G.~Hewer, ``An iterative technique for the computation of the steady state
+  gains for the discrete optimal regulator,'' {\em Automatic Control, IEEE
+  Transactions on}, vol.~16, pp.~382--384, Aug 1971.
+
+\bibitem{Modares20141780}
+H.~Modares and F.~L. Lewis, ``Optimal tracking control of nonlinear
+  partially-unknown constrained-input systems using integral reinforcement
+  learning,'' {\em Automatica}, vol.~50, no.~7, pp.~1780 -- 1792, 2014.
+
+\bibitem{Brujeni5669655}
+L.~Brujeni, J.~M. Lee, and S.~Shah, ``Dynamic tuning of pi-controllers based on
+  model-free reinforcement learning methods,'' in {\em Control Automation and
+  Systems (ICCAS), 2010 International Conference on}, pp.~453--458, Oct 2010.
 
 \end{thebibliography}

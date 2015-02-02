@@ -3,15 +3,207 @@
 \chapter{Reinforcement Learning for Tracking Problem: A Survey} \label{chap::survey}
 Despite the success of \ac{RL} in many robotics problem (e.g. learning to fly \cite{Abbeel}, walk \cite{NIPS2007_3253} and navigate \cite{4543641}), the application of \ac{RL} for tracking control is not a widely explored topic. Over the spans of the literature survey, author finds several attempts to exploits \ac{RL} for tracking problem, which can be categorized into 3 different approaches: dynamic tuning, \ac{RL} for optimal control, and \ac{RL} for nonlinear additive compensator. 
 
-This chapter covers the foundational theory of the 3 aforementioned approaches. The main idea, advantages, limitations and ease of implementation are the key issues which will be discussed. These issue will serve as the basis of the argument to choose one method for later implementation. The chapter starts in Section \ref{sec:rl_lqt} by providing explanation about optimal tracking control using \ac{RL}. Section \ref{sec:dytun} deals with the so called dynamic tuning -- a class of gain scheduling which makes use of \ac{RL}. The third method, presented in Section \ref{sec:nl_comp}, is a relatively new approach which employs \ac{RL} to learn additive input compensation.
+This chapter covers the foundational theory of the 3 aforementioned approaches. The main idea, advantages, limitations and ease of implementation are the key issues which will be discussed. These issues will serve as the basis of the argument to choose one method for later implementation. The chapter starts in Section \ref{sec:rl_lqt} by providing explanation about \ac{RL} for optimal tracking control. Section \ref{sec:dytun} deals with the so called dynamic tuning -- a class of gain scheduling which makes use of \ac{RL}. The third method, presented in Section \ref{sec:nl_comp}, is a relatively new approach which employs \ac{RL} to learn additive input compensation.
+
+Furthermore, author also finds it interesting to compare \ac{RL} for reference tracking with a much more mature technique, namely \ac{ILC} \cite{4048052}. As the name suggested, \ac {ILC} is developed to improve tracking contaminated by repetitive error/disturbance. This method has been successfully implemented for various applications from CNC machining \cite{299157} to industrial robots \cite{1044377}. Therefore, \ac {ILC} will be the subject of evaluation in Section \ref{sec:ilc}.
+
 
 \section{Reinforcement Learning for Optimal Tracking Control} \label{sec:rl_lqt}
-This method is initiated and developed by Lewis et. al. which aims to solve the tracking by \ac{RL} problem from dynamic programming perspective. The method uses optimal control, a branch of control theory whose root is closely related to dynamic programming \cite{126844}. The method starts from the downside of optimal tracking control which requires the solution of non-causal differential equation. It turns out that by modifying the cost function and the state of the optimal control, a causal representation can be obtained, followed by \ac{RL} to asymptotically solve for the solution . 
+This method is initiated and developed by Lewis et. al. which aims to solve the tracking by \ac{RL} problem from dynamic programming perspective. The method uses optimal control, a branch of control theory whose root is closely related to dynamic programming \cite{126844}. The method starts from the downside of optimal tracking control which requires the solution of non-causal differential equation. It turns out that by assuming the reference to follow a certain dynamics and modifying the state of the optimal tracking, a causal representation can be obtained. Once a causality is in hand, we can then employ our favorite \ac{RL} techniques to asymptotically solve for the solution. 
 
-To provide an easier comparison between the standard optimal control solution with \ac{RL}-based one, this section starts by formulating the optimal tracking problem and deriving the solution. Next, the modified formulation of optimal control which allows the causal formulation of infinite horizon optimal control problem is discussed. Following is the policy iteration algorithms to solve the optimal control. In this section, only discrete-time \ac{LQT} problem is considered. Although the extension to non-linear and continuous time optimal control problem is not straightforward, the main idea is actually very similar.
+To provide an easier comparison between the standard optimal control solution with \ac{RL}-based one, this section starts by formulating the standard optimal tracking problem and deriving its solution. Next, the modified formulation of optimal control which allows the causal formulation of infinite horizon optimal control problem is discussed. Following is the \ac{PI} algorithms to solve the optimal control. In this section, only discrete-time \ac{LQT} problem is considered \cite{Kiumarsi6760476}. Although the extension to non-linear and continuous time optimal tracking problem is not straightforward, the main steps are actually quite similar. The derivation presented in this section is based on work by Kiumarsi-Khomartash \cite{Kiumarsi6760476} with modifications to comply with the convention used in this report.
+
+\subsection{Standard LQT problem}
+The standard \ac {LQT} problem is treated extensively in \cite{lewis1995optimal}. First, we formulize the \ac {LTI} discrete-time system as 
+
+\begin{equation} \label{eq:ss}
+\begin{split}
+x(k+1) &= Ax(k) + Bu(k) \\
+y(k) &= Cx(k)
+\end{split}
+\end{equation}
+
+where $x(j) \in \mathbb{R}^n$, $u(j) \in \mathbb{R}^m$ and $y(j) \in \mathbb{R}^l$ are the state, input and output at time instance $j$ respectively. While $A$, $B$, $C$ are the state matrices. For the sake of simplicity, we omit the feedthrough matrix $D$ and consider a \ac {SISO} system. The value of a certain state $x(k)$ and reference signal $r(k)$ can be formulized as the following infinite-horizon cost function
+
+\begin{equation}
+\label{eq:infcost}
+J = V(x(k), r(k)) = \frac{1}{2} \sum_{i=k}^{\infty} (Cx(i)-r(i))^TQ(Cx(i)-r(i)) + u(i)^TRu(i)
+\end{equation}
+
+where $Q \geq 0$ and $R > 0$. The goal of LQT is to obtain the optimal control input $u^*(k)$ which minimizes $J$. This control input is given as a combination of feedback and feedforward term
+\begin{equation}
+u(k) = -Kx(k) + K_vv(k+1)
+\end{equation}
+where $v(k+1)$ can be obtained by solving a non-causal difference equation
+\begin{equation}
+v(k) = (A-BK)^Tv(k+1) + C^TQr(k)
+\label{eq:noncausal}
+\end{equation}
+The control gains $K$ and $K_v$ are
+
+\begin{equation}
+K = (B^TSB + R)^{-1}B^TSA
+\end{equation}
+
+\begin{equation}
+K_v = (B^TSB + R)^{-1}B^T
+\end{equation}
+
+where $S=S^T>0$ is a unique solution of the \ac {ARE} as follows
+
+\begin{equation}
+\begin{split}
+S &= A^TS(A-BK) + C^TQC \\
+&= A^TSA - A^TSB(B^TSB+R)^{-1}B^TSA + C^TQC
+\end{split}
+\end{equation}
+Applying the optimal control input $u^*(k)$ gives us the minimal cost (optimal value) given by
+
+\begin{equation}
+J^* = V^*(x(k), r(k)) = \frac{1}{2}x(k)^TSx(k) - x(k)^Tv(k) + w(k)
+\end{equation}
+
+where $ w(k) $ is obtained from a backward recursion
+
+\begin{equation}
+w(k) = w(k+1) + \frac{1}{2}r(k)^TQr(k) - \frac{1}{2}v(k+1)^TB(B^TSB+R)^{-1}B^Tv(k+1)
+\end{equation}
+
+Clearly, the drawback of standard optimal tracking control is the necessity to solve a non-causal difference equation \eqref{eq:noncausal}. However, by assuming the reference trajectory to follow a certain dynamics, we can obtain a causal equation. This will be the subject of next subsection.
+
+\subsection{Causal Representation of the LQT}
+First, the necessary assumption is that the reference is generated by following stable difference equation
+\begin{equation}
+r(k+1) = Fr(k) 
+\end{equation}
+where $ F $ is hurwitz. By augmenting the state in \eqref{eq:ss}, we obtain the following new state space system
+
+\begin{equation}
+\begin{split}
+\left[ \begin{array}{c}
+x(k+1) \\ 
+r(k+1)
+\end{array} \right] &= \left[\begin{array}{cc}
+A & \textbf{0} \\ 
+\textbf{0} & F
+\end{array}  \right] \left[ \begin{array}{c}
+x(k) \\ 
+r(k)
+\end{array} \right] + \left[ \begin{array}{c}
+B \\ 
+\textbf{0}
+\end{array} \right] u(k) \\
+X(k+1) &= TX(k) + B_1u(k)
+\end{split}
+\end{equation}
+
+Next, we assume that the candidate lyapunov function $V$ for the augmented state space system to be
+
+\begin{equation}
+\label{eq:lqtlyap}
+V(x(k), r(k)) = V(X(k)) = \frac{1}{2}X(k)^TPX(k)
+\end{equation}
+
+where $ P = P^T > 0 $
+
+Modifying the infinite-horizon cost function \eqref{eq:infcost}, we come up with a Bellman equation for LQT
+\begin{equation}
+\begin{split}
+V(x(k), r(k)) = &\frac{1}{2} (Cx(k)-r(k))^TQ(Cx(k)-r(k)) + u(k)^TRu(k) + \\
+&\frac{1}{2} \sum_{i=k+1}^{\infty} \left[ (Cx(i)-r(i))^TQ(Cx(i)-r(i)) + u(i)^TRu(i)\right] 
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+V(x(k), r(k)) = &\frac{1}{2} (Cx(k)-r(k))^TQ(Cx(k)-r(k)) + u(k)^TRu(k) + \\
+& V(x(k+1), r(k+1))
+\end{split}
+\end{equation}
+
+Inserting the lyapunov equation \eqref{eq:lqtlyap}, the LQT Bellman equation becomes
+\begin{equation}
+\label{eq:lqtbellman}
+X(k)^TPX(k) =  X(k)^TQ_1X(k) + u(k)^TRu(k) + X(k+1)^TPX(k+1)
+\end{equation}
+where
+
+\begin{equation}
+Q_1 = \left[ \begin{array}{cc}
+C^TQC & -C^TQ \\ 
+-QC & Q
+\end{array} \right] 
+\end{equation}
+
+From the LQT Bellman equation, one can compute the time derivative (skipped here) to obtain the LQT ARE.
+\begin{equation}
+\label{eq:lqtare}
+Q_1 - P + T^TPT - T^TPB_1(R+B_1^TPB_1)^{-1}B_1^TPT = 0
+\end{equation}
+
+Solving for $P$ that satisfies \eqref{eq:lqtare}, we finally obtain the optimal policy 
+\begin{equation}
+\label{eq:opt_u}
+u(k) = -K_1X(k)
+\end{equation}
+with
+\begin{equation}
+K_1 = (R+B_1^TPB_1)^{-1}B_1^TPT
+\end{equation}
+Our next objective is to compute $P$ of \eqref{eq:lqtare} in iterative manner using \ac {RL} instead of direct computation which might be unfeasible. 
+
+\subsection{\ac{RL} for Solving the LQT ARE}
+In this subsection, we will employ iterative learning algorithms to solve for $P$. Before that, we need to derive for the lyapunov equation from the LQT Bellman equation \eqref{eq:lqtbellman} by inserting the optimal \eqref{eq:opt_u}. This yields
+\begin{equation*}
+X(k)^TPX(k) =  X(k)^TQ_1X(k) + X(k)^TK_1^TRK_1X(k) + X(k)^T(T - B_1K_1)^TP(T - B_1K_1)X(k)
+\end{equation*}
+\begin{equation}
+\label{eq:lyap_lqt}
+\Leftrightarrow  P =  Q_1 + K_1^TRK_1 + (T - B_1K_1)^TP(T - B_1K_1)
+\end{equation}
+
+It turns out that by choosing a stabilizing initial policy $u^0 = -K_1^0X(k)$, one can use policy evaluation and iteration to approximate $ P $. In each iteration, the policy is guaranteed to be stable. The prove of this key theorem is given in \cite{1099755}. 
+
+By taking this theorem, one can design both offline and online \ac{PI} algorithms to asymptotically approximate $P$. The offline \ac{PI} improves $P$ using the lyapunov function \eqref{eq:lyap_lqt}, while the LQT Bellman equation \eqref{eq:lqtbellman} is used for the online \ac{PI}. These two algorithms are listed as follows. Note that both require the knowledge of the system dynamics. If the model is not (fully) known, one can use Q-learning \cite{Kiumarsi20141167} or actor-critic \ac {RL} \cite{Modares20141780} instead. 
+
+\begin{algorithm}[H]
+	%	\KwData{this text}
+	%	\KwResult{how to write algorithm with \LaTeX2e }
+	\textbf{Initialization:} Select an admissible (stable) gain $K^0_1$\\
+	\For{j = 0 to N}{
+		\textbf{Policy evaluation:} \\
+		$P^{j+1} = Q_1 + (K_1^j)^TRK_1^j + (T-B_1K_1^j)^TP^{j+1}(T-B_1K_1^j)$\\
+		
+		\textbf{Policy iteration:} \\
+		$ K_1^{j+1} = (R+B_1^TP^{j+1}B_1)^{-1} B_1^TP^{j+1}T $\\	
+	}
+	\label{alg:off_pi}
+	\caption{Offline Policy Iteration}
+\end{algorithm}
+
+\begin{algorithm}[H]
+	%	\KwData{this text}
+	%	\KwResult{how to write algorithm with \LaTeX2e }
+	\textbf{Initialization:} Select an admissible (stable) gain $K^0_1$\\
+	\For{j = 0 to N}{
+		\textbf{Policy evaluation:} \\
+		$X(k)^TP^{j+1}X(k) = X(k)^T\left( Q_1 + (K_1^j)^TRK_1^j\right) X(k) + X(k+1)^TP^{j+1}X(k+1)$\\
+		
+		\textbf{Policy iteration:} \\
+		$ K_1^{j+1} = (R+B_1^TP^{j+1}B_1)^{-1} B_1^TP^{j+1}T $\\	
+	}
+	\label{alg:on_pi}
+	\caption{Online Policy Iteration}
+\end{algorithm}
+
+
+\subsection{Conclusion}
+We
 
 \section{Dynamic Tuning via Reinforcement Learning} \label{sec:dytun}
-This is the first section .
+In this second section, a method to improve tracking performance by dynamically tuned a controller's gain using \ac {RL} is presented. To author's best knowledge, there are two prominent methods which serve this purpose. The first method is a relatively simple one \cite{Brujeni5669655} which starts from an admissible controller e.g. PID, and tune the controller's gain according to the value function. The second method is a more complex which is based on a relatively new algorithm called \ac {PI$^2$}. It is a model-free, sampling based learning method derived from the principle of optimal control \cite{Buchli2010}. This algorithm has been shown to work for a variable impedance control \cite{Buchli6037312}, 
+
+\subsection{Direct Tuning of }
 
 %\subsection{Case Study: PI Tuning using Reinforcement Learning}
 This is the subsection of the first section.
@@ -19,5 +211,9 @@ This is the subsection of the first section.
 
 \section{Nonlinear Compensation for Tracking via Reinforcement Learning} \label{sec:nl_comp}
 This is third section.
+
+\section{Iterative Learning Control} \label{sec:ilc}
+This is third section.
+
 %\subsection{Case Study: 1-DOF Robot Gravity Compensation}
 

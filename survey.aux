@@ -3,6 +3,9 @@
 \citation{Abbeel}
 \citation{NIPS2007_3253}
 \citation{4543641}
+\citation{4048052}
+\citation{299157}
+\citation{1044377}
 \citation{126844}
 \@writefile{toc}{\contentsline {chapter}{\numberline {3}Reinforcement Learning for Tracking Problem: A Survey}{9}{chapter.3}}
 \@writefile{lof}{\addvspace {10\p@ }}
@@ -10,7 +13,7 @@
 \@writefile{loa}{\addvspace {10\p@ }}
 \newlabel{chap::survey}{{3}{9}{Reinforcement Learning for Tracking Problem: A Survey}{chapter.3}{}}
 \undonewlabel{acro:RL}
-\newlabel{acro:RL}{{3}{9}{Reinforcement Learning for Tracking Problem: A Survey}{section*.17}{}}
+\newlabel{acro:RL}{{3}{9}{Reinforcement Learning for Tracking Problem: A Survey}{section*.18}{}}
 \acronymused{RL}
 \acronymused{RL}
 \acronymused{RL}
@@ -19,21 +22,78 @@
 \acronymused{RL}
 \acronymused{RL}
 \acronymused{RL}
+\acronymused{RL}
+\undonewlabel{acro:ILC}
+\newlabel{acro:ILC}{{3}{9}{Reinforcement Learning for Tracking Problem: A Survey}{section*.19}{}}
+\acronymused{ILC}
+\acronymused{ILC}
+\acronymused{ILC}
 \@writefile{toc}{\contentsline {section}{\numberline {3-1}Reinforcement Learning for Optimal Tracking Control}{9}{section.3.1}}
 \newlabel{sec:rl_lqt}{{3-1}{9}{Reinforcement Learning for Optimal Tracking Control}{section.3.1}{}}
 \acronymused{RL}
+\citation{Kiumarsi6760476}
+\citation{Kiumarsi6760476}
+\citation{lewis1995optimal}
 \acronymused{RL}
 \acronymused{RL}
+\undonewlabel{acro:PI}
+\newlabel{acro:PI}{{3-1}{10}{Reinforcement Learning for Optimal Tracking Control}{section*.20}{}}
+\acronymused{PI}
 \undonewlabel{acro:LQT}
-\newlabel{acro:LQT}{{3-1}{10}{Reinforcement Learning for Optimal Tracking Control}{section*.18}{}}
+\newlabel{acro:LQT}{{3-1}{10}{Reinforcement Learning for Optimal Tracking Control}{section*.21}{}}
 \acronymused{LQT}
-\@writefile{toc}{\contentsline {section}{\numberline {3-2}Dynamic Tuning via Reinforcement Learning}{10}{section.3.2}}
-\newlabel{sec:dytun}{{3-2}{10}{Dynamic Tuning via Reinforcement Learning}{section.3.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3-3}Nonlinear Compensation for Tracking via Reinforcement Learning}{10}{section.3.3}}
-\newlabel{sec:nl_comp}{{3-3}{10}{Nonlinear Compensation for Tracking via Reinforcement Learning}{section.3.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3-1-1}Standard LQT problem}{10}{subsection.3.1.1}}
+\acronymused{LQT}
+\undonewlabel{acro:LTI}
+\newlabel{acro:LTI}{{3-1-1}{10}{Standard LQT problem}{section*.22}{}}
+\acronymused{LTI}
+\newlabel{eq:ss}{{3-1}{10}{Standard LQT problem}{equation.3.1.1}{}}
+\undonewlabel{acro:SISO}
+\newlabel{acro:SISO}{{3-1-1}{10}{Standard LQT problem}{section*.23}{}}
+\acronymused{SISO}
+\newlabel{eq:infcost}{{3-2}{10}{Standard LQT problem}{equation.3.1.2}{}}
+\newlabel{eq:noncausal}{{3-4}{10}{Standard LQT problem}{equation.3.1.4}{}}
+\undonewlabel{acro:ARE}
+\newlabel{acro:ARE}{{3-1-1}{11}{Standard LQT problem}{section*.24}{}}
+\acronymused{ARE}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3-1-2}Causal Representation of the LQT}{11}{subsection.3.1.2}}
+\newlabel{eq:lqtlyap}{{3-12}{11}{Causal Representation of the LQT}{equation.3.1.12}{}}
+\citation{1099755}
+\citation{Kiumarsi20141167}
+\citation{Modares20141780}
+\newlabel{eq:lqtbellman}{{3-15}{12}{Causal Representation of the LQT}{equation.3.1.15}{}}
+\newlabel{eq:lqtare}{{3-17}{12}{Causal Representation of the LQT}{equation.3.1.17}{}}
+\newlabel{eq:opt_u}{{3-18}{12}{Causal Representation of the LQT}{equation.3.1.18}{}}
+\acronymused{RL}
+\acronymused{RL}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3-1-3}\ac {RL} for Solving the LQT ARE}{12}{subsection.3.1.3}}
+\newlabel{eq:lyap_lqt}{{3-20}{12}{\ac {RL} for Solving the LQT ARE}{equation.3.1.20}{}}
+\acronymused{PI}
+\acronymused{PI}
+\acronymused{PI}
+\citation{Brujeni5669655}
+\citation{Buchli2010}
+\citation{Buchli6037312}
+\acronymused{RL}
+\newlabel{alg:off_pi}{{4}{13}{\ac {RL} for Solving the LQT ARE}{algocfline.4}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {4}{\ignorespaces Offline Policy Iteration\relax }}{13}{algocf.4}}
+\newlabel{alg:on_pi}{{5}{13}{\ac {RL} for Solving the LQT ARE}{algocfline.5}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {5}{\ignorespaces Online Policy Iteration\relax }}{13}{algocf.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3-1-4}Conclusion}{13}{subsection.3.1.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {3-2}Dynamic Tuning via Reinforcement Learning}{13}{section.3.2}}
+\newlabel{sec:dytun}{{3-2}{13}{Dynamic Tuning via Reinforcement Learning}{section.3.2}{}}
+\acronymused{RL}
+\undonewlabel{acro:PI$^2$}
+\newlabel{acro:PI$^2$}{{3-2}{13}{Dynamic Tuning via Reinforcement Learning}{section*.25}{}}
+\acronymused{PI$^2$}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3-2-1}Direct Tuning of }{13}{subsection.3.2.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {3-3}Nonlinear Compensation for Tracking via Reinforcement Learning}{13}{section.3.3}}
+\newlabel{sec:nl_comp}{{3-3}{13}{Nonlinear Compensation for Tracking via Reinforcement Learning}{section.3.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3-4}Iterative Learning Control}{14}{section.3.4}}
+\newlabel{sec:ilc}{{3-4}{14}{Iterative Learning Control}{section.3.4}{}}
 \@setckpt{survey}{
-\setcounter{page}{11}
-\setcounter{equation}{0}
+\setcounter{page}{15}
+\setcounter{equation}{20}
 \setcounter{enumi}{4}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
@@ -42,7 +102,7 @@
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
 \setcounter{chapter}{3}
-\setcounter{section}{3}
+\setcounter{section}{4}
 \setcounter{subsection}{0}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
@@ -54,11 +114,11 @@
 \setcounter{lstnumber}{1}
 \setcounter{Item}{11}
 \setcounter{Hfootnote}{0}
-\setcounter{bookmark@seq@number}{24}
+\setcounter{bookmark@seq@number}{30}
 \setcounter{AlgoLine}{0}
-\setcounter{algocfline}{3}
-\setcounter{algocfproc}{3}
-\setcounter{algocf}{3}
+\setcounter{algocfline}{5}
+\setcounter{algocfproc}{5}
+\setcounter{algocf}{5}
 \setcounter{lstlisting}{0}
 \setcounter{section@level}{1}
 }
