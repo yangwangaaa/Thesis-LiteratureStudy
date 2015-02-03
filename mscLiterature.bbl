@@ -123,9 +123,79 @@ H.~Modares and F.~L. Lewis, ``Optimal tracking control of nonlinear
   partially-unknown constrained-input systems using integral reinforcement
   learning,'' {\em Automatica}, vol.~50, no.~7, pp.~1780 -- 1792, 2014.
 
+\bibitem{buchli2011learning}
+J.~Buchli, F.~Stulp, E.~Theodorou, and S.~Schaal, ``Learning variable impedance
+  control,'' {\em The International Journal of Robotics Research}, vol.~30,
+  no.~7, pp.~820--833, 2011.
+
+\bibitem{theodorou2010generalized}
+E.~Theodorou, J.~Buchli, and S.~Schaal, ``A generalized path integral control
+  approach to reinforcement learning,'' {\em The Journal of Machine Learning
+  Research}, vol.~11, pp.~3137--3181, 2010.
+
+\bibitem{375142}
+J.-S. Jang and N.~Gulley, ``Gain scheduling based fuzzy controller design,'' in
+  {\em Fuzzy Information Processing Society Biannual Conference, 1994.
+  Industrial Fuzzy Control and Intelligent Systems Conference, and the NASA
+  Joint Technology Workshop on Neural Networks and Fuzzy Logic,}, pp.~101--105,
+  Dec 1994.
+
+\bibitem{5229855}
+Z.~Guo, J.-X. Xu, and T.~H. Lee, ``A gain-scheduling optimal fuzzy logic
+  controller design for unicycle,'' in {\em Advanced Intelligent Mechatronics,
+  2009. AIM 2009. IEEE/ASME International Conference on}, pp.~1423--1428, July
+  2009.
+
+\bibitem{1684589}
+A.~Hazzab, I.~Bousserhane, M.~Zerbo, and P.~Sicard, ``Real time implementation
+  of fuzzy gain scheduling of pi controller for induction machine control.,''
+  in {\em Information and Communication Technologies, 2006. ICTTA '06. 2nd},
+  vol.~1, pp.~1416--1421, 2006.
+
+\bibitem{6606304}
+Y.~Cheon, D.~Lee, I.-B. Lee, and S.~W. Sung, ``A new pid auto-tuning strategy
+  with operational optimization for mcfc systems,'' in {\em Control Conference
+  (ASCC), 2013 9th Asian}, pp.~1--6, June 2013.
+
+\bibitem{572744}
+C.-K. Chu, G.-R. Yu, E.~Jonckheere, and H.~Youssef, ``Gain scheduling for
+  fly-by-throttle flight control using neural networks,'' in {\em Decision and
+  Control, 1996., Proceedings of the 35th IEEE Conference on}, vol.~2,
+  pp.~1557--1562 vol.2, Dec 1996.
+
+\bibitem{556252}
+J.-S. Chai, S.~Tan, and C.-C. Hang, ``Gain scheduling control of nonlinear
+  plant using rbf neural network,'' in {\em Intelligent Control, 1996.,
+  Proceedings of the 1996 IEEE International Symposium on}, pp.~502--507, Sep
+  1996.
+
+\bibitem{882916}
+P.~Albertos and M.~Olivares, ``Online learning control of a gantry crane,'' in
+  {\em Intelligent Control, 2000. Proceedings of the 2000 IEEE International
+  Symposium on}, pp.~157--162, 2000.
+
 \bibitem{Brujeni5669655}
 L.~Brujeni, J.~M. Lee, and S.~Shah, ``Dynamic tuning of pi-controllers based on
   model-free reinforcement learning methods,'' in {\em Control Automation and
   Systems (ICCAS), 2010 International Conference on}, pp.~453--458, Oct 2010.
+
+\bibitem{stengel1994}
+R.~F. Stengel, {\em Optimal Control and Estimation}.
+\newblock Dover Publications, 1994.
+
+\bibitem{oksendal2010}
+B.~K. Oksendal, {\em Stochastic Differential Equations: An Introduction with
+  Applications}.
+\newblock Springer, 2010.
+
+\bibitem{5509336}
+E.~Theodorou, J.~Buchli, and S.~Schaal, ``Reinforcement learning of motor
+  skills in high dimensions: A path integral approach,'' in {\em Robotics and
+  Automation (ICRA), 2010 IEEE International Conference on}, pp.~2397--2403,
+  May 2010.
+
+\bibitem{ijspeert2002learning}
+A.~J. Ijspeert, J.~Nakanishi, and S.~Schaal, ``Learning attractor landscapes
+  for learning motor primitives,'' tech. rep., 2002.
 
 \end{thebibliography}

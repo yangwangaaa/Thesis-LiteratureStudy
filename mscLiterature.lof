@@ -2,8 +2,10 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2-1}{\ignorespaces Actor critic structure\relax }}{8}{figure.caption.17}
+\contentsline {figure}{\numberline {2-1}{\ignorespaces Actor critic structure\relax }}{8}{figure.caption.18}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3-1}{\ignorespaces Gain scheduling of Nominal controller using \ac {RL}. In this case, a PID controller is used\relax }}{14}{figure.caption.30}
+\contentsline {figure}{\numberline {3-2}{\ignorespaces A sequence of state and action\relax }}{15}{figure.caption.31}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

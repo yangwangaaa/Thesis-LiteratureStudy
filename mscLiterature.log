@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  2 FEB 2015 09:51
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  3 FEB 2015 14:13
 entering extended mode
 **mscLiterature.tex
 
@@ -622,14 +622,14 @@ LaTeX Font Info:    Try loading font information for T1+lmss on input line 45.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\t1lmss.fd"
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<STYLESTUFF/COVER.jpg, id=179, 601.38965pt x 844.87071pt>
+<STYLESTUFF/COVER.jpg, id=183, 601.38965pt x 844.87071pt>
 File: STYLESTUFF/COVER.jpg Graphic file (type jpg)
 
 <use STYLESTUFF/COVER.jpg>
 Package pdftex.def Info: STYLESTUFF/COVER.jpg used on input line 45.
 (pdftex.def)             Requested size: 597.5157pt x 845.1007pt.
 
-<STYLESTUFF/TU_LOGO.png, id=180, 145.71439pt x 42.42851pt>
+<STYLESTUFF/TU_LOGO.png, id=184, 145.71439pt x 42.42851pt>
 File: STYLESTUFF/TU_LOGO.png Graphic file (type png)
 
 <use STYLESTUFF/TU_LOGO.png>
@@ -690,7 +690,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 45.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [3]
-<STYLESTUFF/EXAMPLELOGO.png, id=204, 227.6505pt x 168.3891pt>
+<STYLESTUFF/EXAMPLELOGO.png, id=208, 227.6505pt x 168.3891pt>
 File: STYLESTUFF/EXAMPLELOGO.png Graphic file (type png)
 
 <use STYLESTUFF/EXAMPLELOGO.png>
@@ -701,7 +701,7 @@ File: STYLESTUFF/TU_LOGO.png Graphic file (type png)
 Package pdftex.def Info: STYLESTUFF/TU_LOGO.png used on input line 45.
 (pdftex.def)             Requested size: 145.714pt x 42.4284pt.
 
-<STYLESTUFF/DCSC.png, id=205, 227.6505pt x 72.27pt>
+<STYLESTUFF/DCSC.png, id=209, 227.6505pt x 72.27pt>
 File: STYLESTUFF/DCSC.png Graphic file (type png)
  <use STYLESTUFF/DCSC.png>
 Package pdftex.def Info: STYLESTUFF/DCSC.png used on input line 45.
@@ -730,6 +730,9 @@ s Forms and Guide/DCSC Literature Style/STYLESTUFF/DCSC.png>]
  Forms and Guide\DCSC Literature Style\mscLiterature.toc"
 Package acronym Info: Label `acro:RL' newly defined as it shall be overridden
 although it is yet undefined on input line 18.
+Package acronym Info: Label `acro:PI$^2$' newly defined as it shall be overridd
+en
+although it is yet undefined on input line 22.
  [3])
 \tf@toc=\write7
  [4]
@@ -782,9 +785,7 @@ although it is yet undefined on input line 8.
 Package acronym Info: Label `acro:3D' newly defined as it shall be overridden
 although it is yet undefined on input line 8.
 Package acronym Info: Label `acro:RL' overridden on input line 12.
-Package acronym Info: Label `acro:PI$^2$' newly defined as it shall be overridd
-en
-although it is yet undefined on input line 12.
+Package acronym Info: Label `acro:PI$^2$' overridden on input line 12.
 Package acronym Info: Label `acro:PD' newly defined as it shall be overridden
 although it is yet undefined on input line 12.
 
@@ -814,7 +815,7 @@ Package acronym Info: Label `acro:DP' newly defined as it shall be overridden
 although it is yet undefined on input line 88.
 Package acronym Info: Label `acro:TD' newly defined as it shall be overridden
 although it is yet undefined on input line 91.
- <actorCritic2.png, id=445, 367.97475pt x 228.25275pt>
+ <actorCritic2.png, id=458, 367.97475pt x 228.25275pt>
 File: actorCritic2.png Graphic file (type png)
 
 <use actorCritic2.png>
@@ -846,39 +847,102 @@ Package acronym Info: Label `acro:ARE' newly defined as it shall be overridden
 although it is yet undefined on input line 52.
  [10] [11] [12]
 Package acronym Info: Label `acro:PI$^2$' overridden on input line 204.
+Package acronym Info: Label `acro:MIMO' newly defined as it shall be overridden
 
-Overfull \hbox (1.01585pt too wide) in paragraph at lines 212--212
+although it is yet undefined on input line 207.
+ [13]
+Package acronym Info: Label `acro:TD' overridden on input line 209.
+Package acronym Info: Label `acro:SARSA' newly defined as it shall be overridde
+n
+although it is yet undefined on input line 209.
+ <dynamictuning.png, id=635, 431.211pt x 162.00525pt>
+File: dynamictuning.png Graphic file (type png)
+
+<use dynamictuning.png>
+Package pdftex.def Info: dynamictuning.png used on input line 213.
+(pdftex.def)             Requested size: 309.85626pt x 116.41624pt.
+ <sarsa.png, id=647, 384.2355pt x 95.75775pt>
+File: sarsa.png Graphic file (type png)
+
+<use sarsa.png>
+Package pdftex.def Info: sarsa.png used on input line 225.
+(pdftex.def)             Requested size: 309.85626pt x 77.22435pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 230--247
+$[]$ 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14 <D:/Dropbox/TU Delft - MSc System & Control/Graduation Project (Thesis)/Th
+esis Forms and Guide/DCSC Literature Style/dynamictuning.png>]
+Package acronym Info: Label `acro:ISE' newly defined as it shall be overridden
+although it is yet undefined on input line 250.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 293.
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 293.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 293.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 293.
+
+Package acronym Info: Label `acro:DoF' overridden on input line 294.
+[15 <D:/Dropbox/TU Delft - MSc System & Control/Graduation Project (Thesis)/The
+sis Forms and Guide/DCSC Literature Style/sarsa.png>] [16]
+Package acronym Info: Label `acro:HJB' newly defined as it shall be overridden
+although it is yet undefined on input line 314.
+Package acronym Info: Label `acro:PDE' newly defined as it shall be overridden
+although it is yet undefined on input line 325.
+Package acronym Info: Label `acro:DMP' newly defined as it shall be overridden
+although it is yet undefined on input line 345.
+ [17]
+Overfull \hbox (1.01585pt too wide) in paragraph at lines 357--357
 []\T1/lmss/bx/n/14.4 Nonlinear Com-pen-sa-tion for Track-ing via Re-in-force-me
 nt Learn-
  []
 
-) [13] [14]
+) [18]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
  Forms and Guide\DCSC Literature Style\simulation.tex"
 Chapter 4.
-) [15
+) [19
 
 
 
 ]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
- Forms and Guide\DCSC Literature Style\implementation.tex" [16
+ Forms and Guide\DCSC Literature Style\implementation.tex" [20
 
 
 
 ]
 Chapter 5.
-) [17]
+) [21]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
- Forms and Guide\DCSC Literature Style\conclusion.tex" [18
+ Forms and Guide\DCSC Literature Style\conclusion.tex" [22
 
 
 
 ]
 Chapter 6.
-) [19]
+) [23]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
- Forms and Guide\DCSC Literature Style\app_back.tex" [20
+ Forms and Guide\DCSC Literature Style\app_back.tex" [24
 
 
 
@@ -891,24 +955,27 @@ LaTeX Font Info:    Try loading font information for T1+lmtt on input line 1.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-))) [21] [22
+))) [25] [26
 
 
 ]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
- Forms and Guide\DCSC Literature Style\mscLiterature.bbl" [23
+ Forms and Guide\DCSC Literature Style\mscLiterature.bbl" [27
 
-] [24]) [25]
+] [28]) [29]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
- Forms and Guide\DCSC Literature Style\glossary.tex" [26
+ Forms and Guide\DCSC Literature Style\glossary.tex" [30
 
 
 ]
 No file mscLiterature.nls.
-) [27] [28
+) [31pdfTeX warning (ext4): destination with the same identifier (name{TD}) has
+ been already used, duplicate ignored
 
-
-]
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.79 \include{glossary}
+                       ] [32]
 No file mscLiterature.ind.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 85.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 85.
@@ -942,22 +1009,22 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 85.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 85.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 85.
 Package rerunfilecheck Info: File `mscLiterature.out' has not changed.
-(rerunfilecheck)             Checksum: DCF7CC104F8FAABFB2BA57375D348528;3209.
+(rerunfilecheck)             Checksum: E20FFE9EAA621B541D5B8CBF9C857005;3306.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 85.
  ) 
 Here is how much of TeX's memory you used:
- 12506 strings out of 493921
- 189797 string characters out of 3144864
- 311840 words of memory out of 3000000
- 15285 multiletter control sequences out of 15000+200000
- 87712 words of font info for 60 fonts, out of 3000000 for 9000
+ 12652 strings out of 493921
+ 191585 string characters out of 3144864
+ 315152 words of memory out of 3000000
+ 15369 multiletter control sequences out of 15000+200000
+ 91729 words of font info for 65 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  43i,23n,45p,1594b,1716s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files (x86)/
-MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Program Files (x86)/MiKTeX 2.9/
-fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/d
-vips/lm/lm-rm.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8
+iles (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files (x86)/MiKT
+eX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files (x86)/MiKTeX 2.9/font
+s/enc/dvips/lm/lm-mathex.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips
+/lm/lm-mathsy.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8
 r.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/P
 rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Program Fil
 es (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Program Files (x86)/Mi
@@ -967,18 +1034,19 @@ ublic/lm/lmmi6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmm
 i8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/P
 rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files
  (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
-ype1/public/lm/lmri10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
-/lm/lmss10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmss12.
-pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
-s/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
-onts/type1/urw/bookman/ubkl8a.pfb>
-Output written on mscLiterature.pdf (46 pages, 1286132 bytes).
+X 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/public/lm/lmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/l
+m/lmri10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmss10.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmss12.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
+type1/public/lm/lmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/symbols/msbm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ur
+w/bookman/ubkl8a.pfb>
+Output written on mscLiterature.pdf (50 pages, 1372059 bytes).
 PDF statistics:
- 791 PDF objects out of 1000 (max. 8388607)
- 209 named destinations out of 1000 (max. 500000)
- 378 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 963 PDF objects out of 1000 (max. 8388607)
+ 268 named destinations out of 1000 (max. 500000)
+ 396 words of extra memory for PDF output out of 10000 (max. 10000000)
 

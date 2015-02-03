@@ -201,16 +201,162 @@ By taking this theorem, one can design both offline and online \ac{PI} algorithm
 We
 
 \section{Dynamic Tuning via Reinforcement Learning} \label{sec:dytun}
-In this second section, a method to improve tracking performance by dynamically tuned a controller's gain using \ac {RL} is presented. To author's best knowledge, there are two prominent methods which serve this purpose. The first method is a relatively simple one \cite{Brujeni5669655} which starts from an admissible controller e.g. PID, and tune the controller's gain according to the value function. The second method is a more complex which is based on a relatively new algorithm called \ac {PI$^2$}. It is a model-free, sampling based learning method derived from the principle of optimal control \cite{Buchli2010}. This algorithm has been shown to work for a variable impedance control \cite{Buchli6037312}, 
+In this second section, a class of method to improve tracking performance by dynamically tuned a controller's gain using \ac {RL} is presented. To author's best knowledge, there are two prominent methods which serve this purpose. The first method is a relatively simple one which starts from an admissible controller e.g. PID, and tune the controller's gain according to the value function. The second method is a more complex approach which is based on a relatively new algorithm called \ac {PI$^2$}. It is a model-free, sampling based learning method derived from the principle of optimal control \cite{Buchli2010}. This algorithm has been shown to work for a variable impedance control \cite{Buchli6037312}, \cite{buchli2011learning}, \cite{theodorou2010generalized} to enable a manipulator performing task like flipping a light switch \cite{buchli2011learning}.
 
-\subsection{Direct Tuning of }
+\subsection{Direct Tuning of Nominal Controller}
+In many cases of reference tracking, a linear controller such as PID only performs well for a certain condition (e.g. a particular reference signal and a region of state) in which the gain is tuned. For different conditions, the performance is most likely degraded or even worse, unstable. Intuitively, one would call for a solution which adjusts the controller gain with respect to the current condition. This method, also known as gain scheduling, has been developed for quite some time. The most common techniques used are fuzzy logic \cite{375142} \cite{5229855} \cite{1684589} and neural networks \cite{6606304} \cite{572744} \cite{556252}. The main drawback of the two methods, however, lies on the scheduling mechanism which must be predefined. For instance with fuzzy logic, we need to define the fuzzy rules for the gain scheduling. For a system with a large number of states or a \ac {MIMO} system, this could become a tedious task. For such cases, it is interesting to use \ac {RL} to achieve an online gain scheduling. Surprisingly, the online gain scheduling by using \ac {RL} is not a widely explored topic. \cite{882916} and \cite{Brujeni5669655} serve as relevant examples out of few search results.
 
-%\subsection{Case Study: PI Tuning using Reinforcement Learning}
-This is the subsection of the first section.
+In this literature report, author will refer to the work by Brujeni et. al. \cite{Brujeni5669655}. Although the paper's application is about chemical process, the technique presented is still considered suitable for robotics. The simplified block diagram of this method is shown in Figure~\ref{fig:dynamictuning}. As the figure depicts, the idea of dynamic tuning is pretty general thus can be extended to a number of \ac {RL} algorithms (e.g. actor critic, Q-learning) and controllers. However, in order to present a more concrete example, we will explain a specific method used in the paper -- a class of \ac {TD} learning called \ac{SARSA} with PID controller. 
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{dynamictuning}
+	\caption{Gain scheduling of Nominal controller using \ac {RL}. In this case, a PID controller is used}
+	\label{fig:dynamictuning}
+\end{figure}
+	
+\begin{enumerate}
+	\item \ac{SARSA} algorithm \\
+		Consider a sequence of state and action as depicted in Figure~\ref{fig:sarsa}. We start by applying control signal $ u_t $ at an initial state $ x_t $, yielding a reward $ r_{t+1} $ and the next state $ x_{t+1 }$. Following the same policy $\pi$, we apply the next action $ u_{t+1} $, hence the name \ac {SARSA}. One of the objective is to learn the action-value function $ Q^{\pi}(x,u) $ while following a fixed policy $ \pi $ over an episode. The pseudo-code of \ac{SARSA} is given in Algorithm~\ref{alg:sarsa} where $ \alpha, \gamma \in [0 \dots 1]$ and $r$ are learning rate, discount rate and immediate reward respectively \cite{sutton1998reinforcement}. Note that instead of updating $Q$ by taking the optimal action at next step, \ac {SARSA} sticks to the action resulting from the policy $\pi$ (see line 8 of the algorithm). Therefore, \ac {SARSA} is a type of on-policy \ac {RL} algorithm.
+		
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{sarsa}
+		\caption{A sequence of state and action}
+		\label{fig:sarsa}
+	\end{figure}
+	
+	\begin{algorithm}[H]
+		%	\KwData{this text}
+		%	\KwResult{how to write algorithm with \LaTeX2e }
+		\textbf{Initialization:} Initialize $ Q(x,u) $ arbitrarily\\
+		\Repeat( for each episode:){episodes run out}{
+			Initialize $ x $ \\
+			Choose $ u $ from $ x $ using policy derived from $ Q $ \\
+			\Repeat ( for each step of episode:){s is terminal}{
+			Take action $ u $, observe $ r $, $ x' $ \\
+			Choose $ u' $ from $ x' $ using policy derived from $ Q $ \\
+			$ Q(x,u) \leftarrow Q(x,u) + \alpha[r+\gamma Q(x',u')-Q(x,u)] $	\\
+			$ x \leftarrow  x' $\\
+			$ u \leftarrow  u' $
+						}
+		} 		
+		\label{alg:sarsa}
+		\caption{SARSA algorithm}
+	\end{algorithm}
+	
+	\item \ac{SARSA} + PID controller \\
+		To incorporate \ac{SARSA} for gain scheduling purpose, we define the policy $\pi$ as the gain modifier (see Figure~\ref{fig:dynamictuning}) instead of control input generator. In other words, $\pi$ will return the controller parameters e.g. $ K_p $ $ K_i $ and $ K_d $ gains for PID controller. In each iteration $\pi$ will be improved by observing the most-updated value function $Q$. Furthermore, the performance of the \ac {RL}-tuned controller needs to be evaluated in every $ N $-steps to see if the method is actually improving the tracking performance. One possible measure for evaluation is the \ac {ISE}
+		\begin{equation}
+		ISE = \sum_{k=0}^{N}e(k)^2 = \sum_{k=0}^{N}(y_d(k) - y_m(k))^T(y_d(k) - y_m(k))
+		\end{equation}
+		where $y_d$ and $y_m$ denotes desired and measured output respectively. It is also suggested to evaluate the value at each time step $Q(x(k), u(k))$. Now, we will proceed to a more concrete example using a PID controller for a linear discrete time system. The pseudo-code of combining \ac {SARSA} with PID is presented in Algorithm~\ref{alg:pid_sarsa}.
+		
+	\begin{algorithm}[h]
+		%	\KwData{this text}
+		%	\KwResult{how to write algorithm with \LaTeX2e }
+		\textbf{Initialization:} Initialize $ Q $\\
+		\For{j = 1 to $ N_{episode} $}{
+			Initialize $ x_0 $ \\
+			\For{$ k=0 $ to $ N_{steps}-1 $}{
+				\vspace{5mm}
+				\textit{Compute PID gains, error, and control input} \\
+				$ K_p, K_i, K_d = \pi(x(k)) $ \\
+				$ e(k) = y_d(k) - y_m(k) $ \\
+				$ u(k) = K_pe(k) + K_i\sum_{i=0}^{k}e(k) + K_d[e(k)-e(k-1)]  $\\
+			    \vspace{5mm}		
+				\textit{Update state and output} \\
+				$ x(k+1) = Ax(k) + Bu(k) $\\
+				$ y(k+1) = Cx(k+1) + Du(k+1) $\\				
+				\vspace{5mm}
+				\textit{Compute immediate reward} \\
+				$ r(k+1) = \rho(x(k), u(k)) = \rho(x(k+1)) $ \\			
+				\vspace{5mm}
+				\textit{Compute PID gains, error, and control input for the next time instance} \\
+				$ K_p, K_i, K_d = \pi(x(k+1)) $ \\
+				$ e(k+1) = y_d(k+1) - y_m(k+1) $ \\
+				$ u(k+1) = K_pe(k+1) + K_i\sum_{i=0}^{k}e(k+1) + K_d[e(k+1)-e(k)]  $ \\
+				\vspace{5mm}
+				\textit{Update value functio}n \\
+				$ Q(x(k), u(k)) \leftarrow Q(x(k), u(k)) + \alpha[r(k+1)+\gamma Q(x(k+1), u(k+1))-Q(x(k), u(k))] $	\\
+				\vspace{5mm}
+				modify $ \pi $ based on $ Q(x(k), u(k)) $
+				}								
+			}						
+	    \caption{PID gain scheduling with \ac {SARSA}}
+		\label{alg:pid_sarsa}
+	\end{algorithm}
+	
+\end{enumerate}
+   
+\subsection{Gain scheduling with \ac{PI$^2$}}
+The second method of dynamic tuning is inspired by the sophisticated motor control of living animals. Biological motor control has shown superiority in terms of versatility and robustness to adapt to different task scenarios. Researchers have been trying to transfer the same capability to robots through variable impedance control. This task requires gain scheduling which, in one way, can be achieved by \ac{PI$^2$} algorithm. One of the main advantage of \ac{PI$^2$} is the scalability for robots with high \ac {DoF}. Although variable impedance control is the only application of \ac{PI$^2$} for robotics so far \cite{Buchli2010}, \cite{Buchli6037312}, \cite{buchli2011learning}, the method seems to be suitable for tracking application as well. Before moving on the motivation of such argument, we will summarize the \ac{PI$^2$} algorithm and its application for variable impedance control first.    
 
-\section{Nonlinear Compensation for Tracking via Reinforcement Learning} \label{sec:nl_comp}
-This is third section.
+Let a continuous-time (non)linear dynamics described as 
+\begin{equation}
+\dot{x_t} = f(x_t) + G(x_t)(u_t + \epsilon_t)
+\end{equation}
+where $ G(x_t) \in \mathbb{R}^{n \times m }$ is the control matrix and $ \epsilon_t  \sim (0, \Sigma_{\epsilon}) $ is a zero-mean random variable. The key prerequisite before applying \ac{PI$^2$} is to transform the model-based stochastic optimal control problem into an approximation path integral problem. The goal of stochastic optimal control is to find an optimal input which minimizes a finite horizon cost function
+
+\begin{equation}
+J_{t_i} = V(X_{t_i}) = \underset{u_{t_i:t_N}}{\text{min}} e_{\tau_i}[R(\tau_i)]
+\end{equation}
+with 
+\begin{equation}
+R(\tau_i) = \phi_{t_N} + \int_{t_i}^{t_N}r_t dt
+\end{equation}
+where $ \phi_{t_N} $ is the terminal reward received at time $ t_N $ and $ \tau_i $ is a trajectory starts at time $ t_i $ and finishes at time $ t_N $. The immediate reward can be formulized as
+\begin{equation}
+r_t = r(x_t, u_t) = q_t + \frac{1}{2}u_t^TRu_t
+\end{equation}
+
+with $R>0$ and $q_t = q(x_t) $ is an arbitrarily chosen function, providing a degree of freedom in specifying the cost. Next, we derive the \ac {HJB} equation according to  \cite{stengel1994}
+
+\begin{equation}
+\partial _tV_t = q_t + (\partial _xV_t)^Tf(x_t)-\frac{1}{2}(\partial _xV_t)^TG_tR^{-1}G_t^T(\partial _xV_t) + \frac{1}{2}trace((\partial _{xx}V_t)G_t\Sigma_{\epsilon}G_t^T)
+\end{equation}
+
+where $ \partial _x $ and $ \partial _{xx} $ denotes jacobian and hessian respectively. Furthermore, we introduce assumptions that value function can be transformed into a logarithmic function $V_t = -\lambda$log$\Psi_t$ and $\lambda G_tR^{-1}G_t^T = G_t\Sigma_{\epsilon}G_t^T = \Sigma(x_t) = \Sigma_t$, which give us
+\begin{equation}
+-\partial _t\Psi_t = -\frac{1}{\lambda}q_t\Psi_t+ f(x_t)^T(\partial _x\Psi_t) + \frac{1}{2}trace((\partial _{xx}V_t)G_t\Sigma_{\epsilon}G_t^T)
+\label{eq:kolmo_pde}
+\end{equation}
+In order to solve the so called Kolmogorov backward \ac {PDE} \eqref{eq:kolmo_pde}, we need to use Feynman Kac formula which provides a numerical approximation of the solution. The detailed derivation can be seen in \cite{oksendal2010} and \cite{5509336}. The solution of \eqref{eq:kolmo_pde} becomes
+\begin{equation}
+\Psi_{t_i} =  \underset{dt \leftarrow 0}{\text{lim}} \int p(\tau_i|x_i)exp \left[ -\frac{1}{\lambda}\left( \psi_{t_N} + \sum\limits_{j=0}^{N-1}q_{t_j}dt\right)\right] d\tau_i 
+\label{eq:pathintegral} 
+\end{equation}
+Equation~\eqref{eq:pathintegral} is called path integral problem. The optimal control input can be derived:
+
+\begin{equation}
+\begin{split}
+u_{t_i} &= \int P(\tau_i) u(\tau_i) d\tau_i \\
+u(\tau_i) &= R^{-1}G_{t_i}^T(G_{t_i}R^{-1}G_{t_i}^T)^{-1}(G_{t_i}\epsilon_{t_i}-b_{t_i}) 
+\end{split}
+\end{equation}
+
+with $P(\tau_i)$ is the probability of trajectory $\tau_i$ and $b_{t_i}$ is a complex notation which is explained in \cite{5509336}. This concludes the problem formulation for the stochastic optimal control.
+
+It turns out that the \ac{PI$^2$} algorithm can be casted into the stochastic optimal control problem with parameterized control policy expressed as follows
+\begin{equation}
+a_t = g_t^T(\theta+\epsilon_t)
+\end{equation}
+One of the example of trajectory generator with parameterized policy is \ac {DMP} \cite{ijspeert2002learning}. The \ac{DMP} generates desired trajectory with a point of attractor $g$ and initial state $q_0$. The dynamics of \ac {DMP} is given as follows
+\begin{align}
+\frac{1}{\tau} \dot{v}_t &= f_t + g^T_t(\theta+\epsilon_t) \\
+\frac{1}{\tau} \dot{q}_{d,t} &= v_t \\
+f_t &= \alpha(\beta(g-q_{d,t})-v_t)\\
+\frac{1}{\tau}\dot{s}_t &= -\alpha s_t\\
+[g_t]_j &= \frac{w_js_t}{\sum_{k=1}^{p}w_k}(g-q_0)\\
+w_j &= \text{exp}(-0.5h_j(s_t-c_j)^2)\\
+\end{align}
+
+The \ac{PI$^2$} algorithm will learn the optimal parameter $\theta$ which yields the optimal smooth trajectory so that the robot will go through a via-point $g$. The particular applications of such behavior are to enable robots performing task like swinging, catching, etc. The simulation and practical results presented on \cite{Buchli2010} and \cite{Buchli6037312} provide an example of an intermediate goal $g$ which the robot initially can not reach. After a number of iterations, the \ac{PI$^2$} algorithms finally manages to generate the optimal trajectory which enables to robot to reach $g$. The results also shows that \ac{PI$^2$} performs superior compared to standard \ac {RL} algorithms. This property of \ac{PI$^2$} with \ac {DMP} is interesting for tracking application if the points of attractor could be extended to a complete trajectory. To best of author's knowledge, there is still no paper which gives the application reference tracking. Therefore, this method is one of the possible solutions for the thesis problem.
+
+\section{Nonlinear Input Compensation via Reinforcement Learning} \label{sec:nl_comp}
+The third method is a relatively new solution originated from \ac {DCSC}. As the name suggested, the idea is to learn an additive compensator to the reference signal by means of \ac{RL}. The proposed method is slightly different from the one presented in \cite{Efe2014} in the sense that the compensator is added directly to the reference signal $q_{ref}$ instead of the controller output $ u $. The block diagram of the control scheme is shown in Figure~\ref
+
 
 \section{Iterative Learning Control} \label{sec:ilc}
 This is third section.
