@@ -198,4 +198,10 @@ E.~Theodorou, J.~Buchli, and S.~Schaal, ``Reinforcement learning of motor
 A.~J. Ijspeert, J.~Nakanishi, and S.~Schaal, ``Learning attractor landscapes
   for learning motor primitives,'' tech. rep., 2002.
 
+\bibitem{Grondman6096441}
+I.~Grondman, M.~Vaandrager, L.~Busoniu, R.~Babuska, and E.~Schuitema,
+  ``Efficient model learning methods for actor critic control,'' {\em Systems,
+  Man, and Cybernetics, Part B: Cybernetics, IEEE Transactions on}, vol.~42,
+  pp.~591--602, June 2012.
+
 \end{thebibliography}

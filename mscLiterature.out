@@ -4,8 +4,8 @@
 \BOOKMARK [0][-]{toc_anchor.0}{Table of Contents}{frontmatter_anchor.-1}% 4
 \BOOKMARK [0][-]{lof_anchor.0}{List of Figures}{frontmatter_anchor.-1}% 5
 \BOOKMARK [0][-]{lot_anchor.0}{List of Tables}{frontmatter_anchor.-1}% 6
-\BOOKMARK [0][-]{chapter*.7}{Preface}{frontmatter_anchor.-1}% 7
-\BOOKMARK [0][-]{chapter*.8}{Acknowledgements}{frontmatter_anchor.-1}% 8
+\BOOKMARK [0][-]{chapter*.8}{Preface}{frontmatter_anchor.-1}% 7
+\BOOKMARK [0][-]{chapter*.9}{Acknowledgements}{frontmatter_anchor.-1}% 8
 \BOOKMARK [-1][]{mainmatter_anchor.-1}{Main Matter}{}% 9
 \BOOKMARK [0][-]{chapter.1}{Introduction}{mainmatter_anchor.-1}% 10
 \BOOKMARK [1][-]{section.1.1}{Problem Definition}{chapter.1}% 11
@@ -27,19 +27,20 @@
 \BOOKMARK [1][-]{section.3.2}{Dynamic Tuning via Reinforcement Learning}{chapter.3}% 27
 \BOOKMARK [2][-]{subsection.3.2.1}{Direct Tuning of Nominal Controller}{section.3.2}% 28
 \BOOKMARK [2][-]{subsection.3.2.2}{Gain scheduling with PI2}{section.3.2}% 29
-\BOOKMARK [1][-]{section.3.3}{Nonlinear Compensation for Tracking via Reinforcement Learning}{chapter.3}% 30
-\BOOKMARK [1][-]{section.3.4}{Iterative Learning Control}{chapter.3}% 31
-\BOOKMARK [0][-]{chapter.4}{Simulation \046 Verification}{mainmatter_anchor.-1}% 32
-\BOOKMARK [1][-]{section.4.1}{Simulated Setup}{chapter.4}% 33
-\BOOKMARK [1][-]{section.4.2}{Simulation Result and Analysis}{chapter.4}% 34
-\BOOKMARK [1][-]{section.4.3}{Discussion}{chapter.4}% 35
-\BOOKMARK [0][-]{chapter.5}{Future Work and Experiments Plan}{mainmatter_anchor.-1}% 36
-\BOOKMARK [0][-]{chapter.6}{Conclusion}{mainmatter_anchor.-1}% 37
-\BOOKMARK [-1][]{apdx_anchor.-1}{Appendices}{}% 38
-\BOOKMARK [0][-]{appendix.A}{Appendix}{apdx_anchor.-1}% 39
-\BOOKMARK [1][-]{section.A.1}{Simulation Program}{appendix.A}% 40
-\BOOKMARK [2][-]{subsection.A.1.1}{A MATLAB listing}{section.A.1}% 41
-\BOOKMARK [-1][]{backmatter_anchor.-1}{Back Matter}{}% 42
-\BOOKMARK [0][-]{appendix*.39}{Glossary}{backmatter_anchor.-1}% 43
-\BOOKMARK [1][-]{section*.40}{List of Acronyms}{appendix*.39}% 44
-\BOOKMARK [1][-]{section*.42}{List of Symbols}{appendix*.39}% 45
+\BOOKMARK [1][-]{section.3.3}{Nonlinear Input Compensation via Reinforcement Learning}{chapter.3}% 30
+\BOOKMARK [2][-]{subsection.3.3.1}{Actor-critic formulation}{section.3.3}% 31
+\BOOKMARK [2][-]{subsection.3.3.2}{LLR Function Approximator}{section.3.3}% 32
+\BOOKMARK [0][-]{chapter.4}{Simulation \046 Verification}{mainmatter_anchor.-1}% 33
+\BOOKMARK [1][-]{section.4.1}{Simulated Setup}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.2}{Simulation Result and Analysis}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.3}{Discussion}{chapter.4}% 36
+\BOOKMARK [0][-]{chapter.5}{Future Work and Experiments Plan}{mainmatter_anchor.-1}% 37
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{mainmatter_anchor.-1}% 38
+\BOOKMARK [-1][]{apdx_anchor.-1}{Appendices}{}% 39
+\BOOKMARK [0][-]{appendix.A}{Appendix}{apdx_anchor.-1}% 40
+\BOOKMARK [1][-]{section.A.1}{Simulation Program}{appendix.A}% 41
+\BOOKMARK [2][-]{subsection.A.1.1}{A MATLAB listing}{section.A.1}% 42
+\BOOKMARK [-1][]{backmatter_anchor.-1}{Back Matter}{}% 43
+\BOOKMARK [0][-]{appendix*.44}{Glossary}{backmatter_anchor.-1}% 44
+\BOOKMARK [1][-]{section*.45}{List of Acronyms}{appendix*.44}% 45
+\BOOKMARK [1][-]{section*.47}{List of Symbols}{appendix*.44}% 46

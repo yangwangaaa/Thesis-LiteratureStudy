@@ -6,7 +6,7 @@ The nature of \ac{RL} is inspired by the way living organisms learn to reach the
 
 Now we will formalize above illustration for robotics application. A robot can be described by its states $x_k$ with subscript $k$ denoting time instance. Applying an action $u_k$ will bring the robot to state $x_{k+1}$ with immediate reward $r_{k+1}$. Subsequently, at $k+1$ the robot applies $u_{k+1}$ which yields state $x_{k+2}$ and $r_{k+2}$. This action-state-update iteration is run for infinite time instances. The goal is defined as maximization of cumulative reward the robot receives. In control engineering, reward is usually replaced with cost. In that case the goal is defined as minimization problem. Starting from now, we will define goal as minimization of future cost $J$.
 
-From the sequence of cost obtained over time, we can define a formalization of goal, called expected return. Return $J_t$ is a function that maps the sequence of costs into real number. An example of return is the sum of the costs.
+From the sequence of cost obtained over time, we can define a formalization of goal, called expected return. Return $J_t$ is a function that maps the sequence of costs into real number. An example of return is the sum of the costs:
 
 \begin{equation}
 J_t = r_{t+1} + r_{t+2} + r_{t+3} + \dots + r_T
@@ -21,7 +21,7 @@ J_t = r_{t+1} + r_{t+2} + r_{t+3} + \dots + r_T
 	\item $\rho:X \times U \rightarrow \mathbb{R}$ is the reward function
 \end{itemize}
 
-In control engineering, $f$ represents the system dynamics which is a transition function mapping a current state and action to the one-step ahead state up to a probability distribution. This probability distribution is mathematically denoted in Equation \eqref{eq:markov}.
+In control engineering, $f$ represents the system dynamics which is a transition function mapping a current state and action to the one-step ahead state up to a probability distribution. This probability distribution is mathematically denoted as
 
 \begin{equation}
 	\text{Pr}\{x_{t+1} = x', r_{t+1} = r| x_t, u_t \}
@@ -32,24 +32,24 @@ where $x$ denotes state, $u$ denotes action, and $r$ denotes immediate reward ob
 
 
 \section{Value Function} \label{sec:value}
-Value function describes how good a particular state or state-action pair under a certain policy. As previously explained, in this thesis we will stick to control engineering convention by seeing \ac{RL} as cost minimization problem. Therefore, the smaller value function of a state $x$, the better it is. The optimum value function is denoted by $ V^{\pi}(x) $ for state-value function and $ Q^{\pi}(x,u) $ for action-value function. Furthermore, one can always find a policy which gives an optimal value function $V^*$. This optimal value function respects the Bellman optimality equation, which can be written as \ref{eq:bellman}. The action-value function counterpart is denoted in Equation \ref{eq:bellman2}. 
-
+Value function describes how good a particular state or state-action pair under a certain policy. As previously explained, in this thesis we will stick to control engineering convention by seeing \ac{RL} as cost minimization problem. Therefore, the smaller value function of a state $x$, the better it is. The optimum value function is denoted by $ V^{\pi}(x) $ for state-value function and $ Q^{\pi}(x,u) $ for action-value function. Furthermore, one can always find a policy which gives an optimal value function $V^*$. This optimal value function respects the Bellman optimality equation, which can be written as 
 \begin{equation}
 V^*(x) = \rho(x,u) + \gamma \min_{u} V^*(f(x,u))
 \label{eq:bellman}
 \end{equation}
+while the action-value function counterpart is denoted as
 
 \begin{equation}
 Q^*(x,u) = \rho(x,u) + \gamma \min_{u} Q^*(f(x,u),u')
 \label{eq:bellman2}
 \end{equation}
 
-Discount factor $\gamma$ is introduced to avoid the value function goes to infinity. Once $V^*$ is known, the optimal policy can be taken in a greedy way as in Equation \ref{eq:optPi}. This concludes the formulation of \ac{RL} problem. The subsequent sections will deal with two methods to solve for the solution.
-
+Discount factor $\gamma$ is introduced to avoid the value function goes to infinity. Once $V^*$ is known, the optimal policy can be taken in a greedy way as
 \begin{equation}
 \pi^* = \text{arg} \max_{\pi} V^*(x)
 \label{eq:optPi}
 \end{equation}
+This concludes the formulation of \ac{RL} problem. The subsequent sections will deal with two methods to solve for the solution.
 
 \section{Policy and value iteration} \label{sec:value_iter}
 The optimal policy can be reached asymptotically by means of iteration. Let initial policy be given by $ \pi_i(x,u) $. Then a new policy can be determined by first evaluating the value of $ \pi_i $ and recursively calculate the new policy $ \pi_{i+1} $. This process can be casted as an iteration algorithm as follows.
@@ -88,7 +88,7 @@ The prove of iteration above is provided in \cite{Bertsekas}. In order to increa
 This type of method to find solution to \ac{RL} is called \ac{DP}. This method is closely related with a branch of control system, namely optimal control.
  
 \section{Actor Critic Methods} \label{sec:actor}
-The second method for solving \ac{RL} is by using temporal-difference learning. It is favored due to its model-free nature. In this section, we will discuss a class of \ac{TD} called actor-critic method. The idea of actor-critic structure is to separate policy and value function into called actor and critic entity respectively (see Figure \ref{fig:actorCritic}). These actor $\psi$ and critic $\theta$ function are parameterized by function approximators and updated using the temporal difference signal $\delta$ in every iteration. The actor-critic method is presented in Algorithm \ref{actorcritic} (adapted from \cite{babuskaRL}). Note that $\tilde{u}$ denotes random exploration term.
+The second method for solving \ac{RL} is by using temporal-difference learning. It is favored due to its model-free nature. In this section, we will discuss a class of \ac{TD} called actor-critic method. The idea of actor-critic structure is to separate policy and value function into called actor and critic entity respectively (see Figure \ref{fig:actorCritic}). These actor $\psi$ and critic $\theta$ function are parameterized by function approximators and updated using the temporal difference signal $\delta$ in every iteration. The actor-critic method is presented in Algorithm \ref{alg:actorcritic} (adapted from \cite{babuskaRL}). Note that $\tilde{u}$ denotes random exploration term.
 
 \begin{figure}[h!]
 \centering
@@ -108,7 +108,7 @@ The second method for solving \ac{RL} is by using temporal-difference learning. 
 			$ \psi_{k+1} = \psi_k + \alpha_c\delta_k \frac{\partial \hat{V}(x,\psi)}{\partial \psi} \bigg|_{x=x_k, \psi = \psi_k}$
 		}
 	}
-	\label{actorcritic}
+	\label{alg:actorcritic}
 	\caption{Actor-critic algorithm}
 \end{algorithm}
 

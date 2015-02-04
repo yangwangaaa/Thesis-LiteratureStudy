@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  3 FEB 2015 14:13
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  4 FEB 2015 18:29
 entering extended mode
 **mscLiterature.tex
 
@@ -622,14 +622,14 @@ LaTeX Font Info:    Try loading font information for T1+lmss on input line 45.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\t1lmss.fd"
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<STYLESTUFF/COVER.jpg, id=183, 601.38965pt x 844.87071pt>
+<STYLESTUFF/COVER.jpg, id=187, 601.38965pt x 844.87071pt>
 File: STYLESTUFF/COVER.jpg Graphic file (type jpg)
 
 <use STYLESTUFF/COVER.jpg>
 Package pdftex.def Info: STYLESTUFF/COVER.jpg used on input line 45.
 (pdftex.def)             Requested size: 597.5157pt x 845.1007pt.
 
-<STYLESTUFF/TU_LOGO.png, id=184, 145.71439pt x 42.42851pt>
+<STYLESTUFF/TU_LOGO.png, id=188, 145.71439pt x 42.42851pt>
 File: STYLESTUFF/TU_LOGO.png Graphic file (type png)
 
 <use STYLESTUFF/TU_LOGO.png>
@@ -690,7 +690,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 45.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [3]
-<STYLESTUFF/EXAMPLELOGO.png, id=208, 227.6505pt x 168.3891pt>
+<STYLESTUFF/EXAMPLELOGO.png, id=212, 227.6505pt x 168.3891pt>
 File: STYLESTUFF/EXAMPLELOGO.png Graphic file (type png)
 
 <use STYLESTUFF/EXAMPLELOGO.png>
@@ -701,7 +701,7 @@ File: STYLESTUFF/TU_LOGO.png Graphic file (type png)
 Package pdftex.def Info: STYLESTUFF/TU_LOGO.png used on input line 45.
 (pdftex.def)             Requested size: 145.714pt x 42.4284pt.
 
-<STYLESTUFF/DCSC.png, id=209, 227.6505pt x 72.27pt>
+<STYLESTUFF/DCSC.png, id=213, 227.6505pt x 72.27pt>
 File: STYLESTUFF/DCSC.png Graphic file (type png)
  <use STYLESTUFF/DCSC.png>
 Package pdftex.def Info: STYLESTUFF/DCSC.png used on input line 45.
@@ -733,6 +733,8 @@ although it is yet undefined on input line 18.
 Package acronym Info: Label `acro:PI$^2$' newly defined as it shall be overridd
 en
 although it is yet undefined on input line 22.
+Package acronym Info: Label `acro:LLR' newly defined as it shall be overridden
+although it is yet undefined on input line 25.
  [3])
 \tf@toc=\write7
  [4]
@@ -815,7 +817,7 @@ Package acronym Info: Label `acro:DP' newly defined as it shall be overridden
 although it is yet undefined on input line 88.
 Package acronym Info: Label `acro:TD' newly defined as it shall be overridden
 although it is yet undefined on input line 91.
- <actorCritic2.png, id=458, 367.97475pt x 228.25275pt>
+ <actorCritic2.png, id=465, 367.97475pt x 228.25275pt>
 File: actorCritic2.png Graphic file (type png)
 
 <use actorCritic2.png>
@@ -855,13 +857,13 @@ Package acronym Info: Label `acro:TD' overridden on input line 209.
 Package acronym Info: Label `acro:SARSA' newly defined as it shall be overridde
 n
 although it is yet undefined on input line 209.
- <dynamictuning.png, id=635, 431.211pt x 162.00525pt>
+ <dynamictuning.png, id=641, 431.211pt x 162.00525pt>
 File: dynamictuning.png Graphic file (type png)
 
 <use dynamictuning.png>
 Package pdftex.def Info: dynamictuning.png used on input line 213.
 (pdftex.def)             Requested size: 309.85626pt x 116.41624pt.
- <sarsa.png, id=647, 384.2355pt x 95.75775pt>
+ <sarsa.png, id=653, 384.2355pt x 95.75775pt>
 File: sarsa.png Graphic file (type png)
 
 <use sarsa.png>
@@ -911,38 +913,51 @@ although it is yet undefined on input line 325.
 Package acronym Info: Label `acro:DMP' newly defined as it shall be overridden
 although it is yet undefined on input line 345.
  [17]
-Overfull \hbox (1.01585pt too wide) in paragraph at lines 357--357
-[]\T1/lmss/bx/n/14.4 Nonlinear Com-pen-sa-tion for Track-ing via Re-in-force-me
-nt Learn-
- []
+Package acronym Info: Label `acro:DCSC' newly defined as it shall be overridden
 
-) [18]
+although it is yet undefined on input line 358.
+Package acronym Info: Label `acro:MLAC' newly defined as it shall be overridden
+
+although it is yet undefined on input line 358.
+Package acronym Info: Label `acro:LLR' overridden on input line 361.
+
+<blockdiagram.png, id=764, 596.2275pt x 449.88075pt>
+File: blockdiagram.png Graphic file (type png)
+ <use blockdiagram.png>
+Package pdftex.def Info: blockdiagram.png used on input line 370.
+(pdftex.def)             Requested size: 309.85626pt x 233.80205pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[18] [19 <D:/Dropbox/TU Delft - MSc System & Control/Graduation Project (Thesis
+)/Thesis Forms and Guide/DCSC Literature Style/blockdiagram.png>]) [20]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
  Forms and Guide\DCSC Literature Style\simulation.tex"
 Chapter 4.
-) [19
+) [21
 
 
 
 ]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
- Forms and Guide\DCSC Literature Style\implementation.tex" [20
+ Forms and Guide\DCSC Literature Style\implementation.tex" [22
 
 
 
 ]
 Chapter 5.
-) [21]
+) [23]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
- Forms and Guide\DCSC Literature Style\conclusion.tex" [22
+ Forms and Guide\DCSC Literature Style\conclusion.tex" [24
 
 
 
 ]
 Chapter 6.
-) [23]
+) [25]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
- Forms and Guide\DCSC Literature Style\app_back.tex" [24
+ Forms and Guide\DCSC Literature Style\app_back.tex" [26
 
 
 
@@ -955,27 +970,28 @@ LaTeX Font Info:    Try loading font information for T1+lmtt on input line 1.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-))) [25] [26
+))) [27] [28
 
 
 ]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
- Forms and Guide\DCSC Literature Style\mscLiterature.bbl" [27
+ Forms and Guide\DCSC Literature Style\mscLiterature.bbl" [29
 
-] [28]) [29]
+] [30] [31])
+[32]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
- Forms and Guide\DCSC Literature Style\glossary.tex" [30
+ Forms and Guide\DCSC Literature Style\glossary.tex" [33
 
 
-]
-No file mscLiterature.nls.
-) [31pdfTeX warning (ext4): destination with the same identifier (name{TD}) has
- been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{TD}) has been
+ already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.79 \include{glossary}
-                       ] [32]
+l.32 	\acro{MLAC}{model learning actor-critic}
+                                              ]
+No file mscLiterature.nls.
+) [34]
 No file mscLiterature.ind.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 85.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 85.
@@ -1009,14 +1025,14 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 85.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 85.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 85.
 Package rerunfilecheck Info: File `mscLiterature.out' has not changed.
-(rerunfilecheck)             Checksum: E20FFE9EAA621B541D5B8CBF9C857005;3306.
+(rerunfilecheck)             Checksum: 54D895903D532082BAEAF272FFAA2C2F;3384.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 85.
  ) 
 Here is how much of TeX's memory you used:
- 12652 strings out of 493921
- 191585 string characters out of 3144864
- 315152 words of memory out of 3000000
- 15369 multiletter control sequences out of 15000+200000
+ 12690 strings out of 493921
+ 192087 string characters out of 3144864
+ 315495 words of memory out of 3000000
+ 15389 multiletter control sequences out of 15000+200000
  91729 words of font info for 65 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  43i,23n,45p,1594b,1716s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1044,9 +1060,9 @@ X 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
 type1/public/lm/lmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
 c/amsfonts/symbols/msbm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ur
 w/bookman/ubkl8a.pfb>
-Output written on mscLiterature.pdf (50 pages, 1372059 bytes).
+Output written on mscLiterature.pdf (52 pages, 1412051 bytes).
 PDF statistics:
- 963 PDF objects out of 1000 (max. 8388607)
- 268 named destinations out of 1000 (max. 500000)
- 396 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1011 PDF objects out of 1200 (max. 8388607)
+ 285 named destinations out of 1000 (max. 500000)
+ 409 words of extra memory for PDF output out of 10000 (max. 10000000)
 

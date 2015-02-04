@@ -3,9 +3,9 @@
 \chapter{Reinforcement Learning for Tracking Problem: A Survey} \label{chap::survey}
 Despite the success of \ac{RL} in many robotics problem (e.g. learning to fly \cite{Abbeel}, walk \cite{NIPS2007_3253} and navigate \cite{4543641}), the application of \ac{RL} for tracking control is not a widely explored topic. Over the spans of the literature survey, author finds several attempts to exploits \ac{RL} for tracking problem, which can be categorized into 3 different approaches: dynamic tuning, \ac{RL} for optimal control, and \ac{RL} for nonlinear additive compensator. 
 
-This chapter covers the foundational theory of the 3 aforementioned approaches. The main idea, advantages, limitations and ease of implementation are the key issues which will be discussed. These issues will serve as the basis of the argument to choose one method for later implementation. The chapter starts in Section \ref{sec:rl_lqt} by providing explanation about \ac{RL} for optimal tracking control. Section \ref{sec:dytun} deals with the so called dynamic tuning -- a class of gain scheduling which makes use of \ac{RL}. The third method, presented in Section \ref{sec:nl_comp}, is a relatively new approach which employs \ac{RL} to learn additive input compensation.
+This chapter covers the foundational theory of the 3 aforementioned approaches. The main idea, advantages, limitations and ease of implementation are the key issues which will be discussed in the next chapter. These issues will serve as the basis of the argument to choose one method for later implementation. The chapter starts in Section \ref{sec:rl_lqt} by providing explanation about \ac{RL} for optimal tracking control. Section \ref{sec:dytun} deals with the so called dynamic tuning -- a class of gain scheduling which makes use of \ac{RL}. The third method, presented in Section \ref{sec:nl_comp}, is a relatively new approach which employs \ac{RL} to learn additive input compensation.
 
-Furthermore, author also finds it interesting to compare \ac{RL} for reference tracking with a much more mature technique, namely \ac{ILC} \cite{4048052}. As the name suggested, \ac {ILC} is developed to improve tracking contaminated by repetitive error/disturbance. This method has been successfully implemented for various applications from CNC machining \cite{299157} to industrial robots \cite{1044377}. Therefore, \ac {ILC} will be the subject of evaluation in Section \ref{sec:ilc}.
+Furthermore, author also finds it interesting to compare \ac{RL} for reference tracking with a much more mature technique, namely \ac{ILC} \cite{4048052}. As the name suggested, \ac {ILC} is developed to improve tracking contaminated by repetitive error/disturbance. This method has been successfully implemented for various applications from CNC machining \cite{299157} to industrial robots \cite{1044377}. Therefore, \ac {ILC} will serve as a benchmark during later verification.
 
 
 \section{Reinforcement Learning for Optimal Tracking Control} \label{sec:rl_lqt}
@@ -355,11 +355,58 @@ w_j &= \text{exp}(-0.5h_j(s_t-c_j)^2)\\
 The \ac{PI$^2$} algorithm will learn the optimal parameter $\theta$ which yields the optimal smooth trajectory so that the robot will go through a via-point $g$. The particular applications of such behavior are to enable robots performing task like swinging, catching, etc. The simulation and practical results presented on \cite{Buchli2010} and \cite{Buchli6037312} provide an example of an intermediate goal $g$ which the robot initially can not reach. After a number of iterations, the \ac{PI$^2$} algorithms finally manages to generate the optimal trajectory which enables to robot to reach $g$. The results also shows that \ac{PI$^2$} performs superior compared to standard \ac {RL} algorithms. This property of \ac{PI$^2$} with \ac {DMP} is interesting for tracking application if the points of attractor could be extended to a complete trajectory. To best of author's knowledge, there is still no paper which gives the application reference tracking. Therefore, this method is one of the possible solutions for the thesis problem.
 
 \section{Nonlinear Input Compensation via Reinforcement Learning} \label{sec:nl_comp}
-The third method is a relatively new solution originated from \ac {DCSC}. As the name suggested, the idea is to learn an additive compensator to the reference signal by means of \ac{RL}. The proposed method is slightly different from the one presented in \cite{Efe2014} in the sense that the compensator is added directly to the reference signal $q_{ref}$ instead of the controller output $ u $. The block diagram of the control scheme is shown in Figure~\ref
+The third method is a relatively new solution originated from \ac {DCSC}. As the name suggested, the idea is to learn an additive compensator to the reference signal by means of \ac{RL}. The proposed method is slightly different from the one presented in \cite{Efe2014} in the sense that the compensator is added directly to the reference signal $q_{ref}$ instead of the controller output $ u $. Furthermore, we specifically choose standard actor-critic \ac{RL} instead of \ac{MLAC} since the individual joint model of the robot is already given from system identification. The block diagram of the control scheme is shown in Figure~\ref{fig:blockdiagram}. 
+
+\subsection{Actor-critic formulation}
+First, we will parameterize the actor and critic using \ac {LLR} approximation \cite{Grondman6096441}. The actor and critic becomes $\pi(x_k,\vartheta_{k-1})$ and $V(x_k,\theta_k)$ respectively. As previously explained in Algorithm~\ref{alg:actorcritic}, the actor-critic will update the parameters $\theta$ and $\vartheta$ at each iteration. The fact that it uses partial derivative of value function makes actor-critic belongs to the so called policy gradient methods. Secondly, we will define the cost function as
+\begin{equation}
+r_k = \rho(y_m(k), y_d(k), u(k)) = (y_d(k) - y_m(k))^TQ(y_d(k) - y_m(k)) + u(k)^TRu(k)
+\end{equation}
+with $ Q \geq 0 $ and $ R>0 $. This cost function is similar to that of \ac {LQT}. 
 
 
-\section{Iterative Learning Control} \label{sec:ilc}
-This is third section.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{blockdiagram}
+\caption{Block diagram of robot with \ac{RL} block acting as an additive compensator}
+\label{fig:blockdiagram}
+\end{figure}
+
+\subsection{\ac{LLR} Function Approximator}
+The function approximator is needed since we are dealing with continuous state space. Popular examples of function approximator include fuzzy \cite{Efe2014}, neural networks \cite{Kiumarsi6918527} and \ac {LLR} \cite{Grondman6096441}. In this literature study, we will consider the latter due to its relatively simple and intuitive algorithm compared those of, for instance, neural network. The idea of \ac {LLR} is to approximate a non-linear function by predicting an output $\hat{y}_q$ to a certain query $x_q$ through a local fitting. This local fitting is performed by means of linear regression with respect to points $X$ which are close to $x_q$.  
+The measure of distance is done by assigning weights into each point $x_i$ in the data base. 
+
+A sorting algorithm can be employed to select $K$ number of closest neighbors from the database. Once these neighbor samples are selected, the input and output samples are said to be related with a simple linear function
+
+\begin{equation}
+Y = \beta X
+\end{equation}
+
+where 
+
+\begin{equation}
+\begin{split}
+Y = \left[ \begin{array}{cccc}
+	y_1 & y_2 & \dots & y_K
+\end{array} \right] \\
+X = \left[ \begin{array}{cccc}
+	x_1 & x_2 & \dots & x_K \\ 
+	1 & 1 & \dots & 1
+\end{array}  \right] 
+\end{split}
+\end{equation}
+with the last row of $X$ is meant for bias term. The parameter $\beta$ is then computed using pseudo-inverse
+\begin{equation}
+\beta = YX^T(XX^T)^{-1}
+\end{equation}
+Now the predicted output $y_q$ can be calculated as
+\begin{equation}
+\hat{y}_q = \beta x_q
+\end{equation}
+The more samples in $X$ and $Y$, in other words the denser the neighborhood, the more accurate the prediction would be.
+
+%\section{Iterative Learning Control} \label{sec:ilc}
+%This is third section.
 
 %\subsection{Case Study: 1-DOF Robot Gravity Compensation}
 
