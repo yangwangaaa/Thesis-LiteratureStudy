@@ -32,12 +32,12 @@ where $x$ denotes state, $u$ denotes action, and $r$ denotes immediate reward ob
 
 
 \section{Value Function} \label{sec:value}
-Value function describes how good a particular state or state-action pair under a certain policy. As previously explained, in this thesis we will stick to control engineering convention by seeing \ac{RL} as cost minimization problem. Therefore, the smaller value function of a state $x$, the better it is. The optimum value function is denoted by $ V^{\pi}(x) $ for state-value function and $ Q^{\pi}(x,u) $ for action-value function. Furthermore, one can always find a policy which gives an optimal value function $V^*$. This optimal value function respects the Bellman optimality equation, which can be written as 
+Value function describes how good a particular state or state-action pair under a certain policy. As previously explained, in this thesis we will stick to control engineering convention by seeing \ac{RL} as cost minimization problem. Therefore, the smaller value function of a state $x$, the better it is. The value function is denoted by $ V^{\pi}(x) $ for state-value function and $ Q^{\pi}(x,u) $ for action-value function. Furthermore, one can always find a policy which gives an optimal value function $V^*$. This optimal value function respects the Bellman optimality equation, which can be written as 
 \begin{equation}
 V^*(x) = \rho(x,u) + \gamma \min_{u} V^*(f(x,u))
 \label{eq:bellman}
 \end{equation}
-while the action-value function counterpart is denoted as
+Similarly, the action-value function
 
 \begin{equation}
 Q^*(x,u) = \rho(x,u) + \gamma \min_{u} Q^*(f(x,u),u')
@@ -57,7 +57,7 @@ The optimal policy can be reached asymptotically by means of iteration. Let init
 \begin{algorithm}[H]
 %	\KwData{this text}
 %	\KwResult{how to write algorithm with \LaTeX2e }
-	\textbf{Initialization:} Start from admissible policy $ \pi_{i} $\\
+	\textbf{Initialization:} Start from an admissible policy $ \pi_{i} $\\
 	\For{i = 1 to N}{
 	\textbf{Policy Evaluation:} \\
 	$ V_{i+1}(x_t) = \rho(x_t, \pi_i(x_t)) +\gamma V_{i+1}(x_{t+1}) $ \\
