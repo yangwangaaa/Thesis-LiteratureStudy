@@ -11,7 +11,7 @@ Furthermore, author also finds it interesting to compare \ac{RL} for reference t
 \section{Reinforcement Learning for Optimal Tracking Control} \label{sec:rl_lqt}
 This method is initiated and developed by Lewis et. al. which aims to solve the tracking by \ac{RL} problem from dynamic programming perspective. The method uses optimal control, a branch of control theory whose root is closely related to dynamic programming \cite{126844}. The method starts from the downside of optimal tracking control which requires the solution of non-causal differential equation. It turns out that by assuming the reference to follow a certain dynamics and modifying the state of the optimal tracking, a causal representation can be obtained. Once a causality is in hand, we can then employ our favorite \ac{RL} techniques to asymptotically solve for the solution. 
 
-To provide an easier comparison between the standard optimal control solution with \ac{RL}-based one, this section starts by formulating the standard optimal tracking problem and deriving its solution. Next, the modified formulation of optimal control which allows the causal formulation of infinite horizon optimal control problem is discussed. Following is the \ac{PI} algorithms to solve the optimal control. In this section, only discrete-time \ac{LQT} problem is considered \cite{Kiumarsi6760476}. Although the extension to non-linear and continuous time optimal tracking problem is not straightforward, the main steps are actually quite similar. The derivation presented in this section is based on work by Kiumarsi-Khomartash \cite{Kiumarsi6760476} with modifications to comply with the convention used in this report.
+To provide an easier comparison between the standard optimal control solution with \ac{RL}-based one, this section starts by formulating the standard optimal tracking problem and deriving its solution. Next, the modified formulation of optimal control which allows the causal formulation of infinite horizon optimal control problem is discussed. Following is the \ac{PI} algorithm to solve the optimal control. In this section, only discrete-time \ac{LQT} problem is considered \cite{Kiumarsi6760476}. Although the extension to non-linear and continuous time optimal tracking problem is not straightforward, the main steps are actually quite similar. The derivation presented in this section is based on work by Kiumarsi-Khomartash \cite{Kiumarsi6760476} with modifications to comply with the convention used in this report.
 
 \subsection{Standard LQT problem}
 The standard \ac {LQT} problem is treated extensively in \cite{lewis1995optimal}. First, we formulize the \ac {LTI} discrete-time system as 
@@ -164,17 +164,17 @@ X(k)^TPX(k) =  X(k)^TQ_1X(k) + X(k)^TK_1^TRK_1X(k) + X(k)^T(T - B_1K_1)^TP(T - B
 
 It turns out that by choosing a stabilizing initial policy $u^0 = -K_1^0X(k)$, one can use policy evaluation and iteration to approximate $ P $. In each iteration, the policy is guaranteed to be stable. The prove of this key theorem is given in \cite{1099755}. 
 
-By taking this theorem, one can design both offline and online \ac{PI} algorithms to asymptotically approximate $P$. The offline \ac{PI} improves $P$ using the lyapunov function \eqref{eq:lyap_lqt}, while the LQT Bellman equation \eqref{eq:lqtbellman} is used for the online \ac{PI}. These two algorithms are listed as follows. Note that both require the knowledge of the system dynamics. If the model is not (fully) known, one can use Q-learning \cite{Kiumarsi20141167} or actor-critic \ac {RL} \cite{Modares20141780} instead. 
+By taking this theorem, one can design both offline and online \ac{PI} algorithms to asymptotically approximate $P$. The offline \ac{PI} improves $P$ using the lyapunov function \eqref{eq:lyap_lqt}, while the LQT Bellman equation \eqref{eq:lqtbellman} is used for the online \ac{PI}. These two algorithms are listed in Algorithm~\ref{alg:off_pi} and \ref{alg:on_pi}. We can see that for the offline \ac{PI}, we can directly obtain $P$. Meanwhile, for the online \ac{PI}, $P$ needs to be solved with a least square method. Note that both require the knowledge of the system dynamics. If the model is not (fully) known, one can use Q-learning \cite{Kiumarsi20141167} or actor-critic \ac {RL} \cite{Modares20141780} instead. 
 
 \begin{algorithm}[H]
 	%	\KwData{this text}
 	%	\KwResult{how to write algorithm with \LaTeX2e }
 	\textbf{Initialization:} Select an admissible (stable) gain $K^0_1$\\
-	\For{j = 0 to N}{
+	\Repeat(){$ P $ converges}{
 		\textbf{Policy evaluation:} \\
 		$P^{j+1} = Q_1 + (K_1^j)^TRK_1^j + (T-B_1K_1^j)^TP^{j+1}(T-B_1K_1^j)$\\
 		
-		\textbf{Policy iteration:} \\
+		\textbf{Policy improvement:} \\
 		$ K_1^{j+1} = (R+B_1^TP^{j+1}B_1)^{-1} B_1^TP^{j+1}T $\\	
 	}
 	\label{alg:off_pi}
@@ -185,40 +185,114 @@ By taking this theorem, one can design both offline and online \ac{PI} algorithm
 	%	\KwData{this text}
 	%	\KwResult{how to write algorithm with \LaTeX2e }
 	\textbf{Initialization:} Select an admissible (stable) gain $K^0_1$\\
-	\For{j = 0 to N}{
+	\Repeat{$ P $ converges}{
 		\textbf{Policy evaluation:} \\
 		$X(k)^TP^{j+1}X(k) = X(k)^T\left( Q_1 + (K_1^j)^TRK_1^j\right) X(k) + X(k+1)^TP^{j+1}X(k+1)$\\
 		
-		\textbf{Policy iteration:} \\
+		\textbf{Policy improvement:} \\
 		$ K_1^{j+1} = (R+B_1^TP^{j+1}B_1)^{-1} B_1^TP^{j+1}T $\\	
 	}
 	\label{alg:on_pi}
 	\caption{Online Policy Iteration}
 \end{algorithm}
 
+\subsection{\ac{RL} for \ac{LQT} with unknown system dynamics}
+As the main goal of this thesis is to improve reference tracking by compensating for the unknown dynamics using \ac {RL}, the previously descibed \ac {PI} method which requires full information about the system dynamics is no longer relevant. In order to relax this requirement, we will turn to \ac {TD} learning. The solution to optimal tracking problem for a partially unknown system is given in \cite{Kiumarsi6760476} \cite{Kiumarsi6918527} and \cite{Modares20141780}. Although the method no longer requires drift dynamics $T$, input dynamics $B_1$ is still necessary. For a fully unknown system dynamics, a method proposed in \cite{Kiumarsi20141167} is the solution. 
 
-\subsection{Conclusion}
-We
+We start by first defining the Q function as 
+\begin{equation}
+Q(X(k), u(k)) = \frac{1}{2}X(k)^TPX(k) 
+\end{equation}
+Then, multiplying \ac{LQT} Bellman equation \eqref{eq:lqtbellman} by $ \frac{1}{2} $ we obtain
+\begin{equation}
+\begin{split}
+Q(X(k), u(k)) &= \frac{1}{2}X(k)^TQ_1X(k) + \frac{1}{2}u(k)^TRu(k) + \frac{1}{2}\gamma X^T(k+1)PX(k+1) \\
+&= \frac{1}{2}X(k)^TQ_1X(k) + \frac{1}{2}u(k)^TRu(k) + \frac{1}{2}\gamma (TX(k) + B_1u(k))^TP(TX(k) + B_1u(k)) \\
+&= \frac{1}{2}\left[  \begin{array}{c}
+X(k) \\ 
+u(k)
+\end{array} \right] ^T \left[\begin{array}{cc}
+Q_1+\gamma T^TPT & \gamma T^TPB_1 \\ 
+\gamma B_1^TPT & R+\gamma B_1^TPB_1
+\end{array}  \right] 
+\left[  \begin{array}{c}
+X(k) \\ 
+u(k)
+\end{array} \right] 
+\end{split}
+\label{eq:bellman_Q}
+\end{equation}
+
+Furthermore, we define the kernel matrix $H = H^T$ as
+\begin{equation}
+\begin{split}
+H &=  \left[\begin{array}{cc}
+Q_1+\gamma T^TPT & \gamma T^TPB_1 \\ 
+\gamma B_1^TPT & R+\gamma B_1^TPB_1
+\end{array}  \right] \\
+&=\left[ \begin{array}{cc}
+H_{XX} & H_{Xu} \\ 
+H_{uX} & H_{uu}
+\end{array} \right] 
+\end{split}
+\end{equation}
+The the quadratic cost function reaches minimum when $ \frac{\partial Q(X(k), u(k))}{\partial u(k)} = 0 $. The input which satisfies this condition is
+\begin{equation}
+u(k) = -H_{uu}^{-1}H_{uX}X(k)
+\end{equation}
+Hence, by learning the value of $H$ online, we can obtain the optimal control input $u$ without the need of the system model. By modifying the infinite horizon cost function \eqref{eq:bellman_Q}, we write the Q function in Bellman equation format as
+
+\begin{equation}
+Q(X(k), u(k)) = \frac{1}{2}X(k)^TQ_1X(k) + \frac{1}{2}u(k)^TRu(k) + \gamma Q(X(k+1), u(k+1))
+\label{eq:Bellman_Q2}
+\end{equation}
+Define $Z(k) = \left[ X(k)^T u(k)^T\right]^T$, the Q function can be written as
+\begin{equation}
+Q(X(k),u(k)) = \frac{1}{2}Z(k)^THZ(k)
+\label{eq:Q_function}
+\end{equation}
+Combining equation~\eqref{eq:Bellman_Q2} with \eqref{eq:Q_function} yields
+\begin{equation}
+Z(k)^THZ(k) = X(k)^TQ_1X(k) + u(k)^TRu(k) + Z(k+1)^THZ(k+1)
+\end{equation}
+
+Finally, we can once again apply \ac {PI} to learn matrix $H$ online. This \ac {PI} is shown in Algorithm~\ref{alg:Q_pi}. Once again, $H$ can be calculated using a least square method after sufficient time instances.
+
+\begin{algorithm}[H]
+	%	\KwData{this text}
+	%	\KwResult{how to write algorithm with \LaTeX2e }
+	\textbf{Initialization:} Select an initial admissible (stable) control input $u = -K^0_1X_0$\\
+	\Repeat{$ H $ converges}{
+		\textbf{Policy evaluation:} \\
+		$Z(k)^TH^{j+1}Z(k) = X(k)^TQ_1X(k) + (u(k)^j)^TRu(k)^j + Z(k+1)^THZ(k+1)$\\
+		
+		\textbf{Policy improvement:} \\
+		$ u^{j+1}(k) = -(H_{uu}^{-1})^{j+1} H_{uX}^{j+1}X(k) $ 
+	}
+	\label{alg:Q_pi}
+	\caption{Model-free Policy Iteration}
+\end{algorithm}
+
 
 \section{Dynamic Tuning via Reinforcement Learning} \label{sec:dytun}
-In this second section, a class of method to improve tracking performance by dynamically tuned a controller's gain using \ac {RL} is presented. To author's best knowledge, there are two prominent methods which serve this purpose. The first method is a relatively simple one which starts from an admissible controller e.g. PID, and tune the controller's gain according to the value function. The second method is a more complex approach which is based on a relatively new algorithm called \ac {PI$^2$}. It is a model-free, sampling based learning method derived from the principle of optimal control \cite{Buchli2010}. This algorithm has been shown to work for a variable impedance control \cite{Buchli6037312}, \cite{buchli2011learning}, \cite{theodorou2010generalized} to enable a manipulator performing task like flipping a light switch \cite{buchli2011learning}.
+In this second section, a class of method to improve tracking performance by dynamically tuned a controller's gain using \ac {RL} is presented. To the best of author's knowledge, there are two prominent methods which serve this purpose. The first method is relatively simple -- it starts from an admissible controller e.g. \ac{PID}, and tune the controller's gain according to the value function. The second method is a more complex approach which is based on a relatively new algorithm called \ac {PI$^2$}. It is a model-free, sampling based learning method derived from the principle of optimal control \cite{Buchli2010}. This algorithm has been shown to work for a variable impedance control \cite{Buchli6037312}, \cite{buchli2011learning}, \cite{theodorou2010generalized} to enable a manipulator performing task like flipping a light switch \cite{buchli2011learning}.
 
 \subsection{Direct Tuning of Nominal Controller}
-In many cases of reference tracking, a linear controller such as PID only performs well for a certain condition (e.g. a particular reference signal and a region of state) in which the gain is tuned. For different conditions, the performance is most likely degraded or even worse, unstable. Intuitively, one would call for a solution which adjusts the controller gain with respect to the current condition. This method, also known as gain scheduling, has been developed for quite some time. The most common techniques used are fuzzy logic \cite{375142} \cite{5229855} \cite{1684589} and neural networks \cite{6606304} \cite{572744} \cite{556252}. The main drawback of the two methods, however, lies on the scheduling mechanism which must be predefined. For instance with fuzzy logic, we need to define the fuzzy rules for the gain scheduling. For a system with a large number of states or a \ac {MIMO} system, this could become a tedious task. For such cases, it is interesting to use \ac {RL} to achieve an online gain scheduling. Surprisingly, the online gain scheduling by using \ac {RL} is not a widely explored topic. \cite{882916} and \cite{Brujeni5669655} serve as relevant examples out of few search results.
+In many cases of reference tracking, a linear controller such as \ac{PID} only performs well for a certain condition (e.g. a particular reference signal and a region of state) in which the gain is tuned. For different conditions, the performance is most likely degraded or even worse, unstable. Intuitively, one would call for a solution which adjusts the controller gain with respect to the current condition. This method, also known as gain scheduling, has been developed for quite some time. The most common techniques used are fuzzy logic \cite{375142} \cite{5229855} \cite{1684589} and neural networks \cite{6606304} \cite{572744} \cite{556252}. The main drawback of the two methods, however, lies on the scheduling mechanism which must be predefined. For instance with fuzzy logic, we need to define the fuzzy rules for the gain scheduling. For a system with a large number of states or a \ac {MIMO} system, this could become a tedious task. For such cases, it is interesting to use \ac {RL} to achieve an online gain scheduling. Surprisingly, the online gain scheduling by using \ac {RL} is not a widely explored topic. \cite{882916} and \cite{Brujeni5669655} serve as relevant examples out of few search results.
 
-In this literature report, author will refer to the work by Brujeni et. al. \cite{Brujeni5669655}. Although the paper's application is about chemical process, the technique presented is still considered suitable for robotics. The simplified block diagram of this method is shown in Figure~\ref{fig:dynamictuning}. As the figure depicts, the idea of dynamic tuning is pretty general thus can be extended to a number of \ac {RL} algorithms (e.g. actor critic, Q-learning) and controllers. However, in order to present a more concrete example, we will explain a specific method used in the paper -- a class of \ac {TD} learning called \ac{SARSA} with PID controller. 
+In this literature report, author will refer to the work by Brujeni et. al. \cite{Brujeni5669655}. Although the paper's application is about chemical process, the technique presented is still considered suitable for robotics. The simplified block diagram of this method is shown in Figure~\ref{fig:dynamictuning}. As the figure depicts, the idea of dynamic tuning is pretty general thus can be extended to a number of \ac {RL} algorithms (e.g. actor critic, Q-learning) and controllers. However, in order to present a more concrete example, we will explain a specific method used in the paper -- a class of \ac {TD} learning called \ac{SARSA} with \ac{PID} controller. 
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.7\linewidth]{dynamictuning}
-	\caption{Gain scheduling of Nominal controller using \ac {RL}. In this case, a PID controller is used}
+	\caption{Gain scheduling of Nominal controller using \ac {RL}. In this case, a \ac{PID} controller is used}
 	\label{fig:dynamictuning}
 \end{figure}
-	
+
 \begin{enumerate}
 	\item \ac{SARSA} algorithm \\
-		Consider a sequence of state and action as depicted in Figure~\ref{fig:sarsa}. We start by applying control signal $ u_t $ at an initial state $ x_t $, yielding a reward $ r_{t+1} $ and the next state $ x_{t+1 }$. Following the same policy $\pi$, we apply the next action $ u_{t+1} $, hence the name \ac {SARSA}. One of the objective is to learn the action-value function $ Q^{\pi}(x,u) $ while following a fixed policy $ \pi $ over an episode. The pseudo-code of \ac{SARSA} is given in Algorithm~\ref{alg:sarsa} where $ \alpha, \gamma \in [0 \dots 1]$ and $r$ are learning rate, discount rate and immediate reward respectively \cite{sutton1998reinforcement}. Note that instead of updating $Q$ by taking the optimal action at next step, \ac {SARSA} sticks to the action resulting from the policy $\pi$ (see line 8 of the algorithm). Therefore, \ac {SARSA} is a type of on-policy \ac {RL} algorithm.
-		
+	Consider a sequence of state and action as depicted in Figure~\ref{fig:sarsa}. We start by applying control signal $ u(k) $ at an initial state $ x(k) $, yielding a reward $ r(k+1) $ and the next state $ x(k+1)$. Following the same policy $\pi$, we apply the next action $ u(k+1) $, hence the name \ac {SARSA}. One of the objective is to learn the action-value function $ Q^{\pi}(x,u) $ while following a fixed policy $ \pi $ over an episode. The pseudo-code of \ac{SARSA} is given in Algorithm~\ref{alg:sarsa} where $ \alpha, \gamma \in [0 \dots 1]$ and $r$ are learning rate, discount rate and immediate reward respectively \cite{sutton1998reinforcement}. Note that instead of updating $Q$ by taking the optimal action at next step, \ac {SARSA} sticks to the action resulting from the policy $\pi$ (see line 8 of the algorithm). Therefore, \ac {SARSA} is a type of on-policy \ac {RL} algorithm.
+	
 	
 	\begin{figure}[h!]
 		\centering
@@ -235,24 +309,24 @@ In this literature report, author will refer to the work by Brujeni et. al. \cit
 			Initialize $ x $ \\
 			Choose $ u $ from $ x $ using policy derived from $ Q $ \\
 			\Repeat ( for each step of episode:){s is terminal}{
-			Take action $ u $, observe $ r $, $ x' $ \\
-			Choose $ u' $ from $ x' $ using policy derived from $ Q $ \\
-			$ Q(x,u) \leftarrow Q(x,u) + \alpha[r+\gamma Q(x',u')-Q(x,u)] $	\\
-			$ x \leftarrow  x' $\\
-			$ u \leftarrow  u' $
-						}
+				Take action $ u $, observe $ r $, $ x' $ \\
+				Choose $ u' $ from $ x' $ using policy derived from $ Q $ \\
+				$ Q(x,u) \leftarrow Q(x,u) + \alpha[r+\gamma Q(x',u')-Q(x,u)] $	\\
+				$ x \leftarrow  x' $\\
+				$ u \leftarrow  u' $
+			}
 		} 		
 		\label{alg:sarsa}
 		\caption{SARSA algorithm}
 	\end{algorithm}
 	
-	\item \ac{SARSA} + PID controller \\
-		To incorporate \ac{SARSA} for gain scheduling purpose, we define the policy $\pi$ as the gain modifier (see Figure~\ref{fig:dynamictuning}) instead of control input generator. In other words, $\pi$ will return the controller parameters e.g. $ K_p $ $ K_i $ and $ K_d $ gains for PID controller. In each iteration $\pi$ will be improved by observing the most-updated value function $Q$. Furthermore, the performance of the \ac {RL}-tuned controller needs to be evaluated in every $ N $-steps to see if the method is actually improving the tracking performance. One possible measure for evaluation is the \ac {ISE}
-		\begin{equation}
-		ISE = \sum_{k=0}^{N}e(k)^2 = \sum_{k=0}^{N}(y_d(k) - y_m(k))^T(y_d(k) - y_m(k))
-		\end{equation}
-		where $y_d$ and $y_m$ denotes desired and measured output respectively. It is also suggested to evaluate the value at each time step $Q(x(k), u(k))$. Now, we will proceed to a more concrete example using a PID controller for a linear discrete time system. The pseudo-code of combining \ac {SARSA} with PID is presented in Algorithm~\ref{alg:pid_sarsa}.
-		
+	\item \ac{SARSA} + \ac{PID} controller \\
+	To incorporate \ac{SARSA} for gain scheduling purpose, we define the policy $\pi$ as the gain modifier (see Figure~\ref{fig:dynamictuning}) instead of control input generator. In other words, $\pi$ will return the controller parameters e.g. $ K_p $ $ K_i $ and $ K_d $ gains for \ac{PID} controller. In each iteration $\pi$ will be improved by observing the most-updated value function $Q$. Furthermore, the performance of the \ac {RL}-tuned controller needs to be evaluated in every $ N $-steps to see if the method is actually improving the tracking performance. One possible measure for evaluation is the \ac {ISE}
+	\begin{equation}
+	ISE = \sum_{k=0}^{N}e(k)^2 = \sum_{k=0}^{N}(y_d(k) - y_m(k))^T(y_d(k) - y_m(k))
+	\end{equation}
+	where $y_d$ and $y_m$ denotes desired and measured output respectively. It is also suggested to evaluate the value at each time step $Q(x(k), u(k))$. A more concrete example of a \ac{PID} controller for a linear discrete time system is presented in Algorithm~\ref{alg:pid_sarsa}.
+	
 	\begin{algorithm}[h]
 		%	\KwData{this text}
 		%	\KwResult{how to write algorithm with \LaTeX2e }
@@ -261,11 +335,11 @@ In this literature report, author will refer to the work by Brujeni et. al. \cit
 			Initialize $ x_0 $ \\
 			\For{$ k=0 $ to $ N_{steps}-1 $}{
 				\vspace{5mm}
-				\textit{Compute PID gains, error, and control input} \\
+				\textit{Compute \ac{PID} gains, error, and control input} \\
 				$ K_p, K_i, K_d = \pi(x(k)) $ \\
 				$ e(k) = y_d(k) - y_m(k) $ \\
 				$ u(k) = K_pe(k) + K_i\sum_{i=0}^{k}e(k) + K_d[e(k)-e(k-1)]  $\\
-			    \vspace{5mm}		
+				\vspace{5mm}		
 				\textit{Update state and output} \\
 				$ x(k+1) = Ax(k) + Bu(k) $\\
 				$ y(k+1) = Cx(k+1) + Du(k+1) $\\				
@@ -273,7 +347,7 @@ In this literature report, author will refer to the work by Brujeni et. al. \cit
 				\textit{Compute immediate reward} \\
 				$ r(k+1) = \rho(x(k), u(k)) = \rho(x(k+1)) $ \\			
 				\vspace{5mm}
-				\textit{Compute PID gains, error, and control input for the next time instance} \\
+				\textit{Compute \ac{PID} gains, error, and control input for the next time instance} \\
 				$ K_p, K_i, K_d = \pi(x(k+1)) $ \\
 				$ e(k+1) = y_d(k+1) - y_m(k+1) $ \\
 				$ u(k+1) = K_pe(k+1) + K_i\sum_{i=0}^{k}e(k+1) + K_d[e(k+1)-e(k)]  $ \\
@@ -282,14 +356,14 @@ In this literature report, author will refer to the work by Brujeni et. al. \cit
 				$ Q(x(k), u(k)) \leftarrow Q(x(k), u(k)) + \alpha[r(k+1)+\gamma Q(x(k+1), u(k+1))-Q(x(k), u(k))] $	\\
 				\vspace{5mm}
 				modify $ \pi $ based on $ Q(x(k), u(k)) $
-				}								
-			}						
-	    \caption{PID gain scheduling with \ac {SARSA}}
+			}								
+		}						
+		\caption{\ac{PID} gain scheduling with \ac {SARSA}}
 		\label{alg:pid_sarsa}
 	\end{algorithm}
 	
 \end{enumerate}
-   
+
 \subsection{Gain scheduling with \ac{PI$^2$}}
 The second method of dynamic tuning is inspired by the sophisticated motor control of living animals. Biological motor control has shown superiority in terms of versatility and robustness to adapt to different task scenarios. Researchers have been trying to transfer the same capability to robots through variable impedance control. This task requires gain scheduling which, in one way, can be achieved by \ac{PI$^2$} algorithm. One of the main advantage of \ac{PI$^2$} is the scalability for robots with high \ac {DoF}. Although variable impedance control is the only application of \ac{PI$^2$} for robotics so far \cite{Buchli2010}, \cite{Buchli6037312}, \cite{buchli2011learning}, the method seems to be suitable for tracking application as well. Before moving on the motivation of such argument, we will summarize the \ac{PI$^2$} algorithm and its application for variable impedance control first.    
 
@@ -352,13 +426,13 @@ f_t &= \alpha(\beta(g-q_{d,t})-v_t)\\
 w_j &= \text{exp}(-0.5h_j(s_t-c_j)^2)\\
 \end{align}
 
-The \ac{PI$^2$} algorithm will learn the optimal parameter $\theta$ which yields the optimal smooth trajectory so that the robot will go through a via-point $g$. The particular applications of such behavior are to enable robots performing task like swinging, catching, etc. The simulation and practical results presented on \cite{Buchli2010} and \cite{Buchli6037312} provide an example of an intermediate goal $g$ which the robot initially can not reach. After a number of iterations, the \ac{PI$^2$} algorithms finally manages to generate the optimal trajectory which enables to robot to reach $g$. The results also shows that \ac{PI$^2$} performs superior compared to standard \ac {RL} algorithms. This property of \ac{PI$^2$} with \ac {DMP} is interesting for tracking application if the points of attractor could be extended to a complete trajectory. To best of author's knowledge, there is still no paper which gives the application reference tracking. Therefore, this method is one of the possible solutions for the thesis problem.
+The \ac{PI$^2$} algorithm will learn the optimal parameter $\theta$ which yields the optimal smooth trajectory so that the robot will go through a via-point $g$. The particular applications of such behavior are to enable robots performing task like swinging, catching, etc. The simulation and practical results presented on \cite{Buchli2010} and \cite{Buchli6037312} provide an example of an intermediate goal $g$ which the robot initially can not reach. After a number of iterations, the \ac{PI$^2$} algorithms finally manages to generate the optimal trajectory which enables to robot to reach $g$. The results also shows that \ac{PI$^2$} performs superior compared to standard \ac {RL} algorithms. This property of \ac{PI$^2$} with \ac {DMP} is interesting for tracking application if the points of attractor could be extended to a complete trajectory. To the best of author's knowledge, there is still no paper which gives the application reference tracking. Therefore, this method is one of the possible solutions for the thesis problem.
 
 \section{Nonlinear Input Compensation via Reinforcement Learning} \label{sec:nl_comp}
-The third method is a relatively new solution originated from \ac {DCSC}. As the name suggested, the idea is to learn an additive compensator to the reference signal by means of \ac{RL}. The proposed method is slightly different from the one presented in \cite{Efe2014} in the sense that the compensator is added directly to the reference signal $q_{ref}$ instead of the controller output $ u $. Furthermore, we specifically choose standard actor-critic \ac{RL} instead of \ac{MLAC} since the individual joint model of the robot is already given from system identification. The block diagram of the control scheme is shown in Figure~\ref{fig:blockdiagram}. 
+The third method is a relatively new solution originated from \ac {DCSC}. As the name suggested, the idea is to learn an additive compensator to the reference signal by means of \ac{RL}. The proposed method is slightly different from the one presented in \cite{Efe2014} in the sense that the compensator is added directly to the reference signal $q_{ref}$ instead of the controller output $ u $. Furthermore, we specifically choose standard actor-critic \ac{RL} instead of \ac{MLAC} since we are not interested in learning the system model online for the sake of safety. The block diagram of the control scheme is shown in Figure~\ref{fig:blockdiagram}. 
 
 \subsection{Actor-critic formulation}
-First, we will parameterize the actor and critic using \ac {LLR} approximation \cite{Grondman6096441}. The actor and critic becomes $\pi(x_k,\vartheta_{k-1})$ and $V(x_k,\theta_k)$ respectively. As previously explained in Algorithm~\ref{alg:actorcritic}, the actor-critic will update the parameters $\theta$ and $\vartheta$ at each iteration. The fact that it uses partial derivative of value function makes actor-critic belongs to the so called policy gradient methods. Secondly, we will define the cost function as
+First, we need to parameterize the actor and critic using \ac {LLR} approximation \cite{Grondman6096441}. The actor and critic becomes $\pi(x_k,\vartheta_{k-1})$ and $V(x_k,\theta_k)$ respectively. As previously explained in Algorithm~\ref{alg:actorcriticPP1admin-08}, the actor-critic will update the parameters $\theta$ and $\vartheta$ at each iteration. The fact that it uses partial derivative of value function makes actor-critic belongs to the so called policy gradient methods. Secondly, we define the cost function as
 \begin{equation}
 r_k = \rho(y_m(k), y_d(k), u(k)) = (y_d(k) - y_m(k))^TQ(y_d(k) - y_m(k)) + u(k)^TRu(k)
 \end{equation}
@@ -366,10 +440,10 @@ with $ Q \geq 0 $ and $ R>0 $. This cost function is similar to that of \ac {LQT
 
 
 \begin{figure}[h]
-\centering
-\includegraphics[width=0.7\linewidth]{blockdiagram}
-\caption{Block diagram of robot with \ac{RL} block acting as an additive compensator}
-\label{fig:blockdiagram}
+	\centering
+	\includegraphics[width=0.7\linewidth]{blockdiagram}
+	\caption{Block diagram of robot with \ac{RL} block acting as an additive compensator}
+	\label{fig:blockdiagram}
 \end{figure}
 
 \subsection{\ac{LLR} Function Approximator}
@@ -387,11 +461,11 @@ where
 \begin{equation}
 \begin{split}
 Y = \left[ \begin{array}{cccc}
-	y_1 & y_2 & \dots & y_K
+y_1 & y_2 & \dots & y_K
 \end{array} \right] \\
 X = \left[ \begin{array}{cccc}
-	x_1 & x_2 & \dots & x_K \\ 
-	1 & 1 & \dots & 1
+x_1 & x_2 & \dots & x_K \\ 
+1 & 1 & \dots & 1
 \end{array}  \right] 
 \end{split}
 \end{equation}

@@ -32,15 +32,24 @@ where $x$ denotes state, $u$ denotes action, and $r$ denotes immediate reward ob
 
 
 \section{Value Function} \label{sec:value}
-Value function describes how good a particular state or state-action pair under a certain policy. As previously explained, in this thesis we will stick to control engineering convention by seeing \ac{RL} as cost minimization problem. Therefore, the smaller value function of a state $x$, the better it is. The value function is denoted by $ V^{\pi}(x) $ for state-value function and $ Q^{\pi}(x,u) $ for action-value function. Furthermore, one can always find a policy which gives an optimal value function $V^*$. This optimal value function respects the Bellman optimality equation, which can be written as 
+Value function describes how good a particular state or state-action pair under a certain policy. As previously explained, in this thesis we will stick to control engineering convention by seeing \ac{RL} as cost minimization problem. Therefore, the smaller value function of a state $x$, the better it is. The value function is denoted by $ V^{\pi}(x) $ for state-value function and $ Q^{\pi}(x,u) $ for action-value function under policy $\pi$. It can be written in terms of immediate reward and the value function of the next state by following derivation
 \begin{equation}
-V^*(x) = \rho(x,u) + \gamma \min_{u} V^*(f(x,u))
+\begin{split}
+V^{\pi}(x_t) &= \rho(x_t,u_t) + \gamma \rho(x_{t+1},u_{t+1}) + \gamma^2 \rho(x_{t+2},u_{t+2}) + ... + \gamma^{\infty}\rho(x_{\infty},u_{\infty}) \\
+V^{\pi}(x_t) &= \rho(x_t,u_t) + \gamma \left( \rho(x_{t+1},u_{t+1}) + \gamma^2 \rho(x_{t+2},u_{t+2}) + ... + \gamma^{\infty}\rho(x_{\infty},u_{\infty})\right)  \\
+V^{\pi}(x_t) &= \rho(x_t,u_t) + \gamma V^{\pi}(x_{t+1})
+\end{split}
+\end{equation} 
+
+Furthermore, one can always find a policy which gives an optimal value function $V^*$. This optimal value function respects the Bellman optimality equation, which can be written as 
+\begin{equation}
+V^*(x_t) = \rho(x,u) + \gamma \min_{u} V^*(x_{t+1})
 \label{eq:bellman}
 \end{equation}
-Similarly, the action-value function
+Similarly, the action-value function is
 
 \begin{equation}
-Q^*(x,u) = \rho(x,u) + \gamma \min_{u} Q^*(f(x,u),u')
+Q^*(x_t,u_t) = \rho(x,u) + \gamma \min_{u} Q^*(x_{t+1},u_{t+1})
 \label{eq:bellman2}
 \end{equation}
 
@@ -52,43 +61,63 @@ Discount factor $\gamma$ is introduced to avoid the value function goes to infin
 This concludes the formulation of \ac{RL} problem. The subsequent sections will deal with two methods to solve for the solution.
 
 \section{Policy and value iteration} \label{sec:value_iter}
-The optimal policy can be reached asymptotically by means of iteration. Let initial policy be given by $ \pi_i(x,u) $. Then a new policy can be determined by first evaluating the value of $ \pi_i $ and recursively calculate the new policy $ \pi_{i+1} $. This process can be casted as an iteration algorithm as follows.
+\ac {PI} and \ac{VI} belong to a class of elementary solution to the \ac{RL} called  dynamic programming \cite{sutton1998reinforcement}. They are characterized by the requirement of system model $f$. These methods are closely related with a branch of control system, namely optimal control \cite{126844}.
 
-\begin{algorithm}[H]
-%	\KwData{this text}
-%	\KwResult{how to write algorithm with \LaTeX2e }
-	\textbf{Initialization:} Start from an admissible policy $ \pi_{i} $\\
-	\For{i = 1 to N}{
+\ac {PI} is a two steps algorithm, consists of policy evaluation and policy improvement. Let the initial policy at certain state $x$ be given by $ \pi$. A better policy can be determined by first evaluating the old policy's value $ V^{\pi} $, search for the optimal action at state $x$ greedily, and replace the old policy with the optimal action. This process can be casted as Algorithm~\ref{alg:PI}. Note that the policy evaluation step is actually a Bellman equation \eqref{eq:bellman} turned into assignment. The \textit{policy-stable} variable is to indicate that the policy does not change anymore i.e. converged.
+
+\begin{algorithm}
+	\textbf{Initialization:} \\
+	Start from an admissible policy $ \pi $\\
+	Initialize $V^{\pi}(x)$ arbitrarily, e.g. $ V^{\pi}(x) = 0 \hspace{2mm}  \forall x \in \mathcal{X} $ \\
+	\Repeat(){\textit{policy-stable} = true}{	
 	\textbf{Policy Evaluation:} \\
-	$ V_{i+1}(x_t) = \rho(x_t, \pi_i(x_t)) +\gamma V_{i+1}(x_{t+1}) $ \\
-	
-	\textbf{Policy Iteration:} \\
-	$ \pi_{i+1}(x_t) = arg \min_{\pi} (\rho(x_t, \pi(x_t)) +\gamma V_{i+1}(x_{t+1})) $ \\	
+		\Repeat(){$ \Delta  <  \varepsilon $ (a small positive number)}{
+		$ \Delta $ $ \leftarrow $ 0 \\
+		\textbf{For each} $ x \in \mathcal{X} $ :\\
+			\hspace{5mm} $ v $ $ \leftarrow $ $ V^{\pi}(x) $ \\
+			\hspace{5mm} $ V^{\pi}(x) \leftarrow \rho(x, \pi(x)) +\gamma V^{\pi}(x') $ \\
+			\hspace{5mm} $ \Delta = $ max$ (\Delta, |v-V^{\pi}(x)|) $ \\}
+			\vspace{2mm}
+	\textbf{Policy Improvement:} \\
+		\textit{policy-stable} $ \leftarrow $ false \\
+		\textbf{For each} $ x \in \mathcal{X} $ : \\
+			\hspace{5mm} $ b \leftarrow \pi(x) $ \\
+			\hspace{5mm} $ \pi(x)=$  arg $\underset{u}{\text{min}} \hspace{1mm} \rho(x, u) +\gamma V^{\pi}(x') $  \\
+			\hspace{5mm} \textbf{if} $ b = \pi(x) $ \textbf{then} \\ 
+			\hspace{10mm} \textit{policy-stable} $ \leftarrow $ true \\
+			\hspace{5mm} \textbf{endif}
 	}
 \caption{Policy iteration algorithm}
+\label{alg:PI}
 \end{algorithm}
 
-The prove of iteration above is provided in \cite{Bertsekas}. In order to increase computational efficiency, instead of evaluating value function $V$ for all possible state $x$ in every iteration, one can formulate a value function evaluation recursively. The policy iteration above is then modified as shown in Algorithm \ref{algorithm2}. It can be guaranteed that $V_i$ will eventually converge to $V^*$.
+\ac{VI} is similar to, but more efficient version than \ac{PI}. In order to increase computational efficiency, instead of evaluating value function $V$ for all possible state $x$ in every iteration, one can evaluate the value function in greedy way, which results in less iteration. Once the value function converges to $V^*$, the optimal policy can be directly obtained as the control input which minimizes $V$. This algorithm is shown in Algorithm~\ref{alg:VI}. 
 
-\begin{algorithm}[H]
-	%	\KwData{this text}
-	%	\KwResult{how to write algorithm with \LaTeX2e }
-	\textbf{Initialization:} Start from admissible policy $ \pi_{i} $\\
-	\For{i = 1 to N}{
-		\textbf{Value Iteration:} \\
-		$ V_{i+1}(x_t) = \rho(x_t, \pi_i(x_t)) +\gamma V_{i}(x_{t+1}) $ \\
-		
-		\textbf{Policy Iteration:} \\
-		$ \pi_{i+1}(x_t) = arg \min_{\pi} (\rho(x_t, \pi(x_t)) +\gamma V_{i+1}(x_{t+1})) $ \\	
+\begin{algorithm}
+	\textbf{Initialization:} \\
+	Start from an admissible policy $ \pi $\\
+	Initialize $V^{\pi}(x)$ arbitrarily, e.g. $ V^{\pi}(x) = 0 \hspace{2mm}  \forall x \in \mathcal{X} $ \\
+	\Repeat(){policy converges to $ \pi^* $}{
+		\Repeat(){$ \Delta  <  \varepsilon $ (a small positive number)}{
+			$ \Delta $ $ \leftarrow $ 0 \\
+			\textbf{For each} $ x \in \mathcal{X} $ :\\
+			\hspace{5mm} $ v $ $ \leftarrow $ $ V^{\pi}(x) $ \\
+			\hspace{5mm} $ V^{\pi}(x) \leftarrow \underset{u}{\text{min}} \rho(x, \pi(x)) + \gamma V^{\pi}(x') $ \\
+			\hspace{5mm} $ \Delta = $ max$ (\Delta, |v-V^{\pi}(x)|) $ \\}
+		\vspace{2mm}
+		Obtain a deterministic policy: \\
+		$ \pi(x)=$  arg $\underset{u}{\text{min}} \hspace{1mm} \rho(x, u) +\gamma V^{\pi}(x') $  \\
+
 	}
-	\label{algorithm2}
 	\caption{Value iteration algorithm}
+\label{alg:VI}
 \end{algorithm}
 
-This type of method to find solution to \ac{RL} is called \ac{DP}. This method is closely related with a branch of control system, namely optimal control.
  
 \section{Actor Critic Methods} \label{sec:actor}
-The second method for solving \ac{RL} is by using temporal-difference learning. It is favored due to its model-free nature. In this section, we will discuss a class of \ac{TD} called actor-critic method. The idea of actor-critic structure is to separate policy and value function into called actor and critic entity respectively (see Figure \ref{fig:actorCritic}). These actor $\psi$ and critic $\theta$ function are parameterized by function approximators and updated using the temporal difference signal $\delta$ in every iteration. The actor-critic method is presented in Algorithm \ref{alg:actorcritic} (adapted from \cite{babuskaRL}). Note that $\tilde{u}$ denotes random exploration term.
+The second method for solving \ac{RL} is by using temporal-difference learning. It is favored due to its model-free nature. In this section, we will discuss a class of \ac{TD} called actor-critic method. The idea of actor-critic method is to separate policy and value function into entities called actor and critic respectively (see Figure~\ref{fig:actorCritic}). The critic evaluates and criticizes the actor performance by feeding a temporal difference signal $\delta$ to the actor. This signal is basically the difference between right and left hand side of Bellman equation, in other words, the Bellman equation error. 
+
+In order to deal with continuous state space, the actor $\psi$ and critic $\theta$ functions are parameterized by function approximators. Examples of function approximators are fuzzy, neural networks and tile coding. The actor-critic method is presented in Algorithm~\ref{alg:actorcritic} (adapted from \cite{babuskaRL}). Note that $\tilde{u}$ denotes random exploration term which is needed to avoid getting stuck at local optimum.
 
 \begin{figure}[h!]
 \centering
@@ -97,7 +126,7 @@ The second method for solving \ac{RL} is by using temporal-difference learning. 
 \label{fig:actorCritic}
 \end{figure}
 
-\begin{algorithm}[H]
+\begin{algorithm}
 	\For{every trial}{
 		Initialize $x_0$ and $u_0 = \tilde{u}_0$\\
 		\Repeat{terminal state}{
@@ -108,9 +137,8 @@ The second method for solving \ac{RL} is by using temporal-difference learning. 
 			$ \psi_{k+1} = \psi_k + \alpha_c\delta_k \frac{\partial \hat{V}(x,\psi)}{\partial \psi} \bigg|_{x=x_k, \psi = \psi_k}$
 		}
 	}
-	\label{alg:actorcritic}
 	\caption{Actor-critic algorithm}
+	\label{alg:actorcritic}
 \end{algorithm}
-
 
 
