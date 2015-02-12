@@ -1,0 +1,96 @@
+\chapter{Experimental Setup} \label{chap:testbed}
+
+The purpose of this chapter is to present the 3D printing robot system used as the testbed. The robotic system consists of a UR5 robot manipulator, 3D print head, and a laser scanner -- each will be described in Section~\ref{sec:ur5}. In Section~\ref{sec:current_work}, we will discuss the previous works done on the robotic system. This includes the system identification model and the \ac {MPC} controller. Finally, based on the we will formalize the hypothesis in Section~\ref{sec:hypo}.
+\section{The 3D Printing Robot System} \label{sec:ur5}
+\subsection{UR5 Robot Arm}
+UR5 is a lightweight, flexible industrial robot from Universal Robots. The robot is chosen due to its human-safe operation with a quite good repeatability of 0.1 mm \cite{UR5}. The robot is a serial link 6 \ac{DoF} manipulator with internal controller to take care of the gravity compensation and most of the non-linearities. In general, the robot can be controlled like a system of 6 decoupled servos, although this is only correct to some degree. We will explain later why this is the case.
+
+Since the internal controller can not be "seen", let alone modified, the UR5 and the controller are viewed as one system. The \ac {RL} controller will be implemented in MATLAB which communicates with the UR5 using a TCP/IP protocol on 125 Hz frequency. There is a number of ways to send control command to the robot:
+\begin{enumerate}
+\item Tool position commmand \\
+The tool position means the position of the robot's end effector in Cartesian coordinate. The origin of the Cartesian frame is exactly at the robot's base. Figure~\ref{fig:UR5_Robot01} shows a full posture of the UR5 robot. With this type of control input, one can command the end effector to move to a specified tool position $ s = (x, y, z) $ in mm. This type of command results in a smooth motion if applied in a long sampling period (> 1 second). For the 125 Hz communication rate, however, it suffers from a poor jitter.
+
+\item Tool speed command \\
+The tool speed command is in the same coordinate as the position command, but now the control input is the velocity of the end effector in mm/s. This command results in a much smoother motion compared to position command.
+
+\item Joint position command \\
+This command controls the joint position of individual robot's joint to a specified angle in radian. Similar to tool position command, it results in a jerky motion. 
+
+\item Joint speed command \\
+This command drives the individual joint into the desired joint velocity in the unit of radian/s. This results in the smoothest motion compared to others. Due to this reason, this command will be used to drive the robot throughout the thesis.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\linewidth]{UR5_Robot01}
+\caption{The UR5 Robot (photo courtesy of Universal Robots)}
+\label{fig:UR5_Robot01}
+\end{figure}
+ 
+\end{enumerate}
+
+\subsection{Laser Scanner}
+The laser scanner is a scanCONTROL 2700-25 series laser manufactured by Micro-Epsilon and mounted on the robot's end effector. It offers a 100 Hz profile frequency, up to 64,000 measuring points per second and 4 $ \mu $m scanning resolution. The laser scanner is used to generate the 3D point cloud of the surface we would like to print on and to measure the tracking accuracy. Figure~\ref{fig:scanCONTROL} shows the 3D view of the laser scanner.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\linewidth]{scanCONTROL}
+	\caption{scanCONTROL 2700 series laser scanner (photo courtesy of Micro-Epsilon)}
+	\label{fig:scanCONTROL}
+\end{figure}
+
+\subsection{3D Print head}
+The 3D print head is a Cobalt C29 inkjet printhead developed by Oc{\'e} Technologies B.V.  Since the print head does not contribute to the controller design and implementation, it will not be used throughout the thesis. Figure~\ref{fig:ur5-endeffector} shows the robot's end effector with print head attached \cite{sunniva2013}.
+
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\linewidth]{ur5}
+\caption{The end effector of the UR5 robot with 3D print head and laser scanner attached (photo courtesy of Sunniva Ipenburg)}
+\label{fig:ur5-endeffector}
+\end{figure}
+
+\section{Previous Work} \label{sec:current_work}
+In this section, we will present a short overview of the previous works done by de Gier from \ac {DCSC}, specifically on the system identification and the \ac {MPC} controller \cite{Gier2013}.
+
+\subsection{System Identification}
+An important assumption for the identification is that the robot acts as six decoupled servos along with their internal controller. Additionally, it is also assumed that each joint is a \ac{LTI} system. This implies that there will be six individuals \ac {LTI} model to identify. Each model is a \ac{SIMO} system with the joint velocity reference $\dot{\theta}_r$ as the input and joint position $\theta$ and velocity $\dot{\theta}$ as the outputs. 
+
+For this purpose, a subspace identification method is used. According to the significant singular values, the order of each model is determined to be either 4 or 5 \cite{verhaegen2007filtering}. After the models are obtained, each joint model is then validated using a square input signal while the other joint angles are held constant. The \ac{VAF} values of each joint for the validation test is shown in Table~\ref{tab:vaf}. Although the result shows a quite good \ac {VAF} score, it is still not good enough to achieve a perfect tracking. To give an example of the performance, the model validation plot of joint 1 and 5 is shown in Figure~\ref{fig:idenJoint}.
+
+\begin{table}[h!]
+\caption{\ac {VAF} scores of the simulated outputs for all joints}	
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline Joint & Position  & Velocity \\ 
+		\hline 1 & 98.64 & 87.33 \\ 
+		\hline 2 & 98.05 & 88.33 \\ 
+		\hline 3 & 98.55 & 88.47 \\ 
+		\hline 4 & 98.97 & 89.50 \\ 
+		\hline 5 & 99.46 & 90.32 \\ 
+		\hline 6 & 98.87 & 85.13 \\ 
+		\hline 
+	\end{tabular} 
+	\label{tab:vaf}
+\end{table}
+
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.4\textwidth}
+		\includegraphics[width=1\linewidth]{"../../Progress Report/Joint5"}
+		\caption{}
+		\label{fig:Joint5}
+	\end{subfigure}%
+	~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
+	%(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.4\textwidth}
+		\includegraphics[width=1\linewidth]{"../../Progress Report/Joint1"}
+		\caption{}
+		\label{fig:Joint1}
+	\end{subfigure}
+	\caption{Model validation of joint 1 and 5 for joint position and velocity}\label{fig:idenJoint}
+\end{figure}
+
+\subsection{\ac{MPC} Controller}
+The previous work involves a design and implementation of \ac {MPC} controller. \ac {MPC} proves to perform better than e.g. \ac{PID} but tracking error is still present in the form of jitter.
+

@@ -37,10 +37,10 @@ B.~Kiumarsi and F.~Lewis, ``Actor-critic-based optimal tracking for partially
   unknown nonlinear discrete-time systems,'' {\em Neural Networks and Learning
   Systems, IEEE Transactions on}, vol.~PP, no.~99, pp.~1--1, 2014.
 
-\bibitem{Efe2014}
-Y.~E. Bayiz and R.~Babuska, ``Nonlinear disturbance compensation and. reference
-  tracking via reinforcement. learning with fuzzy approximators,'' {\em 19th
-  IFAC World Congress}, 2010.
+\bibitem{Brujeni5669655}
+L.~Brujeni, J.~M. Lee, and S.~Shah, ``Dynamic tuning of pi-controllers based on
+  model-free reinforcement learning methods,'' in {\em Control Automation and
+  Systems (ICCAS), 2010 International Conference on}, pp.~453--458, Oct 2010.
 
 \bibitem{Buchli2010}
 J.~Buchli, E.~Theodorou, F.~Stulp, and S.~Schaal, ``Variable impedance
@@ -52,6 +52,11 @@ F.~Stulp, J.~Buchli, A.~Ellmer, M.~Mistry, E.~Theodorou, and S.~Schaal,
   ``Reinforcement learning of impedance control in stochastic force fields,''
   in {\em Development and Learning (ICDL), 2011 IEEE International Conference
   on}, vol.~2, pp.~1--6, Aug 2011.
+
+\bibitem{Efe2014}
+Y.~E. Bayiz and R.~Babuska, ``Nonlinear disturbance compensation and. reference
+  tracking via reinforcement. learning with fuzzy approximators,'' {\em 19th
+  IFAC World Congress}, 2010.
 
 \bibitem{einstein}
 A.~Einstein, ``On the method of theoretical physics,'' vol.~1, pp.~163--169,
@@ -65,11 +70,10 @@ R.~S. Sutton and A.~G. Barto, {\em Reinforcement learning: An introduction},
 \bibitem{babuskaRL}
 R.~Babuska, ``Sc4081 knowledge-based control systems lecture slide,''
 
-\bibitem{Bertsekas}
-D.~Bertsekas, ``Neuro-dynamic programming: An overview and recent results,'' in
-  {\em Operations Research Proceedings 2006} (K.-H. Waldmann and U.~Stocker,
-  eds.), vol.~2006 of {\em Operations Research Proceedings}, pp.~71--72,
-  Springer Berlin Heidelberg, 2007.
+\bibitem{126844}
+R.~Sutton, A.~Barto, and R.~J. Williams, ``Reinforcement learning is direct
+  adaptive optimal control,'' {\em Control Systems, IEEE}, vol.~12, pp.~19--22,
+  April 1992.
 
 \bibitem{Abbeel}
 A.~Coates, P.~Abbeel, and A.~Ng, ``Autonomous helicopter flight using
@@ -103,11 +107,6 @@ D.~Kim and S.~Kim, ``An iterative learning control method with application for
 M.~Norrlof and S.~Gunnarsson, ``Experimental comparison of some classical
   iterative learning control algorithms,'' {\em Robotics and Automation, IEEE
   Transactions on}, vol.~18, pp.~636--641, Aug 2002.
-
-\bibitem{126844}
-R.~Sutton, A.~Barto, and R.~J. Williams, ``Reinforcement learning is direct
-  adaptive optimal control,'' {\em Control Systems, IEEE}, vol.~12, pp.~19--22,
-  April 1992.
 
 \bibitem{lewis1995optimal}
 F.~L. Lewis and V.~L. Syrmos, {\em Optimal control}.
@@ -174,11 +173,6 @@ P.~Albertos and M.~Olivares, ``Online learning control of a gantry crane,'' in
   {\em Intelligent Control, 2000. Proceedings of the 2000 IEEE International
   Symposium on}, pp.~157--162, 2000.
 
-\bibitem{Brujeni5669655}
-L.~Brujeni, J.~M. Lee, and S.~Shah, ``Dynamic tuning of pi-controllers based on
-  model-free reinforcement learning methods,'' in {\em Control Automation and
-  Systems (ICCAS), 2010 International Conference on}, pp.~453--458, Oct 2010.
-
 \bibitem{stengel1994}
 R.~F. Stengel, {\em Optimal Control and Estimation}.
 \newblock Dover Publications, 1994.
@@ -203,5 +197,26 @@ I.~Grondman, M.~Vaandrager, L.~Busoniu, R.~Babuska, and E.~Schuitema,
   ``Efficient model learning methods for actor critic control,'' {\em Systems,
   Man, and Cybernetics, Part B: Cybernetics, IEEE Transactions on}, vol.~42,
   pp.~591--602, June 2012.
+
+\bibitem{UR5}
+``Ur5 technical specification.''
+  \url{http://files.mediastorage.dk/UR_Tech_Spec/UR5_EN.pdf}.
+\newblock Accessed: 2015-02-11.
+
+\bibitem{sunniva2013}
+S.~van Ipenburg, ``On-surface 3d printing method using a robotic arm,'' 2013.
+
+\bibitem{Gier2013}
+M.~de~Gier, ``Ur5 mpc program,'' 2014.
+
+\bibitem{verhaegen2007filtering}
+M.~Verhaegen and V.~Verdult, {\em Filtering and system identification: a least
+  squares approach}.
+\newblock Cambridge university press, 2007.
+
+\bibitem{AlTamimi2007473}
+A.~Al-Tamimi, F.~L. Lewis, and M.~Abu-Khalaf, ``Model-free q-learning designs
+  for linear discrete-time zero-sum games with application to h-infinity
+  control,'' {\em Automatica}, vol.~43, no.~3, pp.~473 -- 481, 2007.
 
 \end{thebibliography}

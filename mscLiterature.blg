@@ -6,7 +6,8 @@ A level-1 auxiliary file: dedication.aux
 A level-1 auxiliary file: introduction.aux
 A level-1 auxiliary file: rl_prelim.aux
 A level-1 auxiliary file: survey.aux
-A level-1 auxiliary file: simulation.aux
+A level-1 auxiliary file: testbed.aux
+A level-1 auxiliary file: results.aux
 A level-1 auxiliary file: implementation.aux
 A level-1 auxiliary file: conclusion.aux
 A level-1 auxiliary file: app_back.aux
@@ -17,4 +18,6 @@ Warning--empty booktitle in einstein
 Warning--empty journal in babuskaRL
 Warning--empty year in babuskaRL
 Warning--empty institution in ijspeert2002learning
-(There were 4 warnings)
+Warning--empty journal in sunniva2013
+Warning--empty journal in Gier2013
+(There were 6 warnings)

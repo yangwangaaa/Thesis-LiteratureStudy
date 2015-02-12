@@ -11,7 +11,7 @@ Furthermore, author also finds it interesting to compare \ac{RL} for reference t
 \section{Reinforcement Learning for Optimal Tracking Control} \label{sec:rl_lqt}
 This method is initiated and developed by Lewis et. al. which aims to solve the tracking by \ac{RL} problem from dynamic programming perspective. The method uses optimal control, a branch of control theory whose root is closely related to dynamic programming \cite{126844}. The method starts from the downside of optimal tracking control which requires the solution of non-causal differential equation. It turns out that by assuming the reference to follow a certain dynamics and modifying the state of the optimal tracking, a causal representation can be obtained. Once a causality is in hand, we can then employ our favorite \ac{RL} techniques to asymptotically solve for the solution. 
 
-To provide an easier comparison between the standard optimal control solution with \ac{RL}-based one, this section starts by formulating the standard optimal tracking problem and deriving its solution. Next, the modified formulation of optimal control which allows the causal formulation of infinite horizon optimal control problem is discussed. Following is the \ac{PI} algorithm to solve the optimal control. In this section, only discrete-time \ac{LQT} problem is considered \cite{Kiumarsi6760476}. Although the extension to non-linear and continuous time optimal tracking problem is not straightforward, the main steps are actually quite similar. The derivation presented in this section is based on work by Kiumarsi-Khomartash \cite{Kiumarsi6760476} with modifications to comply with the convention used in this report.
+To provide an easier comparison between the standard optimal tracking solution with \ac{RL}-based one, this section starts by formulating the standard optimal tracking problem and deriving its solution. Next, the modified formulation of optimal tracking which allows the causal formulation of infinite horizon optimal tracking problem is discussed. Following is the \ac{PI} algorithm to solve the optimal tracking. In this section, only discrete-time \ac{LQT} problem is considered \cite{Kiumarsi6760476}. Although the extension to non-linear and continuous time optimal tracking problem is not straightforward, the main steps are actually quite similar. The derivation presented in this section is based on work by Kiumarsi-Khomartash \cite{Kiumarsi6760476} with modifications to comply with the convention used in this report.
 
 \subsection{Standard LQT problem}
 The standard \ac {LQT} problem is treated extensively in \cite{lewis1995optimal}. First, we formulize the \ac {LTI} discrete-time system as 
@@ -30,7 +30,7 @@ where $x(j) \in \mathbb{R}^n$, $u(j) \in \mathbb{R}^m$ and $y(j) \in \mathbb{R}^
 J = V(x(k), r(k)) = \frac{1}{2} \sum_{i=k}^{\infty} (Cx(i)-r(i))^TQ(Cx(i)-r(i)) + u(i)^TRu(i)
 \end{equation}
 
-where $Q \geq 0$ and $R > 0$. The goal of LQT is to obtain the optimal control input $u^*(k)$ which minimizes $J$. This control input is given as a combination of feedback and feedforward term
+where $Q \geq 0$ and $R > 0$. The goal of LQT is to obtain the optimal tracking input $u^*(k)$ which minimizes $J$. This control input is given as a combination of feedback and feedforward term
 \begin{equation}
 u(k) = -Kx(k) + K_vv(k+1)
 \end{equation}
@@ -57,7 +57,7 @@ S &= A^TS(A-BK) + C^TQC \\
 &= A^TSA - A^TSB(B^TSB+R)^{-1}B^TSA + C^TQC
 \end{split}
 \end{equation}
-Applying the optimal control input $u^*(k)$ gives us the minimal cost (optimal value) given by
+Applying the optimal tracking input $u^*(k)$ gives us the minimal cost (optimal value) given by
 
 \begin{equation}
 J^* = V^*(x(k), r(k)) = \frac{1}{2}x(k)^TSx(k) - x(k)^Tv(k) + w(k)
@@ -240,7 +240,7 @@ The the quadratic cost function reaches minimum when $ \frac{\partial Q(X(k), u(
 \begin{equation}
 u(k) = -H_{uu}^{-1}H_{uX}X(k)
 \end{equation}
-Hence, by learning the value of $H$ online, we can obtain the optimal control input $u$ without the need of the system model. By modifying the infinite horizon cost function \eqref{eq:bellman_Q}, we write the Q function in Bellman equation format as
+Hence, by learning the value of $H$ online, we can obtain the optimal tracking input $u$ without the need of the system model. By modifying the infinite horizon cost function \eqref{eq:bellman_Q}, we write the Q function in Bellman equation format as
 
 \begin{equation}
 Q(X(k), u(k)) = \frac{1}{2}X(k)^TQ_1X(k) + \frac{1}{2}u(k)^TRu(k) + \gamma Q(X(k+1), u(k+1))
@@ -289,8 +289,7 @@ In this literature report, author will refer to the work by Brujeni et. al. \cit
 	\label{fig:dynamictuning}
 \end{figure}
 
-\begin{enumerate}
-	\item \ac{SARSA} algorithm \\
+	\subsubsection{\ac{SARSA} algorithm} 
 	Consider a sequence of state and action as depicted in Figure~\ref{fig:sarsa}. We start by applying control signal $ u(k) $ at an initial state $ x(k) $, yielding a reward $ r(k+1) $ and the next state $ x(k+1)$. Following the same policy $\pi$, we apply the next action $ u(k+1) $, hence the name \ac {SARSA}. One of the objective is to learn the action-value function $ Q^{\pi}(x,u) $ while following a fixed policy $ \pi $ over an episode. The pseudo-code of \ac{SARSA} is given in Algorithm~\ref{alg:sarsa} where $ \alpha, \gamma \in [0 \dots 1]$ and $r$ are learning rate, discount rate and immediate reward respectively \cite{sutton1998reinforcement}. Note that instead of updating $Q$ by taking the optimal action at next step, \ac {SARSA} sticks to the action resulting from the policy $\pi$ (see line 8 of the algorithm). Therefore, \ac {SARSA} is a type of on-policy \ac {RL} algorithm.
 	
 	
@@ -320,7 +319,7 @@ In this literature report, author will refer to the work by Brujeni et. al. \cit
 		\caption{SARSA algorithm}
 	\end{algorithm}
 	
-	\item \ac{SARSA} + \ac{PID} controller \\
+	\subsubsection{\ac{SARSA} + \ac{PID} controller}
 	To incorporate \ac{SARSA} for gain scheduling purpose, we define the policy $\pi$ as the gain modifier (see Figure~\ref{fig:dynamictuning}) instead of control input generator. In other words, $\pi$ will return the controller parameters e.g. $ K_p $ $ K_i $ and $ K_d $ gains for \ac{PID} controller. In each iteration $\pi$ will be improved by observing the most-updated value function $Q$. Furthermore, the performance of the \ac {RL}-tuned controller needs to be evaluated in every $ N $-steps to see if the method is actually improving the tracking performance. One possible measure for evaluation is the \ac {ISE}
 	\begin{equation}
 	ISE = \sum_{k=0}^{N}e(k)^2 = \sum_{k=0}^{N}(y_d(k) - y_m(k))^T(y_d(k) - y_m(k))
@@ -362,7 +361,6 @@ In this literature report, author will refer to the work by Brujeni et. al. \cit
 		\label{alg:pid_sarsa}
 	\end{algorithm}
 	
-\end{enumerate}
 
 \subsection{Gain scheduling with \ac{PI$^2$}}
 The second method of dynamic tuning is inspired by the sophisticated motor control of living animals. Biological motor control has shown superiority in terms of versatility and robustness to adapt to different task scenarios. Researchers have been trying to transfer the same capability to robots through variable impedance control. This task requires gain scheduling which, in one way, can be achieved by \ac{PI$^2$} algorithm. One of the main advantage of \ac{PI$^2$} is the scalability for robots with high \ac {DoF}. Although variable impedance control is the only application of \ac{PI$^2$} for robotics so far \cite{Buchli2010}, \cite{Buchli6037312}, \cite{buchli2011learning}, the method seems to be suitable for tracking application as well. Before moving on the motivation of such argument, we will summarize the \ac{PI$^2$} algorithm and its application for variable impedance control first.    
