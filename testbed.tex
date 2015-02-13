@@ -1,11 +1,11 @@
 \chapter{Experimental Setup} \label{chap:testbed}
 
-The purpose of this chapter is to present the 3D printing robot system used as the testbed. The robotic system consists of a UR5 robot manipulator, 3D print head, and a laser scanner -- each will be described in Section~\ref{sec:ur5}. In Section~\ref{sec:current_work}, we will discuss the previous works done on the robotic system. This includes the system identification model and the \ac {MPC} controller. Finally, based on the we will formalize the hypothesis in Section~\ref{sec:hypo}.
+The purpose of this chapter is to present the 3D printing robot system used as the testbed. The robotic system consists of a UR5 robot manipulator, 3D print head, and a laser scanner -- each will be described in Section~\ref{sec:ur5}. In Section~\ref{sec:current_work}, we will discuss the previous works done on the robotic system. This includes the system identification model and the \ac {MPC} controller. Finally, based on the errors, we will formalize the hypothesis in Section~\ref{sec:hypo}.
 \section{The 3D Printing Robot System} \label{sec:ur5}
-\subsection{UR5 Robot Arm}
-UR5 is a lightweight, flexible industrial robot from Universal Robots. The robot is chosen due to its human-safe operation with a quite good repeatability of 0.1 mm \cite{UR5}. The robot is a serial link 6 \ac{DoF} manipulator with internal controller to take care of the gravity compensation and most of the non-linearities. In general, the robot can be controlled like a system of 6 decoupled servos, although this is only correct to some degree. We will explain later why this is the case.
+\subsection{UR5 Robot Arm} \label{subsec:ur5}
+UR5 is a lightweight, flexible industrial robot from Universal Robots. The robot is chosen due to its human-safe operation with a quite good repeatability of 0.1 mm \cite{UR5}. The robot is a serial link 6 \ac{DoF} manipulator with internal controller to take care of the gravity compensation and most of the non-linearities. In general, the robot can be controlled like a system of 6 decoupled servos, although this is only correct to some degree. We will see later why this is the case. Since the internal controller can not be "seen", let alone modified, the UR5 and the controller are viewed as one system. 
 
-Since the internal controller can not be "seen", let alone modified, the UR5 and the controller are viewed as one system. The \ac {RL} controller will be implemented in MATLAB which communicates with the UR5 using a TCP/IP protocol on 125 Hz frequency. There is a number of ways to send control command to the robot:
+The \ac {RL} controller will be implemented in MATLAB which communicates with the UR5 using a TCP/IP protocol on 125 Hz frequency. There is a number of ways to send control command to the robot:
 \begin{enumerate}
 \item Tool position commmand \\
 The tool position means the position of the robot's end effector in Cartesian coordinate. The origin of the Cartesian frame is exactly at the robot's base. Figure~\ref{fig:UR5_Robot01} shows a full posture of the UR5 robot. With this type of control input, one can command the end effector to move to a specified tool position $ s = (x, y, z) $ in mm. This type of command results in a smooth motion if applied in a long sampling period (> 1 second). For the 125 Hz communication rate, however, it suffers from a poor jitter.
@@ -57,7 +57,7 @@ An important assumption for the identification is that the robot acts as six dec
 
 For this purpose, a subspace identification method is used. According to the significant singular values, the order of each model is determined to be either 4 or 5 \cite{verhaegen2007filtering}. After the models are obtained, each joint model is then validated using a square input signal while the other joint angles are held constant. The \ac{VAF} values of each joint for the validation test is shown in Table~\ref{tab:vaf}. Although the result shows a quite good \ac {VAF} score, it is still not good enough to achieve a perfect tracking. To give an example of the performance, the model validation plot of joint 1 and 5 is shown in Figure~\ref{fig:idenJoint}.
 
-\begin{table}[h!]
+\begin{table}
 \caption{\ac {VAF} scores of the simulated outputs for all joints}	
 	\centering
 	\begin{tabular}{|c|c|c|}
@@ -91,6 +91,78 @@ For this purpose, a subspace identification method is used. According to the sig
 	\caption{Model validation of joint 1 and 5 for joint position and velocity}\label{fig:idenJoint}
 \end{figure}
 
+\newpage
 \subsection{\ac{MPC} Controller}
-The previous work involves a design and implementation of \ac {MPC} controller. \ac {MPC} proves to perform better than e.g. \ac{PID} but tracking error is still present in the form of jitter.
+The previous work involves a design and implementation of \ac {MPC} controller. As the comparisons, we will control the robots using 3 of the 4 methods described in Subsection~\ref{subsec:ur5}: tool position, tool velocity and joint velocity command. We will call these three control methods the default controllers. The experiment is to make the robot following a straight line along X-axis with constant values on Y and Z axes.  In order to see the effect of robot's speed to the errors, the experiment is repeated with three different speeds for the default controllers. As for the \ac {MPC}, only one speed is possible due to the difficulty to modify the provided \ac {MPC} program. The plots for Y and Z trajectories are shown in Figure~\ref{fig:trajectory_data_Y} and \ref{fig:trajectory_data_Z} respectively. 
+
+As we can see, there is a shaky behavior in both axes trajectories. To have an idea of how large the amplitude of the jitter, we calculate the difference between maximum and minimum values of each trajectory as shown in Table~\ref{tab:y_jitter} and \ref{tab:z_jitter}. The Y-axis trajectory for the default controllers are slowly drifting from the desired value. This is expected since the default controllers are basically open loop controllers. This causes the jitter's amplitude to be much higher than the \ac {MPC} (see Table~\ref{tab:y_jitter}). Furthermore, for different speeds, the jitters of each default controller behave similarly. If we run the controller for several iterations at constant speed, the plot (not shown here) confirms that the jitter indeed shows a repeating behavior. 
+
+Table~\ref{tab:y_jitter} has shown that the \ac {MPC} controller manages to reduce the jitter significantly -- it almost reaches the robot repeatability. However, for The Z-axis trajectory, the jitter is much larger. 
+
+\begin{table}
+	\centering
+	\caption{The difference between maximum and minimum values of Y-axis trajectory with different control methods}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Control method & speed & jitter's amplitude (mm) \\
+		\hline		
+		& $ \times $1 & 0.635678\\
+		Tool Position & $ \times $2 & 0.670974\\
+		& $ \times $4 & 0.624456\\
+		\hline		
+		& $ \times $1 & 0.529104\\
+		Tool Velocity & $ \times $2 & 0.376090\\
+		& $ \times $4 & 0.320906\\
+		\hline		
+		& $ \times $1 & 0.550691\\
+		Joint Velocity & $ \times $2 & 0.522474\\
+		& $ \times $4 & 0.490630\\				
+		\hline
+		\ac {MPC} & $ \times $1 & 0.120889 \\
+		\hline
+
+	\end{tabular}
+	\label{tab:y_jitter}
+\end{table}
+
+\begin{table}
+	\centering
+	\caption{The difference between maximum and minimum values of Z-axis trajectory with different control methods}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Control method & speed & jitter's amplitude (mm) \\
+		\hline		
+		& $ \times $1 & 0.879843\\
+		Tool Position & $ \times $2 & 0.805172\\
+		& $ \times $4 & 0.800554\\
+		\hline		
+		& $ \times $1 & 0.904581\\
+		Tool Velocity & $ \times $2 & 0.909465\\
+		& $ \times $4 & 1.007834\\
+		\hline		
+		& $ \times $1 & 0.793960\\
+		Joint Velocity & $ \times $2 & 0.795276\\
+		& $ \times $4 & 0.975885\\				
+		\hline
+		\ac {MPC} & $ \times $1 & 0.795315 \\
+		\hline
+		
+	\end{tabular}
+	\label{tab:z_jitter}
+\end{table}
+
+%\begin{figure}
+%\centering
+%\includegraphics[width=0.7\linewidth]{trajectory_data_Y}
+%\caption{the Y trajectories of the robot with different controllers. From left to right: tool position command, tool velocity command, joint velocity command and \ac{MPC}}
+%\label{fig:trajectory_data_Y}
+%\end{figure}
+%\begin{figure}
+%\centering
+%\includegraphics[width=0.7\linewidth]{trajectory_data_Z}
+%\caption{the Z trajectories of the robot with different controllers. From left to right: tool position command, tool velocity command, joint velocity command and \ac{MPC}}
+%\label{fig:trajectory_data_Z}
+%\end{figure}
+
+ 
 

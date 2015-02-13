@@ -204,10 +204,12 @@ I.~Grondman, M.~Vaandrager, L.~Busoniu, R.~Babuska, and E.~Schuitema,
 \newblock Accessed: 2015-02-11.
 
 \bibitem{sunniva2013}
-S.~van Ipenburg, ``On-surface 3d printing method using a robotic arm,'' 2013.
+S.~van Ipenburg, {\em On-Surface 3D Printing Method using a Robotic Arm}.
+\newblock Thesis Report, MSc BioMechanical Engineering, TU Delft, 2013.
 
 \bibitem{Gier2013}
-M.~de~Gier, ``Ur5 mpc program,'' 2014.
+M.~de~Gier, {\em UR5 MPC Program}.
+\newblock DCSC, TU Delft, 2014.
 
 \bibitem{verhaegen2007filtering}
 M.~Verhaegen and V.~Verdult, {\em Filtering and system identification: a least

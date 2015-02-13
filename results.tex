@@ -7,7 +7,7 @@ From the mathematical perspective, the optimal tracking approach is more rigorou
 
 As previously stated in the motivation, the goal of the thesis is to push the envelope of current tracking performance using \ac {RL}. As for the case-specific, it is hypothesized in Chapter~\ref{chap:testbed} that the low tracking performance is due to unknown non-linearities and disturbance in the robot. Therefore, a model-based standard optimal tracking is no longer a relevant solution. Although \cite{Kiumarsi20141167} has shown that using \ac{RL}, one can obviate the need of system model for linear system, the solution for an unknown non-linear system is not yet available. This is one crucial limitation to this method for now since we actually want to improve tracking of potentially non-linear system. Even if the solution exists, a practical problem will most probably arise due to the necessity of persistence of excitation in order to achieve a converging control policy \cite{Kiumarsi20141167} \cite{AlTamimi2007473}. For the UR5 robot testbed, this could potentially damage the robot since the motors must be excited with a persistently exciting signal such as pseudo-random noise. 
 
-The second limitation of the approach is that it is still not known how to integrate the available but inaccurate model to the optimal tracking. Literatures have shown that although the models are not perfect, it can still help in speeding up the \ac {RL} convergence time \cite{Brujeni5669655} \cite{Grondman6096441}. Therefore, model integration would be a useful, though not necessary factor.
+The second limitation of the approach is that it is still not known how to integrate the available but inaccurate model to the optimal tracking. Literatures have shown that although the models are not perfect, it can still help in speeding up the \ac {RL} convergence time \cite{Brujeni5669655} \cite{Grondman6096441}. Therefore, model integration would be a useful, though not necessary factor. Due to these factors, optimal tracking \ac {RL} is not the most suitable method for the thesis requirements.
 
 \subsection{Dynamic Tuning via \ac{RL}}
 \subsubsection{Direct Tuning of Nominal Controller}
@@ -23,7 +23,7 @@ To the best of author's knowledge, there is no any literature yet which addresse
 The drawback of this method is the lack of mathematical formalization to prove the common control criterion: stability, convergence and robustness. From the practical point of view, some kind of mechanism must be introduced to ensure that the compensator signal is not too large since the nominal controller has already performed near optimally. Nevertheless, due to the model-free characteristic, this method is chosen to be the solution which will be developed and implemented for the rest of the thesis.
 
 \section{Research Plan} \label{sec:res_planning}
-The post-literature survey research plan is organized as follows. Before the implementation on the UR5 robot being commissioned, a simple simulation of a 1-\ac {DoF} manipulator will be programmed. The purpose of the simulation is to verify that the proposed method is actually working. If the \ac{RL}-based optimizer indeed works, the controller will be modified to suit the UR5 robot. If the controller performs as expected, improvements will be carried out until the end of the thesis. Parallel to these steps, the thesis report will be written as well. The research plan is summarized in flowchart form as shown in Figure~\ref{fig:flowchart}.
+The post-literature survey research plan is organized as follows. Before commissioning the implementation on the UR5, a simple simulation of a 1-\ac {DoF} manipulator will be programmed. The purpose of the simulation is to verify that the proposed method is actually working. If the \ac{RL}-based optimizer indeed works, the next step would be to further develop the controller for implementation on the UR5 robot. If the controller performs as expected, improvement will be carried out until the end of the thesis. Parallel to these steps, the thesis report will be written as well. The research plan is summarized in a flowchart as shown in Figure~\ref{fig:flowchart}.
 
 \begin{figure}
 \centering
@@ -32,5 +32,5 @@ The post-literature survey research plan is organized as follows. Before the imp
 \label{fig:flowchart}
 \end{figure}
 
-\section{Discussion}\label{sec:discussion}
-During the implementation, 
+%\section{Discussion}\label{sec:discussion}
+%During the implementation, 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  12 FEB 2015 14:14
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  13 FEB 2015 16:04
 entering extended mode
 **mscLiterature.tex
 
@@ -628,14 +628,14 @@ LaTeX Font Info:    Try loading font information for T1+lmss on input line 48.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\t1lmss.fd"
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<STYLESTUFF/COVER.jpg, id=231, 601.38965pt x 844.87071pt>
+<STYLESTUFF/COVER.jpg, id=227, 601.38965pt x 844.87071pt>
 File: STYLESTUFF/COVER.jpg Graphic file (type jpg)
 
 <use STYLESTUFF/COVER.jpg>
 Package pdftex.def Info: STYLESTUFF/COVER.jpg used on input line 48.
 (pdftex.def)             Requested size: 597.5157pt x 845.1007pt.
 
-<STYLESTUFF/TU_LOGO.png, id=232, 145.71439pt x 42.42851pt>
+<STYLESTUFF/TU_LOGO.png, id=228, 145.71439pt x 42.42851pt>
 File: STYLESTUFF/TU_LOGO.png Graphic file (type png)
 
 <use STYLESTUFF/TU_LOGO.png>
@@ -696,7 +696,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 48.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [3]
-<STYLESTUFF/EXAMPLELOGO.png, id=256, 227.6505pt x 168.3891pt>
+<STYLESTUFF/EXAMPLELOGO.png, id=252, 227.6505pt x 168.3891pt>
 File: STYLESTUFF/EXAMPLELOGO.png Graphic file (type png)
 
 <use STYLESTUFF/EXAMPLELOGO.png>
@@ -707,7 +707,7 @@ File: STYLESTUFF/TU_LOGO.png Graphic file (type png)
 Package pdftex.def Info: STYLESTUFF/TU_LOGO.png used on input line 48.
 (pdftex.def)             Requested size: 145.714pt x 42.4284pt.
 
-<STYLESTUFF/DCSC.png, id=257, 227.6505pt x 72.27pt>
+<STYLESTUFF/DCSC.png, id=253, 227.6505pt x 72.27pt>
 File: STYLESTUFF/DCSC.png Graphic file (type png)
  <use STYLESTUFF/DCSC.png>
 Package pdftex.def Info: STYLESTUFF/DCSC.png used on input line 48.
@@ -836,7 +836,7 @@ Package acronym Info: Label `acro:VI' newly defined as it shall be overridden
 although it is yet undefined on input line 64.
 Package acronym Info: Label `acro:TD' newly defined as it shall be overridden
 although it is yet undefined on input line 118.
- [7] [8] <actorCritic2.png, id=586, 367.97475pt x 228.25275pt>
+ [7] [8] <actorCritic2.png, id=587, 367.97475pt x 228.25275pt>
 File: actorCritic2.png Graphic file (type png)
 
 <use actorCritic2.png>
@@ -881,13 +881,13 @@ although it is yet undefined on input line 281.
 Package acronym Info: Label `acro:SARSA' newly defined as it shall be overridde
 n
 although it is yet undefined on input line 283.
- <dynamictuning.png, id=784, 431.211pt x 162.00525pt>
+ <dynamictuning.png, id=785, 431.211pt x 162.00525pt>
 File: dynamictuning.png Graphic file (type png)
 
 <use dynamictuning.png>
 Package pdftex.def Info: dynamictuning.png used on input line 287.
 (pdftex.def)             Requested size: 309.85626pt x 116.41624pt.
- <sarsa.png, id=798, 384.2355pt x 95.75775pt>
+ <sarsa.png, id=799, 384.2355pt x 95.75775pt>
 File: sarsa.png Graphic file (type png)
 
 <use sarsa.png>
@@ -940,7 +940,7 @@ Package acronym Info: Label `acro:LLR' overridden on input line 433.
 LaTeX Warning: Reference `alg:actorcriticPP1admin-08' on page 21 undefined on i
 nput line 433.
 
-<blockdiagram.png, id=913, 596.2275pt x 449.88075pt>
+<blockdiagram.png, id=914, 596.2275pt x 449.88075pt>
 File: blockdiagram.png Graphic file (type png)
  <use blockdiagram.png>
 Package pdftex.def Info: blockdiagram.png used on input line 442.
@@ -964,20 +964,20 @@ LaTeX Warning: Reference `sec:hypo' on page 25 undefined on input line 3.
 
 Package acronym Info: Label `acro:DoF' overridden on input line 6.
 Package acronym Info: Label `acro:RL' overridden on input line 8.
-[25] <UR5_Robot01.jpg, id=974, 2479.2625pt x 2732.2075pt>
+[25] <UR5_Robot01.jpg, id=975, 2479.2625pt x 2732.2075pt>
 File: UR5_Robot01.jpg Graphic file (type jpg)
 
 <use UR5_Robot01.jpg>
 Package pdftex.def Info: UR5_Robot01.jpg used on input line 24.
 (pdftex.def)             Requested size: 221.32687pt x 243.88695pt.
- <scanCONTROL.jpg, id=976, 979.0176pt x 853.5087pt>
+ <scanCONTROL.jpg, id=977, 979.0176pt x 853.5087pt>
 File: scanCONTROL.jpg Graphic file (type jpg)
 
 <use scanCONTROL.jpg>
 Package pdftex.def Info: scanCONTROL.jpg used on input line 36.
 (pdftex.def)             Requested size: 221.32687pt x 192.95584pt.
  [26 <D:/Dropbox/TU Delft - MSc System & Control/Graduation Project (Thesis)/Th
-esis Forms and Guide/DCSC Literature Style/UR5_Robot01.jpg>] <ur5.png, id=986, 
+esis Forms and Guide/DCSC Literature Style/UR5_Robot01.jpg>] <ur5.png, id=987, 
 334.24875pt x 275.22826pt>
 File: ur5.png Graphic file (type png)
  <use ur5.png>
@@ -990,10 +990,7 @@ Package acronym Info: Label `acro:SIMO' newly defined as it shall be overridden
 although it is yet undefined on input line 56.
 Package acronym Info: Label `acro:VAF' overridden on input line 58.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<"../../Progress Report/Joint5".png, id=1000, 366.33414pt x 285.3419pt>
+<"../../Progress Report/Joint5".png, id=1001, 366.33414pt x 285.3419pt>
 File: "../../Progress Report/Joint5".png Graphic file (type png)
 
 <use "../../Progress Report/Joint5".png>
@@ -1001,21 +998,28 @@ Package pdftex.def Info: "../../Progress Report/Joint5".png used on input line
 80.
 (pdftex.def)             Requested size: 177.05879pt x 137.91171pt.
 
-<"../../Progress Report/Joint1".png, id=1001, 365.0881pt x 287.83397pt>
+<"../../Progress Report/Joint1".png, id=1002, 365.0881pt x 287.83397pt>
 File: "../../Progress Report/Joint1".png Graphic file (type png)
 
 <use "../../Progress Report/Joint1".png>
 Package pdftex.def Info: "../../Progress Report/Joint1".png used on input line 
 87.
 (pdftex.def)             Requested size: 177.05879pt x 139.59491pt.
-Package acronym Info: Label `acro:PID' overridden on input line 95.
-) [27 <D:/Dropbox/TU Delft - MSc System & Control/Graduation Project (Thesis)/T
-hesis Forms and Guide/DCSC Literature Style/scanCONTROL.jpg>] [28 <D:/Dropbox/T
-U Delft - MSc System & Control/Graduation Project (Thesis)/Thesis Forms and Gui
-de/DCSC Literature Style/ur5.png> <D:/Dropbox/TU Delft - MSc System & Control/G
-raduation Project (Thesis)/Progress Report/Joint5.png> <D:/Dropbox/TU Delft - M
-Sc System & Control/Graduation Project (Thesis)/Progress Report/Joint1.png>] [2
-9]
+ [27 <D:/Dropbox/TU Delft - MSc System & Control/Graduation Project (Thesis)/Th
+esis Forms and Guide/DCSC Literature Style/scanCONTROL.jpg>] [28 <D:/Dropbox/TU
+ Delft - MSc System & Control/Graduation Project (Thesis)/Thesis Forms and Guid
+e/DCSC Literature Style/ur5.png> <D:/Dropbox/TU Delft - MSc System & Control/Gr
+aduation Project (Thesis)/Progress Report/Joint5.png> <D:/Dropbox/TU Delft - MS
+c System & Control/Graduation Project (Thesis)/Progress Report/Joint1.png>]
+
+LaTeX Warning: Reference `fig:trajectory_data_Y' on page 29 undefined on input 
+line 96.
+
+
+LaTeX Warning: Reference `fig:trajectory_data_Z' on page 29 undefined on input 
+line 96.
+
+) [29]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
  Forms and Guide\DCSC Literature Style\results.tex" [30
 
@@ -1024,6 +1028,10 @@ Sc System & Control/Graduation Project (Thesis)/Progress Report/Joint1.png>] [2
 ]
 Chapter 5.
 Package acronym Info: Label `acro:RL' overridden on input line 3.
+
+LaTeX Warning: Reference `sec:discussion' on page 31 undefined on input line 3.
+
+
 [31]
 Package acronym Info: Label `acro:PID' overridden on input line 14.
 Package acronym Info: Label `acro:MPC' overridden on input line 14.
@@ -1032,7 +1040,7 @@ Package acronym Info: Label `acro:PI$^2$' overridden on input line 16.
 Package acronym Info: Label `acro:PD' newly defined as it shall be overridden
 although it is yet undefined on input line 21.
 Package acronym Info: Label `acro:DoF' overridden on input line 21.
- [32] <Drawing1.png, id=1092, 504.88625pt x 1105.12875pt>
+ [32] <Drawing1.png, id=1094, 504.88625pt x 1105.12875pt>
 File: Drawing1.png Graphic file (type png)
 
 <use Drawing1.png>
@@ -1121,7 +1129,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 89.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 89.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 89.
 Package rerunfilecheck Info: File `mscLiterature.out' has not changed.
-(rerunfilecheck)             Checksum: 53D08253EB0078DF56ED9863B7F18E4C;4237.
+(rerunfilecheck)             Checksum: DF26A99070AD26E68FF733C1D613AD32;4179.
 
 
 LaTeX Warning: There were undefined references.
@@ -1129,10 +1137,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 89.
  ) 
 Here is how much of TeX's memory you used:
- 12945 strings out of 493921
- 196444 string characters out of 3144864
- 320884 words of memory out of 3000000
- 15551 multiletter control sequences out of 15000+200000
+ 12951 strings out of 493921
+ 196551 string characters out of 3144864
+ 321309 words of memory out of 3000000
+ 15557 multiletter control sequences out of 15000+200000
  92048 words of font info for 66 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  43i,23n,45p,1840b,1716s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1160,9 +1168,9 @@ X 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
 type1/public/lm/lmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
 c/amsfonts/symbols/msbm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ur
 w/bookman/ubkl8a.pfb>
-Output written on mscLiterature.pdf (64 pages, 3958069 bytes).
+Output written on mscLiterature.pdf (64 pages, 3962005 bytes).
 PDF statistics:
- 1318 PDF objects out of 1440 (max. 8388607)
+ 1320 PDF objects out of 1440 (max. 8388607)
  362 named destinations out of 1000 (max. 500000)
- 527 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 519 words of extra memory for PDF output out of 10000 (max. 10000000)
 
