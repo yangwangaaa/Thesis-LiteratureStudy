@@ -14,7 +14,7 @@ In this thesis, a method to improve the performance of nominal controller by usi
 
 
 \section{Problem Definition}
-The fundamental problem in this literature study concerns the non-optimal performance of nominal controller with respect to reference tracking task. Hence the research question can be raised as follows.
+The fundamental problem in this literature study concerns the non-optimal performance of nominal controller with respect to a reference tracking task. Hence the research question can be raised as follows.
 
 \textit{"Is it possible to integrate Reinforcement Learning technique to a nominal controller in a certain structure such that reference tracking performance of the controlled system significantly improves?"}
 
@@ -31,7 +31,7 @@ While conducting a research, it is often wise to restrict oneself to a simple co
 
 The goal of this thesis are as follows:
 \begin{enumerate}
-\item To provide a general framework to improving the tracking control using \ac{RL}
+\item To provide a general framework to improve the tracking control using \ac{RL}
 \item To apply and compare existing method of \ac{RL} for tracking application to the 3D printing robot setup
 \item To come up with modification and improvement of the previous methods
 \end{enumerate}
@@ -42,14 +42,15 @@ In order to build a strong theoretical foundation for later implementation, the 
 	\item To gather as many relevant papers as possible from reputable academic search engines. Relevant means papers which deal with \ac{RL} and control system. Additional pointer to tracking problem is heavily considered. Examples of sources being used are Web of Science, IEEE Xplore and Google Scholar.
 	\item To discuss the detail of future experimental setup (UR5 \ac{3D} printing robot) with Marco de Gier, who was working on the setup at the time this literature is written.
 	\item From the papers, extract existing methods which have the potential for application to the future experiments. So far, there are 3 different methods that are considered. These methods will be explained in detail in Chapter \ref{chap::survey}.
-	\item Create simple simulation programs showing how each method works
+	\item Analyze the feasibility, advantages and limitations for all the methods found. Based on this, select one which is most suitable to answer the thesis problem.
+	\item Organize the research planning and future steps to be taken during the remaining thesis time.
 	
 \end{enumerate}
 
 
 \section{Outline}
 
-The structure of this literature review is arranged as follows. In the next chapter, an introductory materials of \ac{RL} is presented. This covers the framework widely used in \ac{RL}: (Markov Decision Process), the principle of value and policy iteration, the formulation of \ac{RL} for continuous space, and the actor-critic structure which suits the framework of control system. Chapter \ref{chap::survey} provides the result of literature study being conducted. This includes the detailed explanation of methods found and their comparison. The last chapter will provide explanation about the research plan.  
+The structure of this literature review is arranged as follows. In the next chapter, an introductory materials of \ac{RL} is presented. This covers the framework widely used in \ac{RL}: (Markov Decision Process), the principle of policy and value iteration and the actor-critic structure which suits the control framework. Chapter~\ref{chap::survey} provides the result of literature study being conducted. This includes the detailed explanation of methods found and their comparison. Chapter~\ref{chap:testbed} explains the UR5 3D printing robot setup along with the result of the previous works. Finally, the last chapter deals with the selection process of the 3 methods followed by an explanation about the research plan.  
 
 %\section{Nomenclature}
 

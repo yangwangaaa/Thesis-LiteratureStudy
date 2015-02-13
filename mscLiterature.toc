@@ -1,5 +1,5 @@
 \contentsline {chapter}{\hbox to\@tempdima {\hfil }Preface}{ix}{chapter*.12}
-\contentsline {chapter}{\hbox to\@tempdima {\hfil }Acknowledgements}{xi}{chapter*.13}
+\contentsline {chapter}{\hbox to\@tempdima {\hfil }Acknowledgements}{xi}{chapter*.14}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1-1}Problem Definition}{2}{section.1.1}
 \contentsline {section}{\numberline {1-2}Goal of the Thesis}{2}{section.1.2}
@@ -41,11 +41,8 @@
 \contentsline {subsubsection}{Gain scheduling for \ac {DMP}}{32}{section*.72}
 \contentsline {subsection}{\numberline {5-1-3}Nonlinear Input Compensation via \ac {RL}}{32}{subsection.5.1.3}
 \contentsline {section}{\numberline {5-2}Research Plan}{33}{section.5.2}
-\contentsline {chapter}{\numberline {6}Future Work and Experiments Plan}{35}{chapter.6}
-\contentsline {chapter}{\numberline {7}Conclusion}{37}{chapter.7}
-\contentsline {chapter}{\numberline {A}Appendix}{39}{appendix.A}
-\contentsline {section}{\numberline {A-1}Simulation Program}{39}{section.A.1}
-\contentsline {subsection}{\numberline {A-1-1}A MATLAB listing}{39}{subsection.A.1.1}
-\contentsline {chapter}{\hbox to\@tempdima {\hfil }Glossary}{45}{appendix*.79}
-\contentsline {section}{\hbox to\@tempdima {\hfil }List of Acronyms}{45}{section*.80}
-\contentsline {section}{\hbox to\@tempdima {\hfil }List of Symbols}{46}{section*.82}
+\contentsline {section}{\numberline {5-3}Discussion}{33}{section.5.3}
+\contentsline {chapter}{\numberline {6}Conclusion}{35}{chapter.6}
+\contentsline {chapter}{\hbox to\@tempdima {\hfil }Glossary}{41}{appendix*.82}
+\contentsline {section}{\hbox to\@tempdima {\hfil }List of Acronyms}{41}{section*.83}
+\contentsline {section}{\hbox to\@tempdima {\hfil }List of Symbols}{42}{section*.85}
