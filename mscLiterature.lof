@@ -2,17 +2,19 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2-1}{\ignorespaces Actor critic structure\relax }}{9}{figure.caption.27}
+\contentsline {figure}{\numberline {2-1}{\ignorespaces Actor critic structure (diagram reproduced from \cite {babuskaRL})\relax }}{9}{figure.caption.27}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3-1}{\ignorespaces Gain scheduling of Nominal controller using \ac {RL}. In this case, a \ac {PID} controller is used\relax }}{17}{figure.caption.40}
-\contentsline {figure}{\numberline {3-2}{\ignorespaces A sequence of state and action\relax }}{18}{figure.caption.42}
-\contentsline {figure}{\numberline {3-3}{\ignorespaces Block diagram of robot with \ac {RL} block acting as an additive compensator\relax }}{22}{figure.caption.53}
+\contentsline {figure}{\numberline {3-1}{\ignorespaces Gain scheduling of Nominal controller using \ac {RL}. In this case, a \ac {PID} controller is used\relax }}{17}{figure.caption.41}
+\contentsline {figure}{\numberline {3-2}{\ignorespaces A sequence of state and action (diagram reproduced from\cite {sutton1998reinforcement})\relax }}{18}{figure.caption.43}
+\contentsline {figure}{\numberline {3-3}{\ignorespaces Block diagram of robot with \ac {RL} block acting as an additive compensator\relax }}{22}{figure.caption.54}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4-1}{\ignorespaces The UR5 Robot (photo courtesy of Universal Robots)\relax }}{26}{figure.caption.57}
-\contentsline {figure}{\numberline {4-2}{\ignorespaces scanCONTROL 2700 series laser scanner (photo courtesy of Micro-Epsilon)\relax }}{27}{figure.caption.58}
-\contentsline {figure}{\numberline {4-3}{\ignorespaces The end effector of the UR5 robot with 3D print head and laser scanner attached (photo courtesy of Sunniva Ipenburg)\relax }}{28}{figure.caption.59}
-\contentsline {figure}{\numberline {4-4}{\ignorespaces Model validation of joint 1 and 5 for joint position and velocity\relax }}{28}{figure.caption.65}
+\contentsline {figure}{\numberline {4-1}{\ignorespaces The UR5 Robot (photo courtesy of Universal Robots)\relax }}{26}{figure.caption.58}
+\contentsline {figure}{\numberline {4-2}{\ignorespaces scanCONTROL 2700 series laser scanner (photo courtesy of Micro-Epsilon)\relax }}{27}{figure.caption.59}
+\contentsline {figure}{\numberline {4-3}{\ignorespaces The end effector of the UR5 robot with 3D print head and laser scanner attached (photo courtesy of Sunniva Ipenburg)\relax }}{28}{figure.caption.60}
+\contentsline {figure}{\numberline {4-4}{\ignorespaces Model validation of joint 1 and 5 for joint position and velocity\relax }}{28}{figure.caption.66}
+\contentsline {figure}{\numberline {4-5}{\ignorespaces the Y trajectories of the robot with different controllers. From left to right: tool position command, tool velocity command, joint velocity command and \ac {MPC}\relax }}{30}{figure.caption.69}
+\contentsline {figure}{\numberline {4-6}{\ignorespaces the Z trajectories of the robot with different controllers. From left to right: tool position command, tool velocity command, joint velocity command and \ac {MPC}\relax }}{30}{figure.caption.70}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5-1}{\ignorespaces Research plan flowchart\relax }}{34}{figure.caption.77}
+\contentsline {figure}{\numberline {5-1}{\ignorespaces Research plan flowchart\relax }}{34}{figure.caption.80}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

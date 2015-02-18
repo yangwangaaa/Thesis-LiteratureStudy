@@ -114,7 +114,7 @@ This concludes the formulation of \ac{RL} problem. The subsequent sections will 
 \end{algorithm}
 
  
-\section{Actor Critic Methods} \label{sec:actor}
+\section{Actor Critic Method} \label{sec:actor}
 The second method for solving \ac{RL} is by using temporal-difference learning. It is favored due to its model-free nature. In this section, we will discuss a class of \ac{TD} called actor-critic method. The idea of actor-critic method is to separate policy and value function into entities called actor and critic respectively (see Figure~\ref{fig:actorCritic}). The critic evaluates and criticizes the actor performance by feeding a temporal difference signal $\delta$ to the actor. This signal is basically the difference between right and left hand side of Bellman equation, in other words, the Bellman equation error. 
 
 In order to deal with continuous state space, the actor $\psi$ and critic $\theta$ functions are parameterized by function approximators. Examples of function approximators are fuzzy, neural networks and tile coding. The actor-critic method is presented in Algorithm~\ref{alg:actorcritic} (adapted from \cite{babuskaRL}). Note that $\tilde{u}$ denotes random exploration term which is needed to avoid getting stuck at local optimum.
@@ -122,7 +122,7 @@ In order to deal with continuous state space, the actor $\psi$ and critic $\thet
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.6\linewidth]{actorCritic2}
-\caption{Actor critic structure} 
+\caption{Actor critic structure (diagram reproduced from \cite{babuskaRL})} 
 \label{fig:actorCritic}
 \end{figure}
 

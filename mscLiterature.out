@@ -17,7 +17,7 @@
 \BOOKMARK [1][-]{section.2.2}{Markov Decision Process}{chapter.2}% 17
 \BOOKMARK [1][-]{section.2.3}{Value Function}{chapter.2}% 18
 \BOOKMARK [1][-]{section.2.4}{Policy and value iteration}{chapter.2}% 19
-\BOOKMARK [1][-]{section.2.5}{Actor Critic Methods}{chapter.2}% 20
+\BOOKMARK [1][-]{section.2.5}{Actor Critic Method}{chapter.2}% 20
 \BOOKMARK [0][-]{chapter.3}{Reinforcement Learning for Tracking Problem: A Survey}{mainmatter_anchor.-1}% 21
 \BOOKMARK [1][-]{section.3.1}{Reinforcement Learning for Optimal Tracking Control}{chapter.3}% 22
 \BOOKMARK [2][-]{subsection.3.1.1}{Standard LQT problem}{section.3.1}% 23
@@ -48,6 +48,6 @@
 \BOOKMARK [0][-]{chapter.6}{Conclusion}{mainmatter_anchor.-1}% 48
 \BOOKMARK [-1][]{apdx_anchor.-1}{Appendices}{}% 49
 \BOOKMARK [-1][]{backmatter_anchor.-1}{Back Matter}{}% 50
-\BOOKMARK [0][-]{appendix*.82}{Glossary}{backmatter_anchor.-1}% 51
-\BOOKMARK [1][-]{section*.83}{List of Acronyms}{appendix*.82}% 52
-\BOOKMARK [1][-]{section*.85}{List of Symbols}{appendix*.82}% 53
+\BOOKMARK [0][-]{appendix*.86}{Glossary}{backmatter_anchor.-1}% 51
+\BOOKMARK [1][-]{section*.87}{List of Acronyms}{appendix*.86}% 52
+\BOOKMARK [1][-]{section*.89}{List of Symbols}{appendix*.86}% 53

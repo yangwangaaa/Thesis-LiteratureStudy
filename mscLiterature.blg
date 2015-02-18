@@ -8,14 +8,14 @@ A level-1 auxiliary file: rl_prelim.aux
 A level-1 auxiliary file: survey.aux
 A level-1 auxiliary file: testbed.aux
 A level-1 auxiliary file: results.aux
-A level-1 auxiliary file: implementation.aux
 A level-1 auxiliary file: conclusion.aux
-A level-1 auxiliary file: app_back.aux
 The style file: ieeetr.bst
 A level-1 auxiliary file: glossary.aux
 Database file #1: MyBib.bib
 Warning--empty booktitle in einstein
 Warning--empty journal in babuskaRL
 Warning--empty year in babuskaRL
+Name 1 in "M. Sedighizadeh, and A. Rezazadeh" has a comma at the end for entry Sedighizadeh2008
+while executing---line 963 of file ieeetr.bst
 Warning--empty institution in ijspeert2002learning
-(There were 4 warnings)
+(There was 1 error message)

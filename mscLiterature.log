@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  13 FEB 2015 20:02
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.11.6)  17 FEB 2015 17:17
 entering extended mode
 **mscLiterature.tex
 
@@ -828,7 +828,7 @@ Package acronym Info: Label `acro:VI' newly defined as it shall be overridden
 although it is yet undefined on input line 64.
 Package acronym Info: Label `acro:TD' newly defined as it shall be overridden
 although it is yet undefined on input line 118.
- [7] [8] <actorCritic2.png, id=577, 367.97475pt x 228.25275pt>
+ [7] [8] <actorCritic2.png, id=585, 367.97475pt x 228.25275pt>
 File: actorCritic2.png Graphic file (type png)
 
 <use actorCritic2.png>
@@ -868,27 +868,24 @@ Package acronym Info: Label `acro:MIMO' newly defined as it shall be overridden
 
 although it is yet undefined on input line 279.
  [16]
+Package acronym Info: Label `acro:SAM' newly defined as it shall be overridden
+although it is yet undefined on input line 281.
 Package acronym Info: Label `acro:SARSA' newly defined as it shall be overridde
 n
 although it is yet undefined on input line 281.
- <dynamictuning.png, id=763, 431.211pt x 162.00525pt>
-File: dynamictuning.png Graphic file (type png)
+ <dynatuning_block.pdf, id=777, 412.56496pt x 227.62204pt>
+File: dynatuning_block.pdf Graphic file (type pdf)
 
-<use dynamictuning.png>
-Package pdftex.def Info: dynamictuning.png used on input line 285.
-(pdftex.def)             Requested size: 309.85626pt x 116.41624pt.
- <sarsa.png, id=777, 384.2355pt x 95.75775pt>
+<use dynatuning_block.pdf>
+Package pdftex.def Info: dynatuning_block.pdf used on input line 285.
+(pdftex.def)             Requested size: 309.85626pt x 170.95575pt.
+ [17 <D:/Dropbox/TU Delft - MSc System & Control/Graduation Project (Thesis)/Th
+esis Forms and Guide/DCSC Literature Style/dynatuning_block.pdf>] <sarsa.png, i
+d=818, 384.2355pt x 95.75775pt>
 File: sarsa.png Graphic file (type png)
-
-<use sarsa.png>
+ <use sarsa.png>
 Package pdftex.def Info: sarsa.png used on input line 296.
 (pdftex.def)             Requested size: 309.85626pt x 77.22435pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[17 <D:/Dropbox/TU Delft - MSc System & Control/Graduation Project (Thesis)/The
-sis Forms and Guide/DCSC Literature Style/dynamictuning.png>]
 Package acronym Info: Label `acro:ISE' newly defined as it shall be overridden
 although it is yet undefined on input line 321.
 
@@ -923,15 +920,15 @@ Package acronym Info: Label `acro:MLAC' newly defined as it shall be overridden
 
 although it is yet undefined on input line 428.
 Package acronym Info: Label `acro:LLR' overridden on input line 431.
+ [21]
+<nonlin_compensator.pdf, id=939, 625.96059pt x 446.70827pt>
+File: nonlin_compensator.pdf Graphic file (type pdf)
 
-<blockdiagram.png, id=893, 596.2275pt x 449.88075pt>
-File: blockdiagram.png Graphic file (type png)
- <use blockdiagram.png>
-Package pdftex.def Info: blockdiagram.png used on input line 440.
-(pdftex.def)             Requested size: 309.85626pt x 233.80205pt.
-
-[21] [22 <D:/Dropbox/TU Delft - MSc System & Control/Graduation Project (Thesis
-)/Thesis Forms and Guide/DCSC Literature Style/blockdiagram.png>]) [23]
+<use nonlin_compensator.pdf>
+Package pdftex.def Info: nonlin_compensator.pdf used on input line 440.
+(pdftex.def)             Requested size: 354.12434pt x 252.72462pt.
+ [22 <D:/Dropbox/TU Delft - MSc System & Control/Graduation Project (Thesis)/Th
+esis Forms and Guide/DCSC Literature Style/nonlin_compensator.pdf>]) [23]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
  Forms and Guide\DCSC Literature Style\testbed.tex" [24
 
@@ -942,21 +939,21 @@ Chapter 4.
 Package acronym Info: Label `acro:MPC' overridden on input line 3.
 Package acronym Info: Label `acro:DoF' overridden on input line 6.
 Package acronym Info: Label `acro:RL' overridden on input line 8.
-[25] <UR5_Robot01.jpg, id=955, 2479.2625pt x 2732.2075pt>
+[25] <UR5_Robot01.jpg, id=1020, 2479.2625pt x 2732.2075pt>
 File: UR5_Robot01.jpg Graphic file (type jpg)
 
 <use UR5_Robot01.jpg>
 Package pdftex.def Info: UR5_Robot01.jpg used on input line 24.
 (pdftex.def)             Requested size: 221.32687pt x 243.88695pt.
- <scanCONTROL.jpg, id=957, 979.0176pt x 853.5087pt>
+ <scanCONTROL.jpg, id=1022, 979.0176pt x 853.5087pt>
 File: scanCONTROL.jpg Graphic file (type jpg)
 
 <use scanCONTROL.jpg>
 Package pdftex.def Info: scanCONTROL.jpg used on input line 36.
 (pdftex.def)             Requested size: 221.32687pt x 192.95584pt.
  [26 <D:/Dropbox/TU Delft - MSc System & Control/Graduation Project (Thesis)/Th
-esis Forms and Guide/DCSC Literature Style/UR5_Robot01.jpg>] <ur5.png, id=967, 
-334.24875pt x 275.22826pt>
+esis Forms and Guide/DCSC Literature Style/UR5_Robot01.jpg>] <ur5.png, id=1032,
+ 334.24875pt x 275.22826pt>
 File: ur5.png Graphic file (type png)
  <use ur5.png>
 Package pdftex.def Info: ur5.png used on input line 47.
@@ -968,36 +965,65 @@ Package acronym Info: Label `acro:SIMO' newly defined as it shall be overridden
 although it is yet undefined on input line 56.
 Package acronym Info: Label `acro:VAF' overridden on input line 58.
 
-<"../../Progress Report/Joint5".png, id=981, 366.33414pt x 285.3419pt>
-File: "../../Progress Report/Joint5".png Graphic file (type png)
+<Joint5.pdf, id=1046, 418.56375pt x 314.17375pt>
+File: Joint5.pdf Graphic file (type pdf)
+ <use Joint5.pdf>
+Package pdftex.def Info: Joint5.pdf used on input line 80.
+(pdftex.def)             Requested size: 221.32687pt x 166.12778pt.
 
-<use "../../Progress Report/Joint5".png>
-Package pdftex.def Info: "../../Progress Report/Joint5".png used on input line 
-80.
-(pdftex.def)             Requested size: 177.05879pt x 137.91171pt.
+<Joint1.pdf, id=1047, 418.56375pt x 314.17375pt>
+File: Joint1.pdf Graphic file (type pdf)
+ <use Joint1.pdf>
+Package pdftex.def Info: Joint1.pdf used on input line 87.
+(pdftex.def)             Requested size: 221.32687pt x 166.12778pt.
 
-<"../../Progress Report/Joint1".png, id=982, 365.0881pt x 287.83397pt>
-File: "../../Progress Report/Joint1".png Graphic file (type png)
+Overfull \hbox (4.86667pt too wide) in paragraph at lines 79--91
+ [][]  [] 
+ []
 
-<use "../../Progress Report/Joint1".png>
-Package pdftex.def Info: "../../Progress Report/Joint1".png used on input line 
-87.
-(pdftex.def)             Requested size: 177.05879pt x 139.59491pt.
- [27 <D:/Dropbox/TU Delft - MSc System & Control/Graduation Project (Thesis)/Th
-esis Forms and Guide/DCSC Literature Style/scanCONTROL.jpg>] [28 <D:/Dropbox/TU
- Delft - MSc System & Control/Graduation Project (Thesis)/Thesis Forms and Guid
-e/DCSC Literature Style/ur5.png> <D:/Dropbox/TU Delft - MSc System & Control/Gr
-aduation Project (Thesis)/Progress Report/Joint5.png> <D:/Dropbox/TU Delft - MS
-c System & Control/Graduation Project (Thesis)/Progress Report/Joint1.png>]
+[27 <D:/Dropbox/TU Delft - MSc System & Control/Graduation Project (Thesis)/The
+sis Forms and Guide/DCSC Literature Style/scanCONTROL.jpg>] [28 <D:/Dropbox/TU 
+Delft - MSc System & Control/Graduation Project (Thesis)/Thesis Forms and Guide
+/DCSC Literature Style/ur5.png> <D:/Dropbox/TU Delft - MSc System & Control/Gra
+duation Project (Thesis)/Thesis Forms and Guide/DCSC Literature Style/Joint5.pd
+f> <D:/Dropbox/TU Delft - MSc System & Control/Graduation Project (Thesis)/Thes
+is Forms and Guide/DCSC Literature Style/Joint1.pdf
 
-LaTeX Warning: Reference `fig:trajectory_data_Y' on page 29 undefined on input 
-line 96.
+pdfTeX warning: pdflatex (file D:/Dropbox/TU Delft - MSc System & Control/Gradu
+ation Project (Thesis)/Thesis Forms and Guide/DCSC Literature Style/Joint1.pdf)
+: PDF inclusion: multiple pdfs with page group included in a single page
+>] <trajectory_data_Y.pdf, id=1196, 1204.5pt x 321.2pt>
+File: trajectory_data_Y.pdf Graphic file (type pdf)
 
+<use trajectory_data_Y.pdf>
+Package pdftex.def Info: trajectory_data_Y.pdf used on input line 160.
+(pdftex.def)             Requested size: 486.92181pt x 129.84512pt.
 
-LaTeX Warning: Reference `fig:trajectory_data_Z' on page 29 undefined on input 
-line 96.
+Overfull \hbox (44.26807pt too wide) in paragraph at lines 160--161
+ [][] 
+ []
 
-) [29] [30]
+<trajectory_data_Z.pdf, id=1199, 1204.5pt x 320.19624pt>
+File: trajectory_data_Z.pdf Graphic file (type pdf)
+
+<use trajectory_data_Z.pdf>
+Package pdftex.def Info: trajectory_data_Z.pdf used on input line 166.
+(pdftex.def)             Requested size: 486.92181pt x 129.43936pt.
+
+Overfull \hbox (44.26807pt too wide) in paragraph at lines 166--167
+ [][] 
+ []
+
+) [29] [30 <D:/Dropbox/TU Delft - MSc System & Control/Graduation Project (Thes
+is)/Thesis Forms and Guide/DCSC Literature Style/trajectory_data_Y.pdf> <D:/Dro
+pbox/TU Delft - MSc System & Control/Graduation Project (Thesis)/Thesis Forms a
+nd Guide/DCSC Literature Style/trajectory_data_Z.pdf
+
+pdfTeX warning: pdflatex (file D:/Dropbox/TU Delft - MSc System & Control/Gradu
+ation Project (Thesis)/Thesis Forms and Guide/DCSC Literature Style/trajectory_
+data_Z.pdf): PDF inclusion: multiple pdfs with page group included in a single 
+page
+>]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
  Forms and Guide\DCSC Literature Style\results.tex"
 Chapter 5.
@@ -1014,21 +1040,22 @@ Package acronym Info: Label `acro:PI$^2$' overridden on input line 16.
 Package acronym Info: Label `acro:PD' newly defined as it shall be overridden
 although it is yet undefined on input line 21.
 Package acronym Info: Label `acro:DoF' overridden on input line 21.
- [32] <Drawing1.png, id=1086, 504.88625pt x 1105.12875pt>
-File: Drawing1.png Graphic file (type png)
+ [32] <research_plan.pdf, id=1469, 176.66pt x 343.2825pt>
+File: research_plan.pdf Graphic file (type pdf)
 
-<use Drawing1.png>
-Package pdftex.def Info: Drawing1.png used on input line 30.
-(pdftex.def)             Requested size: 221.32687pt x 484.45383pt.
+<use research_plan.pdf>
+Package pdftex.def Info: research_plan.pdf used on input line 30.
+(pdftex.def)             Requested size: 221.32687pt x 430.08157pt.
 Package acronym Info: Label `acro:ILC' newly defined as it shall be overridden
 although it is yet undefined on input line 36.
 ) [33] [34 <D:/Dropbox/TU Delft - MSc System & Control/Graduation Project (Thes
-is)/Thesis Forms and Guide/DCSC Literature Style/Drawing1.png>]
+is)/Thesis Forms and Guide/DCSC Literature Style/research_plan.pdf>]
 ("D:\Dropbox\TU Delft - MSc System & Control\Graduation Project (Thesis)\Thesis
  Forms and Guide\DCSC Literature Style\conclusion.tex"
 Chapter 6.
 Package acronym Info: Label `acro:RL' overridden on input line 2.
 Package acronym Info: Label `acro:PI$^2$' overridden on input line 2.
+Package acronym Info: Label `acro:ILC' overridden on input line 2.
 ) [35
 
 
@@ -1041,7 +1068,7 @@ Package acronym Info: Label `acro:PI$^2$' overridden on input line 2.
  Forms and Guide\DCSC Literature Style\mscLiterature.bbl" [37
 
 ] [38]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 187.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 197.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
@@ -1085,21 +1112,17 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 88.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 88.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 88.
 Package rerunfilecheck Info: File `mscLiterature.out' has not changed.
-(rerunfilecheck)             Checksum: 0F9D0C3B179FA2574A0EA6A15BB650C8;3950.
-
-
-LaTeX Warning: There were undefined references.
-
+(rerunfilecheck)             Checksum: 6722684E0322C9DE67A442E6A35693D0;3949.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 88.
  ) 
 Here is how much of TeX's memory you used:
- 12344 strings out of 493921
- 187935 string characters out of 3144864
- 298124 words of memory out of 3000000
- 14978 multiletter control sequences out of 15000+200000
+ 12370 strings out of 493921
+ 188261 string characters out of 3144864
+ 299775 words of memory out of 3000000
+ 14997 multiletter control sequences out of 15000+200000
  91729 words of font info for 65 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 43i,23n,45p,1840b,498s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,23n,46p,1840b,498s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program F
 iles (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files (x86)/MiKT
 eX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files (x86)/MiKTeX 2.9/font
@@ -1124,9 +1147,9 @@ X 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
 type1/public/lm/lmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
 c/amsfonts/symbols/msbm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ur
 w/bookman/ubkl8a.pfb>
-Output written on mscLiterature.pdf (60 pages, 6383980 bytes).
+Output written on mscLiterature.pdf (60 pages, 6692253 bytes).
 PDF statistics:
- 1301 PDF objects out of 1440 (max. 8388607)
- 352 named destinations out of 1000 (max. 500000)
- 490 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1734 PDF objects out of 2073 (max. 8388607)
+ 358 named destinations out of 1000 (max. 500000)
+ 500 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -276,13 +276,13 @@ Finally, we can once again apply \ac {PI} to learn matrix $H$ online. This \ac {
 In this second section, a class of method to improve tracking performance by dynamically tuned a controller's gain using \ac {RL} is presented. To the best of author's knowledge, there are two prominent methods which serve this purpose. The first method is relatively simple -- it starts from an admissible controller e.g. \ac{PID}, and tune the controller's gain according to the value function. The second method is a more complex approach which is based on a relatively new algorithm called \ac {PI$^2$}. It is a model-free, sampling based learning method derived from the principle of optimal control \cite{Buchli2010}. This algorithm has been shown to work for a variable impedance control \cite{Buchli6037312}, \cite{buchli2011learning}, \cite{theodorou2010generalized} to enable a manipulator performing task like flipping a light switch \cite{buchli2011learning}.
 
 \subsection{Direct Tuning of Nominal Controller}
-In many cases of reference tracking, a linear controller such as \ac{PID} only performs well for a certain condition (e.g. a particular reference signal and a region of state) in which the gain is tuned. For different conditions, the performance is most likely degraded or even worse, the response becomes unstable. Intuitively, one would call for a solution which adjusts the controller gain with respect to the current condition. This method, also known as gain scheduling, has been developed for quite some time. The most common techniques used are fuzzy logic \cite{375142} \cite{5229855} \cite{1684589} and neural networks \cite{6606304} \cite{572744} \cite{556252}. The main drawback of the two methods, however, lies on the scheduling mechanism which must be predefined. For instance with fuzzy logic, we need to define the fuzzy rules for the gain scheduling. For a system with a large number of states or a \ac {MIMO} system, this could become a tedious task. For such cases, it is interesting to use \ac {RL} to achieve an online gain scheduling. Surprisingly, the online gain scheduling by using \ac {RL} is not a widely explored topic. \cite{882916} and \cite{Brujeni5669655} serve as relevant examples out of few search results.
+In many cases of reference tracking, a linear controller such as \ac{PID} only performs well for a certain condition (e.g. a particular reference signal and a region of state) in which the gain is tuned. For different conditions, the performance is most likely degraded or even worse, the response becomes unstable. Intuitively, one would call for a solution which adjusts the controller gain with respect to the current condition. This method, also known as gain scheduling, has been developed for quite some time. The most common techniques used are fuzzy logic \cite{375142} \cite{5229855} \cite{1684589} and neural networks \cite{6606304} \cite{572744} \cite{556252}. The main drawback of the two methods, however, lies on the scheduling mechanism which must be predefined. For instance with fuzzy logic, we need to define the fuzzy rules for the gain scheduling. For a system with a large number of states or a \ac {MIMO} system, this could become a tedious task. For such cases, it is interesting to use \ac {RL} to achieve an online gain scheduling. \cite{882916}, \cite{856947} and \cite{Brujeni5669655} serve as relevant examples out of the search results.
 
-In this literature report, author will refer to the work by Brujeni et. al. \cite{Brujeni5669655}. Although the paper's application is about chemical process, the technique presented is still considered suitable for robotics. The simplified block diagram of this method is shown in Figure~\ref{fig:dynamictuning}. As the figure depicts, the idea of dynamic tuning is pretty general thus can be extended to a number of \ac {RL} algorithms (e.g. actor critic, Q-learning) and controllers. However, in order to present a more concrete example, we will explain a specific method used in the paper -- a class of \ac {TD} learning called \ac{SARSA} with \ac{PID} controller. 
+In this literature report, author will refer to the work by Brujeni et. al. \cite{Brujeni5669655} and Howell \cite{856947}. Although the papers' applications are not related to robotics, the techniques presented are still considered relevant. The simplified block diagram of \ac{RL}-based dynamic tuning is shown in Figure~\ref{fig:dynamictuning}. The \ac {SAM} block acts as a random gains generator which samples from the probability distribution shaped by the \ac {RL} algorithm. As the figure depicts, the idea of dynamic tuning is pretty general thus can be extended to a number of \ac {RL} algorithms (e.g. actor critic, Q-learning) and controllers. However, in order to present a more concrete example, we will explain a specific method used in the paper -- a class of \ac {TD} learning called \ac{SARSA} with \ac{PID} controller. 
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.7\linewidth]{dynamictuning}
+	\includegraphics[width=0.7\linewidth]{dynatuning_block}
 	\caption{Gain scheduling of Nominal controller using \ac {RL}. In this case, a \ac{PID} controller is used}
 	\label{fig:dynamictuning}
 \end{figure}
@@ -294,7 +294,7 @@ In this literature report, author will refer to the work by Brujeni et. al. \cit
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.7\linewidth]{sarsa}
-		\caption{A sequence of state and action}
+		\caption{A sequence of state and action (diagram reproduced from\cite{sutton1998reinforcement})}
 		\label{fig:sarsa}
 	\end{figure}
 	
@@ -318,7 +318,7 @@ In this literature report, author will refer to the work by Brujeni et. al. \cit
 	\end{algorithm}
 	
 	\subsubsection{\ac{SARSA} + \ac{PID} controller}
-	To incorporate \ac{SARSA} for gain scheduling purpose, we define the policy $\pi$ as the gain modifier (see Figure~\ref{fig:dynamictuning}) instead of control input generator. In other words, $\pi$ will return the controller parameters e.g. $ K_p $ $ K_i $ and $ K_d $ gains for \ac{PID} controller. In each iteration $\pi$ will be improved by observing the most-updated value function $Q$. Furthermore, the performance of the \ac {RL}-tuned controller needs to be evaluated in every $ N $-steps to see if the method is actually improving the tracking performance. One possible measure for evaluation is the \ac {ISE}
+	To incorporate \ac{SARSA} for gain scheduling purpose, we define the policy $\pi$ as the \ac {SAM} modifier (see Figure~\ref{fig:dynamictuning}) instead of the control input generator. This modification can be, for instance, in the form of the gains' probability density mean \cite{Sedighizadeh2008}. The \ac {SAM} will subsequently generates the controller parameters e.g. $ K_p $ $ K_i $ and $ K_d $ gains for \ac{PID} controller. In each iteration $\pi$ will be improved by observing the most-updated value function $Q$. Furthermore, the performance of the \ac {RL}-tuned controller needs to be evaluated in every $ N $-steps to see if the method is actually improving the tracking performance. One possible measure for evaluation is the \ac {ISE}
 	\begin{equation}
 	ISE = \sum_{k=0}^{N}e(k)^2 = \sum_{k=0}^{N}(y_d(k) - y_m(k))^T(y_d(k) - y_m(k))
 	\end{equation}
@@ -437,7 +437,7 @@ with $ Q \geq 0 $ and $ R>0 $ which is similar to that of \ac {LQT}. The possibi
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\linewidth]{blockdiagram}
+	\includegraphics[width=0.8\linewidth]{nonlin_compensator.pdf}
 	\caption{Block diagram of robot with \ac{RL} block acting as an additive compensator}
 	\label{fig:blockdiagram}
 \end{figure}

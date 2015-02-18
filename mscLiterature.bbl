@@ -62,13 +62,13 @@ Y.~E. Bayiz and R.~Babuska, ``Nonlinear disturbance compensation and. reference
 A.~Einstein, ``On the method of theoretical physics,'' vol.~1, pp.~163--169,
   Philosophy of Science, 1934.
 
+\bibitem{babuskaRL}
+R.~Babuska, ``Sc4081 knowledge-based control systems lecture slide,''
+
 \bibitem{sutton1998reinforcement}
 R.~S. Sutton and A.~G. Barto, {\em Reinforcement learning: An introduction},
   vol.~28.
 \newblock MIT press, 1998.
-
-\bibitem{babuskaRL}
-R.~Babuska, ``Sc4081 knowledge-based control systems lecture slide,''
 
 \bibitem{126844}
 R.~Sutton, A.~Barto, and R.~J. Williams, ``Reinforcement learning is direct
@@ -156,6 +156,16 @@ J.-S. Chai, S.~Tan, and C.-C. Hang, ``Gain scheduling control of nonlinear
 P.~Albertos and M.~Olivares, ``Online learning control of a gantry crane,'' in
   {\em Intelligent Control, 2000. Proceedings of the 2000 IEEE International
   Symposium on}, pp.~157--162, 2000.
+
+\bibitem{856947}
+M.~Howell, T.~Gordon, and M.~Best, ``The application of continuous action
+  reinforcement learning automata to adaptive pid tuning,'' in {\em Learning
+  Systems for Control (Ref. No. 2000/069), IEE Seminar}, pp.~2/1--2/4, 2000.
+
+\bibitem{Sedighizadeh2008}
+M.~Sedighizadeh and A.~Rezazadeh, ``The application of continuous action
+  reinforcement learning automata to adaptive pid tuning,'' in {\em World
+  Academy of Science, Engineering and Technology Vol:2}, 2008.
 
 \bibitem{stengel1994}
 R.~F. Stengel, {\em Optimal Control and Estimation}.
