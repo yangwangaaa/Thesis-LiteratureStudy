@@ -1,0 +1,46 @@
+\begin{thebibliography}{6}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bayiz and Babuska(2010)]{Efe2014}
+Y.~Efe Bayiz and Robert Babuska.
+\newblock Nonlinear disturbance compensation and. reference tracking via
+  reinforcement. learning with fuzzy approximators.
+\newblock \emph{19th IFAC World Congress}, 2010.
+
+\bibitem[Brujeni et~al.(2010)Brujeni, Lee, and Shah]{Brujeni5669655}
+L.A. Brujeni, Jong~Min Lee, and S.L. Shah.
+\newblock Dynamic tuning of pi-controllers based on model-free reinforcement
+  learning methods.
+\newblock In \emph{Control Automation and Systems (ICCAS), 2010 International
+  Conference on}, pages 453--458, Oct 2010.
+
+\bibitem[de~Gier(2014)]{Gier2013}
+M.~de~Gier.
+\newblock \emph{UR5 MPC Program}.
+\newblock DCSC, TU Delft, 2014.
+
+\bibitem[Kiumarsi and Lewis(2014)]{Kiumarsi6918527}
+B.~Kiumarsi and F.L. Lewis.
+\newblock Actor-critic-based optimal tracking for partially unknown nonlinear
+  discrete-time systems.
+\newblock \emph{Neural Networks and Learning Systems, IEEE Transactions on},
+  PP\penalty0 (99):\penalty0 1--1, 2014.
+
+\bibitem[Modares and Lewis(2014)]{Modares20141780}
+Hamidreza Modares and Frank~L. Lewis.
+\newblock Optimal tracking control of nonlinear partially-unknown
+  constrained-input systems using integral reinforcement learning.
+\newblock \emph{Automatica}, 50\penalty0 (7):\penalty0 1780 -- 1792, 2014.
+
+\bibitem[Sedighizadeh and Rezazadeh(2008)]{Sedighizadeh2008}
+M.~Sedighizadeh and A.~Rezazadeh.
+\newblock Adaptive pid controller based on reinforcement learning for wind
+  turbine control.
+\newblock In \emph{World Academy of Science, Engineering and Technology Vol:2},
+  2008.
+
+\end{thebibliography}

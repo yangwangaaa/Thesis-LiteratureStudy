@@ -1,6 +1,8 @@
 \beamer@endinputifotherversion {3.33pt}
 \select@language {english}
-\beamer@sectionintoc {1}{Basic of Reinforcement Learning (RL) \& Tracking Control}{3}{0}{1}
-\beamer@sectionintoc {2}{Experimental Setup: 3D Printing Robot System}{18}{0}{2}
-\beamer@sectionintoc {3}{RL for Tracking: A Survey}{23}{0}{3}
-\beamer@sectionintoc {4}{Research Plan \& Conclusion}{38}{0}{4}
+\beamer@sectionintoc {1}{Preliminaries}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Basics of Reinforcement Learning (RL) \& Tracking Control}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Experimental Setup: 3D Printing Robot System}{28}{0}{1}
+\beamer@sectionintoc {2}{Literature Survey Result}{40}{0}{2}
+\beamer@subsectionintoc {2}{1}{RL for Tracking: A Survey}{40}{0}{2}
+\beamer@subsectionintoc {2}{2}{Research Plan \& Conclusion}{56}{0}{2}

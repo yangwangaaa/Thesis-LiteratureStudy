@@ -1,7 +1,5 @@
-\beamer@slide {fig:IMG_9011}{18}
-\beamer@slide {tab:vaf}{20}
-\beamer@slide {fig:trajectory_data_Y}{21}
-\beamer@slide {fig:trajectory_data_Z}{21}
-\beamer@slide {eq:lyap_equation}{27}
-\beamer@slide {eq:lyap}{28}
-\beamer@slide {eq:bellman_Q}{28}
+\beamer@slide {fig:IMG_9011}{29}
+\beamer@slide {tab:vaf}{35}
+\beamer@slide {eq:lyap_equation}{44}
+\beamer@slide {eq:lyap}{45}
+\beamer@slide {eq:bellman_Q}{45}

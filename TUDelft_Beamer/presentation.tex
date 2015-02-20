@@ -16,8 +16,11 @@
 \usepackage[absolute,overlay]{textpos}
 \mode<presentation>{\usetheme{tud}}
 \usepackage[T1]{fontenc}
-%\usetheme{Torino}
+\usepackage[round]{natbib}
+%\usepackage[square,sort,comma,numbers]{natbib}
 \usepackage{arev}
+\usepackage{multimedia}
+\usepackage{media9}
 %\usepackage{mathtools}
 %\newcommand{\defeq}{\vcentcolon=}
 %\newcommand{\eqdef}{=\vcentcolon}
@@ -51,8 +54,11 @@
 \newcommand{\field}[1]{\mathbb{#1}}
 \newcommand{\Zset}{\field{Z}}
 
+
 \begin{document}
-	
+%	% Bibliography
+%	\bibliographystyle{plainnat}
+%	\bibliography{myrefs}	
 	{
 		% remove the next line if you don't want a background image
 		\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{images/background-titlepage.jpg}}%
@@ -65,11 +71,11 @@
 			\tableofcontents
 		\end{frame}
 	}
-	
-	\section{Basic of Reinforcement Learning (RL) \& Tracking Control}
+	\section{Preliminaries}
+	\subsection{Basics of Reinforcement Learning (RL) \& Tracking Control}
 	\begin{frame}\frametitle{Motivation of RL}
 		\begin{itemize}
-			\item Inspired by how living animals learn
+			\item Inspired by how animals learn
 			\pause
 			\item Learning through interaction with environment
 			\pause
@@ -136,13 +142,16 @@
 	\end{frame}
 	
 	\begin{frame}\frametitle{Mathematical Formalization of RL (3)}
-		How to obtain an optimal policy $ \pi^* $? \\
+		How to obtain an optimal policy $ \pi^* $? \\ 
+		\pause
 		First, an exact value function $ V$ $ \forall x \in \mathcal{X} $ must be found
+		\pause
 		\begin{definition}
 			Bellman optimality principle:
 			\begin{equation}
 			V^*(x_{k}) = \underset{u_k}{\text{min}} \hspace{1mm} \Big[ \rho(x_k,u_k) + \gamma V^*(x_{k+1}) \Big] 			
 			\end{equation}
+			Optimal policy:
 			\begin{equation}
 			\pi^*(x_{k-1}) = u^*_k = \text{arg} \underset{u_k}{\text{min}} \hspace{1mm} \Big[ \rho(x_k,u_k) + \gamma V^*(x_{k+1}) \Big] 				
 			\end{equation}		
@@ -154,7 +163,7 @@
 		\fontsize{8}{4}\selectfont 
 	 	Dynamic Programming (DP):
 	 	\begin{itemize}
-	 		\item needs system model
+	 		\item needs a system model \pause
 %	 		\item can be implemented in offline and online fashion
 	 		\item example: policy iteration (PI)
 	 	\end{itemize}
@@ -183,31 +192,34 @@
 		\end{algorithm}
 	\end{frame}
 							
+%	\begin{frame}\frametitle{Solutions to RL problem (2)}
+%		\vspace{3mm}
+%		\fontsize{8}{4}\selectfont 
+%		Temporal Difference (TD)
+%		\begin{itemize}
+%			\item does not need a system model \pause
+%			%	 		\item can be implemented in offline and online fashion
+%			\item examples: Q-learning, actor-critic \pause
+%		\end{itemize}	
+%		\begin{figure}
+%			\includegraphics<1>[width=0.6\linewidth]{images/actorCritic} 			
+%			\caption{\fontsize{8}{4}\selectfont Actor-critic structure (source: SC4081 slide)}
+%		\end{figure}			
+%	\end{frame}
+			
 	\begin{frame}\frametitle{Solutions to RL problem (2)}
 		\vspace{3mm}
-		\fontsize{8}{4}\selectfont 
-		Temporal Difference (TD)
-		\begin{itemize}
-			\item does not need system model
-			%	 		\item can be implemented in offline and online fashion
-			\item examples: Q-learning, actor-critic 
-		\end{itemize}	
-		\only<-1>{	
-				\begin{figure}
-					\includegraphics<1>[width=0.6\linewidth]{images/actorCritic} 			
-					\caption{\fontsize{8}{4}\selectfont Actor-critic structure (source: SC4081 slide)}
-				\end{figure}
-			}
-	\end{frame}
-			
-	\begin{frame}\frametitle{Solutions to RL problem (3)}
-		\vspace{3mm}
 		\fontsize{8}{4}\selectfont
-		Actor critic method
+		Temporal Difference (TD)
+%		Actor critic method
 		\begin{itemize}		 	
-			\item suitable for continous state and action space e.g. robotics
-			\item parameterize actor and critic using function approximators
+			\item does not need a system model \pause
+			%	 		\item can be implemented in offline and online fashion
+			\item examples: Q-learning, actor-critic \pause			
+%			\item suitable for continous state and action space e.g. robotics \pause
+%			\item parameterize actor and critic using function approximators \pause
 		\end{itemize}
+		\pause
 		\begin{algorithm}[H]
 			\begin{algorithmic}[1]    			
 				\fontsize{8}{4}\selectfont 
@@ -216,9 +228,9 @@
 				\REPEAT
 				\STATE apply $u_k$, measure $x_{k+1}$, receive $r_{k+1}$ 
 				\STATE choose next action $ u_{k+1} = \hat{\pi}(x_{k+1}, \psi_k) + \tilde{u}_{k+1} $ 
-				\STATE $ \delta_k = r_{k+1} + \hat{V}(x_{k+1}, \theta_k) \hat{V}(x_{k}, \theta_k) $ 
+				\STATE $ \delta_k = r_{k+1} + \hat{V}(x_{k+1}, \theta_k) - \hat{V}(x_{k}, \theta_k) $ 
 				\STATE $ \theta_{k+1} = \theta_k + \alpha_c\delta_k \frac{\partial \hat{V}(x,\theta)}{\partial \theta} \bigg|_{x=x_k, \theta \theta_k}$ 
-				\STATE $ \psi_{k+1} = \psi_k + \alpha_c\delta_k \frac{\partial \hat{V}(x,\psi)}{\partial \psi} \bigg|_{x=x_k, \psi = \psi_k}$
+				\STATE $ \psi_{k+1} = \psi_k + \alpha_a\delta_k \frac{\partial \hat{\pi}(x,\psi)}{\partial \psi} \bigg|_{x=x_k, \psi = \psi_k}$
 				\UNTIL{terminal state}				
 			\end{algorithmic}
 			\caption{Actor-critic algorithm}
@@ -228,10 +240,11 @@
 	\begin{frame}\frametitle{Tracking Control}
 		Typical tracking controllers:
 		\begin{itemize}
-			\item Open-loop control 
-			\item State/Output Feedback control (e.g. PID controller)
-			\item Feedback + feedforward control (e.g. LQT optimal controller)
+			\item Open-loop control  \pause
+			\item State/Output Feedback control (e.g. PID controller) \pause
+			\item Feedback + feedforward control (e.g. LQT optimal controller) \pause
 		\end{itemize}
+		\pause
 		\vspace{3mm}
 		\textbf{Drawback:} even the best of the 3 only performs as good as the model!
 	\end{frame}
@@ -243,20 +256,21 @@
 	\end{frame}
 			%\subsection{Section 1 - Subsection 2}
 			
-	\section{Experimental Setup: 3D Printing Robot System}
+	\subsection{Experimental Setup: 3D Printing Robot System}
 	\begin{frame}\frametitle{3D Printing Robot}
 		\vspace{2mm}
 		\fontsize{9}{4}\selectfont 
 		\begin{itemize}
-			\item The UR5 robot with unknown internal controller
-			\item 4 types of command:
+			\item The UR5 robot with unknown internal controller \pause
+			\item 4 types of command (default controllers): \pause
 			\begin{itemize} \fontsize{8}{4}\selectfont  
-				\item Tool Position $ (x, y, z) $ in meter \vspace{0.5mm}
+				\item Tool Position $ (x, y, z) $ in meter \vspace{0.5mm} 
 				\item Tool Velocity $ (\dot{x}, \dot{y}, \dot{z}) $ in meter/s \vspace{0.5mm}
 				\item Joint Position $ (q_1, q_2, q_3 , q_4, q_5, q_6)$ in rad \vspace{0.5mm}
 				\item Joint velocity $ (\dot{q_1}, \dot{q_2}, \dot{q_3} , \dot{q_4}, \dot{q_5}, \dot{q_6})$ in rad/s
-			\end{itemize} \vspace{1mm}
-			\item The laser scanner \vspace{1mm}
+			\end{itemize} \vspace{1mm} 
+			\pause
+			\item The laser scanner \vspace{1mm} \pause
 			\item The 3D Print head					
 		\end{itemize}
 		\pause
@@ -268,92 +282,80 @@
 		\end{figure}
 	\end{frame}
 
-	\begin{frame}\frametitle{3D Printing Robot: system identification}
+	\begin{frame}\frametitle{Previous work: system identification}
 		\begin{itemize}
-			\item Subspace identification
+			\item \fontsize{8}{4}\selectfont Subspace identification \hspace{3mm} 
 				\begin{center}
-					\includegraphics[width=0.53\linewidth]{images/Joint1}
+					\includegraphics[width=0.5\linewidth]{images/Joint1}
 				\end{center}
 
-	\end{itemize}
-			\begin{table}
-				\fontsize{7}{4}\selectfont 
-				\caption{\fontsize{8}{4}\selectfont  \textbf{Table 1.} VAF scores of the simulated outputs for all joints}	
-				\centering
-				\begin{tabular}{|c|c|c|}
-					\hline Joint & Position  & Velocity \\ 
-					\hline 1 & 98.64 & 87.33 \\ 
-					\hline 2 & 98.05 & 88.33 \\ 
-					\hline 3 & 98.55 & 88.47 \\ 
-					\hline 4 & 98.97 & 89.50 \\ 
-					\hline 5 & 99.46 & 90.32 \\ 
-					\hline 6 & 98.87 & 85.13 \\ 
-					\hline 
-				\end{tabular} 
-				\label{tab:vaf}
-			\end{table}
-							
+		\end{itemize}
+		\pause
+		\begin{table}
+			\fontsize{7}{4}\selectfont 
+			\caption{\fontsize{8}{4}\selectfont  \textbf{Table 1.} VAF scores of the simulated outputs for all joints}	
+			\centering
+			\begin{tabular}{|c|c|c|}
+				\hline Joint & Position  & Velocity \\ 
+				\hline 1 & 98.64 & 87.33 \\ 
+				\hline 2 & 98.05 & 88.33 \\ 
+				\hline 3 & 98.55 & 88.47 \\ 
+				\hline 4 & 98.97 & 89.50 \\ 
+				\hline 5 & 99.46 & 90.32 \\ 
+				\hline 6 & 98.87 & 85.13 \\ 
+				\hline 
+			\end{tabular} 
+			\label{tab:vaf}
+		\end{table}
+		\centering
+		\fontsize{8}{4}\selectfont	reference: \citet{Gier2013}			
 	\end{frame}
 			
-			\begin{frame}\frametitle{3D Printing Robot: MPC controller}
-				\vspace{2mm}
-				\begin{itemize}
-					\fontsize{8}{4}\selectfont
-					\item test a simple straight trajectory along X-axis
-					\item compares MPC with previously mentioned controllers
-					
-%					\begin{table}[h]
-%						\centering
-%						\caption{The difference between maximum and minimum values of Y-axis trajectory with different control methods}
-%						\begin{tabular}{|c|c|c|}
-%							\hline
-%							Control method & speed & jitter's amplitude (mm) \\
-%							\hline		
-%							& $ \times $1 & 0.635678\\
-%							Tool Position & $ \times $2 & 0.670974\\
-%							& $ \times $4 & 0.624456\\
-%							\hline		
-%							& $ \times $1 & 0.529104\\
-%							Tool Velocity & $ \times $2 & 0.376090\\
-%							& $ \times $4 & 0.320906\\
-%							\hline		
-%							& $ \times $1 & 0.550691\\
-%							Joint Velocity & $ \times $2 & 0.522474\\
-%							& $ \times $4 & 0.490630\\				
-%							\hline
-%							\ac {MPC} & $ \times $1 & 0.120889 \\
-%							\hline
-%							
-%						\end{tabular}
-%						\label{tab:y_jitter}
-%					\end{table}
-					\begin{figure}
-						\centering
-						\includegraphics[width=0.9\linewidth]{images/trajectory_data_Y.pdf}
-						\caption{\fontsize{8}{4}\selectfont Y trajectories of the robot with different controllers}
-						\label{fig:trajectory_data_Y}
-					\end{figure}
-					\begin{figure}
-						\centering
-						\includegraphics[width=0.9\linewidth]{images/trajectory_data_Z.pdf}
-						\caption{\fontsize{8}{4}\selectfont Z trajectories of the robot with different controllers}
-						\label{fig:trajectory_data_Z}
-					\end{figure}
-				\end{itemize}
-			\end{frame}		
-				
-			\begin{frame}\frametitle{Hypotheses}
-				\vspace{2mm}
-				\begin{itemize}
-					\fontsize{8}{4}\selectfont
-					\item \textit{"Current controller (MPC) relies heavily on the identified model which is not perfect. Therefore, the model-mismatch induced by the unknown dynamics is responsible for the non-optimal performance of the MPC controller" }
-					\vspace{3mm}
-					\item \textit{"The best nominal controller yet is not PID, LQR, or else. It is the internal controller of the robot itself"}
-					
-				\end{itemize}
-			\end{frame}
-									
-			\section{RL for Tracking: A Survey}
+	\begin{frame}{The 3D Printing Robot in Action}
+		\includemedia[
+		label=vidA,
+		addresource=ur5robot2.mp4,
+		activate=pageopen,
+		width=10.7cm, height=6cm,
+		flashvars={
+			source=ur5robot2.mp4
+			&loop=true
+		}
+		]{}{VPlayer.swf}
+		
+	\end{frame}
+						
+	\begin{frame}\frametitle{Previous work: MPC controller }
+		\vspace{2mm}
+		\begin{itemize}
+			\fontsize{8}{4}\selectfont
+			\item test a simple trajectory along X-axis and compare with default controllers
+			
+			\begin{figure}
+				\centering
+				\includegraphics[width=1\linewidth]{images/trajectory_data.pdf}
+				\caption{\fontsize{8}{4}\selectfont Y and Z trajectories of the robot}
+%				\label{fig:trajectory_data_Y}
+			\end{figure}
+		\end{itemize}
+		\centering
+		\fontsize{8}{4}\selectfont	reference: \citet{Gier2013}				
+	\end{frame}	
+
+
+	\begin{frame}\frametitle{Hypotheses}
+		\vspace{2mm}
+		\begin{itemize}
+			\fontsize{8}{4}\selectfont
+			\item \textit{"Based on the system identification, there is a non-linear dynamics which can't be captured"}
+			\vspace{3mm}
+			\item \textit{"Current controller (MPC) relies on the identified model which is not perfect. Therefore, the model-mismatch induced by the unknown dynamics is responsible for the non-optimal performance of the MPC controller" }
+%			\vspace{3mm}
+%			\item \textit{"The best nominal controller yet is not PID, LQR, or else. It is the internal controller of the robot itself"}					
+		\end{itemize}
+	\end{frame}
+			\section{Literature Survey Result}				
+			\subsection{RL for Tracking: A Survey}
 			\begin{frame}\frametitle{RL for Optimal Tracking Control}
 				
 				Assume a SISO LQT problem: \\
@@ -371,35 +373,38 @@
 					J = V(x_k, r_k) := \frac{1}{2} \sum_{i=k}^{\infty} \Big(Cx_i-r_i\Big)^TQ\Big(Cx_i-r_i\Big) + {u_i}^TRu_i
 					\end{equation}
 				\end{definition}
+				\vspace{2mm}
+				\centering
+				\fontsize{8}{4}\selectfont	references: \citet{Kiumarsi6918527}, \cite{Modares20141780}			
 			\end{frame}
+			
+%			\begin{frame}\frametitle{RL for Optimal Tracking Control (2)}
+%				\fontsize{8}{4}\selectfont
+%				The solution to LQT is a combination of feedback and feedforward term: 
+%				\begin{equation} 
+%				u_{k} = -Kx_k + K_vv_{k+1} 
+%				\end{equation}		
+%				where
+%				\begin{equation}
+%				v_k = (A-BK)^Tv_{k+1} + C^TQr_k
+%				\end{equation}\vspace{1mm}
+%				
+%				The control gains are:
+%				\begin{equation}
+%				\begin{split}
+%				K &= (B^TSB + R)^{-1}B^TSA \\
+%				K_v &= (B^TSB + R)^{-1}B^T
+%				\end{split}
+%				\end{equation}
+%				with $S$ is the solution of ARE:
+%				\begin{equation}
+%				S = A^TSA - A^TSB(B^TSB+R)^{-1}B^TSA + C^TQC
+%				\end{equation}
+%				\fontsize{9}{4}\selectfont	
+%				\textbf{Drawback:} Have to solve a non-causal difference equation 
+%			\end{frame}
 			
 			\begin{frame}\frametitle{RL for Optimal Tracking Control (2)}
-				\fontsize{8}{4}\selectfont
-				The solution to LQT is a combination of feedback and feedforward term: 
-				\begin{equation} 
-				u_{k} = -Kx_k + K_vv_{k+1} 
-				\end{equation}		
-				where
-				\begin{equation}
-				v_k = (A-BK)^Tv_{k+1} + C^TQr_k
-				\end{equation}\vspace{1mm}
-				
-				The control gains are:
-				\begin{equation}
-				\begin{split}
-				K &= (B^TSB + R)^{-1}B^TSA \\
-				K_v &= (B^TSB + R)^{-1}B^T
-				\end{split}
-				\end{equation}
-				with $S$ is the solution of ARE:
-				\begin{equation}
-				S = A^TSA - A^TSB(B^TSB+R)^{-1}B^TSA + C^TQC
-				\end{equation}
-				\fontsize{9}{4}\selectfont	
-				\textbf{Drawback:} Have to solve a non-causal difference equation 
-			\end{frame}
-			
-			\begin{frame}\frametitle{RL for Optimal Tracking Control (3)}
 				\vspace{3mm}
 				\fontsize{8}{4}\selectfont
 				Important assumption:
@@ -440,7 +445,7 @@
 				\end{equation}
 			\end{frame}
 			
-			\begin{frame}\frametitle{RL for Optimal Tracking Control (4)}
+			\begin{frame}\frametitle{RL for Optimal Tracking Control (3)}
 				\fontsize{8}{4}\selectfont
 				Taking the time derivative of LQT Bellman, we obtain the LQT ARE
 				\begin{equation}
@@ -466,7 +471,7 @@
 			\end{frame}
 			%\subsection{Section 1 - Subsection 3}
 			
-			\begin{frame}\frametitle{RL for Optimal Tracking Control (5)}
+			\begin{frame}\frametitle{RL for Optimal Tracking Control (4)}
 			\vspace{3mm}
 			\fontsize{8}{4}\selectfont 
 			From the LQT, obtain lyapunov equation
@@ -490,6 +495,10 @@
 				\caption{Offline Policy Iteration}
 			\end{algorithmic}
 			\end{algorithm}
+			\pause
+			Extension to nonlinear case by \citet{Modares20141780} \\		
+			\pause	
+			\textbf{catch:} assume a perfect system model is 
 			
 %			\begin{algorithm}[H]
 %			\begin{algorithmic}[1] 	
@@ -584,11 +593,14 @@
 					\item Proven to converge 
 				\end{itemize}
 				\vspace{3mm}
+				\pause
 				\textbf{Disadvantages:}
 				\begin{itemize}
 					\item non-linear RL-based OTC does not exist 
 					\item Needs a persistently exciting input, could be dangerous for the robot				
 				\end{itemize}
+				\pause
+				\textbf{Conclusion:} not the most suitable method for the problem!
 			\end{frame}				
 							
 			\begin{frame}\frametitle{Dynamic Tuning via RL}
@@ -598,8 +610,8 @@
 					\item A feedback control e.g. PID performs well at a certain region
 					\item For different regions, the controller needs to be retuned
 					\item Solution: gain scheduling
+					\pause
 					\item The general diagram:
-				\pause
 				\begin{center}
 					\includegraphics[width=0.70\linewidth]{images/dynatuning_block}
 %					\caption{figure courtesy of }
@@ -610,46 +622,46 @@
 				\end{itemize}
 			\end{frame}
 			
-			\begin{frame}\frametitle{Dynamic Tuning via RL (2): SARSA}
-				\vspace{3mm}
-				\fontsize{8}{4}\selectfont 
-				\begin{itemize}
-					\item Stands for state-action-reward-state-action
-					\item Policy $\pi$ as gain modifier, not controller
-				\end{itemize}
-				\begin{center}
-					\includegraphics[width=0.50\linewidth]{images/sarsa}
-					%					\caption{figure courtesy of }
-				\end{center}
-				\begin{algorithm}[H]
-					\begin{algorithmic}[1] 	
-						\fontsize{7}{4}\selectfont
-						\STATE \textbf{Initialization:} Initialize $ Q(x,u) $ arbitrarily
-						\REPEAT %( for each episode:)
-							\STATE Initialize $ x $ 
-							\STATE update $\pi$ based on $ Q $
-							\STATE Choose $ K $ at $ x $ using $ \pi $  
-							\REPEAT % ( for each step of episode:)
-								\STATE Modify feedback controller using gain $ K $
-								\STATE Take action $ u $ from the controller, observe $ r $, $ x' $ 
-								\STATE update $ \pi $ based on $Q$
-								\STATE Choose $ K' $ from $ x' $ using $ \pi $ 
-								\STATE $ Q(x,K) \leftarrow Q(x,K) + \alpha[r+\gamma Q(x',K')-Q(x,K)] $	
-								\STATE $ x \leftarrow  x' $
-								\STATE $ K \leftarrow  K' $
-							\UNTIL{$ x $ is terminal}
-						\UNTIL{episodes run out}							
-					\caption{SARSA algorithm}
-					\end{algorithmic}						
-				\end{algorithm}
-			\end{frame}
+%			\begin{frame}\frametitle{Dynamic Tuning via RL (2): SARSA}
+%				\vspace{3mm}
+%				\fontsize{8}{4}\selectfont 
+%				\begin{itemize}
+%					\item Stands for state-action-reward-state-action 
+%					\item Policy $\pi$ as gain modifier, not controller.  \citet{Brujeni5669655}	
+%				\end{itemize}
+%				\begin{center}
+%					\includegraphics[width=0.50\linewidth]{images/sarsa}
+%					%					\caption{figure courtesy of }
+%				\end{center}
+%				\begin{algorithm}[H]
+%					\begin{algorithmic}[1] 	
+%						\fontsize{7}{4}\selectfont
+%						\STATE \textbf{Initialization:} Initialize $ Q(x,u) $ arbitrarily
+%						\REPEAT %( for each episode:)
+%							\STATE Initialize $ x $ 
+%							\STATE update $\pi$ based on $ Q $
+%							\STATE Choose $ K $ at $ x $ using $ \pi $  
+%							\REPEAT % ( for each step of episode:)
+%								\STATE Modify feedback controller using gain $ K $
+%								\STATE Take action $ u $ from the controller, observe $ r $, $ x' $ 
+%								\STATE update $ \pi $ based on $Q$
+%								\STATE Choose $ K' $ from $ x' $ using $ \pi $ 
+%								\STATE $ Q(x,K) \leftarrow Q(x,K) + \alpha[r+\gamma Q(x',K')-Q(x,K)] $	
+%								\STATE $ x \leftarrow  x' $
+%								\STATE $ K \leftarrow  K' $
+%							\UNTIL{$ x $ is terminal}
+%						\UNTIL{episodes run out}							
+%					\caption{SARSA algorithm}
+%					\end{algorithmic}						
+%				\end{algorithm}
+%			\end{frame}
 			
-			\begin{frame}\frametitle{Dynamic Tuning via RL (3): Actor-critic}
+			\begin{frame}\frametitle{Dynamic Tuning via RL (2): Actor-critic}
 				\vspace{3mm}
 				\fontsize{8}{4}\selectfont 
 				\begin{itemize}
-					\item An alternative to SARSA
 					\item Actor and critic can be parameterized with a basis function e.g. RBF neural network
+					\item reference: \citet{Sedighizadeh2008}
 				\end{itemize}
 				\begin{center}
 					\includegraphics[width=0.70\linewidth]{images/actorcritic_dynamictuning}
@@ -657,26 +669,28 @@
 				\end{center}
 			\end{frame}			
 			
-			\begin{frame}\frametitle{Dynamic Tuning via RL (4): Summary}				
+			\begin{frame}\frametitle{Dynamic Tuning via RL (3): Summary}				
 				\vspace{3mm}
 				\textbf{Advantages:}
 				\begin{itemize}
 					\item Intuitive and easier to implement
 				\end{itemize}
 				\vspace{3mm}
+				\pause
 				\textbf{Disadvantages:}
 				\begin{itemize}
 					\item so far only applies to feedback controller
 					\item feedback controller "waits" until error occurs, hence it is always late
 					\item  will not perform better due to this reason					
 				\end{itemize}
+				\pause
+				\textbf{Conclusion:} not the most suitable method for the problem!
 			\end{frame}	
 						
 			\begin{frame}\frametitle{Nonlinear Compensator using RL}
 				\vspace{3mm}
 				\fontsize{8}{4}\selectfont 
 				\begin{itemize}
-					\item A relatively new approach
 					\item Acts as an additive input
 					\item An actor critic RL is proposed
 					
@@ -684,9 +698,9 @@
 						\includegraphics[width=0.80\linewidth]{images/nonlin_compensator}
 						%					\caption{figure courtesy of }
 					\end{center}
-					\item Comparison with ILC is interesting
 				\end{itemize}
-				
+				\centering
+				\fontsize{8}{4}\selectfont reference: \citet{Efe2014}
 			\end{frame}		
 			
 			\begin{frame}\frametitle{Nonlinear Compensator using RL (2)}
@@ -698,24 +712,28 @@
 					r_{k+1} = \rho(y_k, y^d_k, u_k) = (y^d_k - y_k)^TQ(y^d_k - y_k) + u_k^TRu_k
 					\end{equation}
 					\item Critic $V(x_k,\theta_k)$ and actor $\pi(x_k,\vartheta_{k-1})$ are parameterized by function approximators e.g. LLR, neural network, etc and  respectively.
+					\item Since for the error is repetitive for constant reference and speed, comparison (Iterative Learning Control) ILC is possible
 				\end{itemize}
 				\vspace{4mm}
+				\pause
 				\textbf{Advantages:}
 				\begin{itemize}
 					\item a relatively new approach, hence interesting for research
 					\item the compensator does not depend directly on the nominal control, hence adding a degree of freedom in control design 
 				\end{itemize}
 				\vspace{2mm}
-				\textbf{Disadvantage:}
+				\pause
+				\textbf{Disadvantages:}
 				\begin{itemize}
 					\item Not mathematically as rigorous as RL-based optimal control 
+					\item Proof of stability does not exist yet
 				\end{itemize}
 			\end{frame}											
 			
-			\section{Research Plan \& Conclusion}			
+			\subsection{Research Plan \& Conclusion}			
 			\begin{frame}\frametitle{Research Plan}
 				\begin{center}
-					\includegraphics[width=0.35\linewidth]{images/research_plan}
+					\includegraphics[width=0.345\linewidth]{images/research_plan}
 				\end{center}
 			\end{frame}
 
@@ -727,10 +745,22 @@
 			\end{itemize}
 			\end{frame}		
 			\begin{frame}\frametitle{End of presentation}			
-					\centering
+					\begin{center}
+						\centering
 					Thank you for the attention \\
 					\vspace{3mm}
-					\fontsize{15}{4}\selectfont\textbf{ Question?}
-			\end{frame}					
+					\fontsize{15}{4}\selectfont\textbf{ Question?}				
+					\end{center}
+					\fontsize{8}{4}\selectfont	
+					\textbf{References: }
+					\fontsize{7}{4}\selectfont
+%						\bibliographystyle{ieeetr}
+%						\bibliography{MyBib}
+						% Bibliography
+						\bibliographystyle{plainnat}
+						\bibliography{MyBib}						
+					
+			\end{frame}				
+				
 		\end{document}
 		
