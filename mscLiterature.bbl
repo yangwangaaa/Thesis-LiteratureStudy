@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{sutton1998reinforcement}
+R.~S. Sutton and A.~G. Barto, {\em Reinforcement learning: An introduction},
+  vol.~28.
+\newblock MIT press, 1998.
+
 \bibitem{IFR2014}
 I.~F. of~Robotics~(IFR), ``Industrial robot statistics,'' {\em World Robotics
   2014 Industrial Robots}, 2014.
@@ -64,11 +69,6 @@ A.~Einstein, ``On the method of theoretical physics,'' vol.~1, pp.~163--169,
 
 \bibitem{babuskaRL}
 R.~Babuska, ``Sc4081 knowledge-based control systems lecture slide,''
-
-\bibitem{sutton1998reinforcement}
-R.~S. Sutton and A.~G. Barto, {\em Reinforcement learning: An introduction},
-  vol.~28.
-\newblock MIT press, 1998.
 
 \bibitem{126844}
 R.~Sutton, A.~Barto, and R.~J. Williams, ``Reinforcement learning is direct
@@ -163,9 +163,9 @@ M.~Howell, T.~Gordon, and M.~Best, ``The application of continuous action
   Systems for Control (Ref. No. 2000/069), IEE Seminar}, pp.~2/1--2/4, 2000.
 
 \bibitem{Sedighizadeh2008}
-M.~Sedighizadeh and A.~Rezazadeh, ``The application of continuous action
-  reinforcement learning automata to adaptive pid tuning,'' in {\em World
-  Academy of Science, Engineering and Technology Vol:2}, 2008.
+M.~Sedighizadeh and A.~Rezazadeh, ``Adaptive pid controller based on
+  reinforcement learning for wind turbine control,'' in {\em World Academy of
+  Science, Engineering and Technology Vol:2}, 2008.
 
 \bibitem{stengel1994}
 R.~F. Stengel, {\em Optimal Control and Estimation}.

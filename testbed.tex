@@ -1,11 +1,11 @@
 \chapter{Experimental Setup} \label{chap:testbed}
 
-The purpose of this chapter is to present the 3D printing robot system used as the testbed. The robotic system consists of a UR5 robot manipulator, 3D print head, and a laser scanner -- each will be described in Section~\ref{sec:ur5}. In Section~\ref{sec:current_work}, we will discuss the previous works done on the robotic system. This includes the system identification result and the \ac {MPC} controller. Furthermore, based on the errors, we will also formalize the hypothesis.
+The purpose of this chapter is to present the \acs{3D} printing robot system used as the testbed. The robotic system consists of a UR5 robot manipulator, \acs{3D} print head, and a laser scanner -- each will be described in Section~\ref{sec:ur5}. In Section~\ref{sec:current_work}, we will discuss the previous works done on the robotic system. This includes the system identification result and the \ac {MPC} controller. Furthermore, based on the errors, we will also formalize the hypothesis.
 \section{The 3D Printing Robot System} \label{sec:ur5}
 \subsection{UR5 Robot Arm} \label{subsec:ur5}
-UR5 is a lightweight, flexible industrial robot from Universal Robots. The robot is widely used in academia and industry due to its human-safe operation with a quite good repeatability of 0.1 mm \cite{UR5} \cite{6942896}. The robot is a serial link 6 \ac{DoF} manipulator with internal controller to take care of the gravity compensation and most of the non-linearities. In general, the robot can be controlled like a system of 6 decoupled servos, although this is only correct to some degree. We will see later why this is the case. Since the internal controller can not be "seen", let alone modified, the UR5 and the controller are viewed as one system. 
+UR5 is a lightweight, flexible industrial robot from Universal Robots. The robot is widely used in academia and industry due to its human-safe operation with a quite good repeatability of 0.1 mm \cite{UR5} \cite{6942896}. The robot is a serial link 6 \acs{DoF} manipulator with internal controller to take care of the gravity compensation and most of the non-linearities. In general, the robot can be controlled like a system of 6 decoupled servos, although this is only correct to some degree. We will see later why this is the case. Since the internal controller can not be "seen", let alone modified, the UR5 and the controller are viewed as one system. 
 
-The \ac {RL} controller will be implemented in MATLAB which communicates with the UR5 using a TCP/IP protocol on 125 Hz frequency. There is a number of ways to send control command to the robot:
+The \acs {RL} controller will be implemented in MATLAB which communicates with the UR5 using a TCP/IP protocol on 125 Hz frequency. There is a number of ways to send control command to the robot:
 \begin{enumerate}
 \item Tool position commmand \\
 The tool position means the position of the robot's end effector in Cartesian coordinate. The origin of the Cartesian frame is exactly at the robot's base. Refer to Figure~\ref{fig:UR5_Robot01} to see the full posture of the UR5 robot. With this type of control input, one can command the end effector to move to a specified tool position $ s = (x, y, z) $ in m. This type of command results in a smooth motion if applied in a long sampling period (> 1 second). For the 125 Hz communication rate, however, it suffers from a poor jitter.
@@ -29,7 +29,7 @@ This command drives the individual joint into the desired joint velocity in the 
 \end{enumerate}
 
 \subsection{Laser Scanner}
-The laser scanner is a scanCONTROL 2700-25 series laser manufactured by Micro-Epsilon and mounted on the robot's end effector. It offers a 100 Hz profile frequency, up to 64,000 measuring points per second and 4 $ \mu $m scanning resolution. The laser scanner is used to generate the 3D point cloud of the surface we would like to print on and to measure the tracking accuracy. Figure~\ref{fig:scanCONTROL} shows the 3D view of the laser scanner.
+The laser scanner is a scanCONTROL 2700-25 series laser manufactured by Micro-Epsilon and mounted on the robot's end effector. It offers a 100 Hz profile frequency, up to 64,000 measuring points per second and 4 $ \mu $m scanning resolution. The laser scanner is used to generate the \acs{3D} point cloud of the surface we would like to print on and to measure the tracking accuracy. Figure~\ref{fig:scanCONTROL} shows the \acs{3D} view of the laser scanner.
 
 \begin{figure}
 	\centering
@@ -39,26 +39,26 @@ The laser scanner is a scanCONTROL 2700-25 series laser manufactured by Micro-Ep
 \end{figure}
 
 \subsection{3D Print head}
-The 3D print head is a Cobalt C29 inkjet printhead developed by Oc{\'e} Technologies B.V.  Since the print head does not contribute to the controller design and implementation, it will not be used throughout the thesis. Figure~\ref{fig:ur5-endeffector} shows the robot's end effector with print head attached \cite{sunniva2013}.
+The \acs{3D} print head is a Cobalt C29 inkjet printhead developed by Oc{\'e} Technologies B.V.  Since the print head does not contribute to the controller design and implementation, it will not be used throughout the thesis. Figure~\ref{fig:ur5-endeffector} shows the robot's end effector with print head attached \cite{sunniva2013}.
 
 
 \begin{figure}
 \centering
 \includegraphics[width=0.5\linewidth]{ur5}
-\caption{The end effector of the UR5 robot with 3D print head and laser scanner attached (photo courtesy of Sunniva Ipenburg)}
+\caption{The end effector of the UR5 robot with \acs{3D} print head and laser scanner attached (photo courtesy of Sunniva Ipenburg)}
 \label{fig:ur5-endeffector}
 \end{figure}
 
 \section{Previous Work} \label{sec:current_work}
-In this section, we will present a short overview of the previous works done by de Gier from \ac {DCSC}, specifically on the system identification and the \ac {MPC} controller \cite{Gier2013}.
+In this section, we will present a short overview of the previous works done by de Gier from \acs {DCSC}, specifically on the system identification and the \acs {MPC} controller \cite{Gier2013}.
 
 \subsection{System Identification}
-An important assumption for the identification is that the robot acts as six decoupled servos along with their internal controller. Additionally, it is also assumed that each joint is a \ac{LTI} system. This implies that there will be six individuals \ac {LTI} model to identify. Each model is a \ac{SIMO} system with the joint velocity reference $\dot{\theta}_r$ as the input and joint position $\theta$ and velocity $\dot{\theta}$ as the outputs. 
+An important assumption for the identification is that the robot acts as six decoupled servos along with their internal controller. Additionally, it is also assumed that each joint is a \acs{LTI} system. This implies that there will be six individuals \acs {LTI} model to identify. Each model is a \ac{SIMO} system with the joint velocity reference $\dot{\theta}_r$ as the input and joint position $\theta$ and velocity $\dot{\theta}$ as the outputs. 
 
-For this purpose, a subspace identification method is used. According to the significant singular values, the order of each model is determined to be either 4 or 5 \cite{verhaegen2007filtering}. After the models are obtained, each joint model is then validated using a square input signal while the other joint angles are held constant. The \ac{VAF} values of each joint for the validation test is shown in Table~\ref{tab:vaf}. Although the result shows a quite good \ac {VAF} score, it is still not good enough to achieve a perfect tracking. To give an example of the performance, the model validation plot of joint 1 and 5 is shown in Figure~\ref{fig:idenJoint}.
+For this purpose, a subspace identification method is used. According to the significant singular values, the order of each model is determined to be either 4 or 5 \cite{verhaegen2007filtering}. After the models are obtained, each joint model is then validated using a square input signal while the other joint angles are held constant. The \ac{VAF} values of each joint for the validation test is shown in Table~\ref{tab:vaf}. Although the result shows a quite good \acs {VAF} score, it is still not good enough to achieve a perfect tracking. To give an example of the performance, the model validation plot of joint 1 and 5 is shown in Figure~\ref{fig:idenJoint}.
 
 \begin{table}
-\caption{\ac {VAF} scores of the simulated outputs for all joints}	
+\caption{\acs {VAF} scores of the simulated outputs for all joints}	
 	\centering
 	\begin{tabular}{|c|c|c|}
 		\hline Joint & Position  & Velocity \\ 
@@ -92,16 +92,16 @@ For this purpose, a subspace identification method is used. According to the sig
 \end{figure}
 
 \newpage
-\subsection{\ac{MPC} Controller}
-The previous work involves a design and implementation of \ac {MPC} controller. As the comparisons, we will control the robots using 3 of the 4 methods described in Subsection~\ref{subsec:ur5}: tool position, tool velocity and joint velocity command. We will call these three control methods the default controllers. The experiment is to make the robot following a straight line along X-axis with constant values on Y and Z axes.  In order to see the effect of robot's speed to the errors, the experiment is repeated with three different speeds for the default controllers. As for the \ac {MPC}, only one speed is possible due to the difficulty to modify the provided \ac {MPC} program. The plots for Y and Z trajectories are shown in Figure~\ref{fig:trajectory_data_Y} and \ref{fig:trajectory_data_Z} respectively. 
+\subsection{\acs{MPC} Controller}
+The previous work involves a design and implementation of \acs {MPC} controller. As the comparisons, we will control the robots using 3 of the 4 methods described in Subsection~\ref{subsec:ur5}: tool position, tool velocity and joint velocity command. We will call these three control methods the default controllers. The experiment is to make the robot following a straight line along X-axis with constant values on Y and Z axes.  In order to see the effect of robot's speed to the errors, the experiment is repeated with three different speeds for the default controllers. As for the \acs {MPC}, only one speed is possible due to the difficulty to modify the provided \acs {MPC} program. The plots for Y and Z trajectories are shown in Figure~\ref{fig:trajectory_data_Y} and \ref{fig:trajectory_data_Z} respectively. 
 
-As we can see, there is a shaky behavior in both axes trajectories. To have an idea of the amplitude of the jitter, we calculate the difference between maximum and minimum values of each trajectory as shown in Table~\ref{tab:y_jitter} and \ref{tab:z_jitter}. The plot shows that the Y-axis trajectory of the default controllers are slowly drifting from the desired value. This is expected since the default controllers are basically open loop controllers. This causes the jitter's amplitude to be much higher than the \ac {MPC} (see Table~\ref{tab:y_jitter}). Furthermore, for different speeds, the jitters of each default controller behave similarly. If we run the controller for several iterations at constant speed, the plot (not shown here) confirms that the jitter indeed shows a repeating behavior. 
+As we can see, there is a shaky behavior in both axes trajectories. To have an idea of the amplitude of the jitter, we calculate the difference between maximum and minimum values of each trajectory as shown in Table~\ref{tab:y_jitter} and \ref{tab:z_jitter}. The plot shows that the Y-axis trajectory of the default controllers are slowly drifting from the desired value. This is expected since the default controllers are basically open loop controllers. This causes the jitter's amplitude to be much higher than the \acs {MPC} (see Table~\ref{tab:y_jitter}). Furthermore, for different speeds, the jitters of each default controller behave similarly. If we run the controller for several iterations at constant speed, the plot (not shown here) confirms that the jitter indeed shows a repeating behavior. 
 
-Table~\ref{tab:y_jitter} has shown that the \ac {MPC} controller manages to reduce the jitter significantly -- it almost reaches the robot repeatability. However, for The Z-axis trajectory, the jitter is much larger. The \ac {MPC} controller no longer manages to suppress the trembling motion as effective as in the Y-axis case. One of the possible factors which might introduce this behavior is the imperfect gravity compensation. Other non-linearities such as friction could also take part. Therefore we will formulate the hypothesis for the experiment as follows:
+Table~\ref{tab:y_jitter} has shown that the \acs {MPC} controller manages to reduce the jitter significantly -- it almost reaches the robot repeatability. However, for The Z-axis trajectory, the jitter is much larger. The \acs {MPC} controller no longer manages to suppress the trembling motion as effective as in the Y-axis case. One of the possible factors which might introduce this behavior is the imperfect gravity compensation. Other non-linearities such as friction could also take part. Therefore we will formulate the hypothesis for the experiment as follows:
 
-\textbf{Hypothesis:} \textit{"Current controller (\ac {MPC}) relies heavily on the identified model which is not perfect. Therefore, the model-mismatch induced by the unknown dynamics is responsible for the non-optimal performance of the \ac {MPC} controller" }
+\textbf{Hypothesis:} \textit{"Current controller (\acs {MPC}) relies heavily on the identified model which is not perfect. Therefore, the model-mismatch induced by the unknown dynamics is responsible for the non-optimal performance of the \acs {MPC} controller" }
 
-This hypothesis justifies the use of \ac {RL}-based controller.
+This hypothesis justifies the use of \acs {RL}-based controller.
 
 \begin{table}[h]
 	\centering
@@ -122,7 +122,7 @@ This hypothesis justifies the use of \ac {RL}-based controller.
 		Joint Velocity & $ \times $2 & 0.522474\\
 		& $ \times $4 & 0.490630\\				
 		\hline
-		\ac {MPC} & $ \times $1 & 0.120889 \\
+		\acs {MPC} & $ \times $1 & 0.120889 \\
 		\hline
 
 	\end{tabular}
@@ -148,7 +148,7 @@ This hypothesis justifies the use of \ac {RL}-based controller.
 		Joint Velocity & $ \times $2 & 0.795276\\
 		& $ \times $4 & 0.975885\\				
 		\hline
-		\ac {MPC} & $ \times $1 & 0.795315 \\
+		\acs {MPC} & $ \times $1 & 0.795315 \\
 		\hline
 		
 	\end{tabular}
@@ -158,13 +158,13 @@ This hypothesis justifies the use of \ac {RL}-based controller.
 \begin{figure}
 \centering
 \includegraphics[width=1.1\linewidth]{trajectory_data_Y.pdf}
-\caption{the Y trajectories of the robot with different controllers. From left to right: tool position command, tool velocity command, joint velocity command and \ac{MPC}}
+\caption{the Y trajectories of the robot with different controllers. From left to right: tool position command, tool velocity command, joint velocity command and \acs{MPC}}
 \label{fig:trajectory_data_Y}
 \end{figure}
 \begin{figure}
 \centering
 \includegraphics[width=1.1\linewidth]{trajectory_data_Z.pdf}
-\caption{the Z trajectories of the robot with different controllers. From left to right: tool position command, tool velocity command, joint velocity command and \ac{MPC}}
+\caption{the Z trajectories of the robot with different controllers. From left to right: tool position command, tool velocity command, joint velocity command and \acs{MPC}}
 \label{fig:trajectory_data_Z}
 \end{figure}
 

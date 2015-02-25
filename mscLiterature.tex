@@ -16,7 +16,7 @@
 %
 %
 % Third party options (create text/logo on the copywrite page)
-\mscThirdPartyText{The implementation work in this thesis was done at DCSC's robotics lab. The cover is courtersy of Universal Robots}
+\mscThirdPartyText{The implementation part of the thesis is conducted at DCSC's robotics lab. The cover is courtersy of Universal Robots}
 %\mscThirdPartyLogo{STYLESTUFF/EXAMPLELOGO}
 % NOTE: on the title page only the TU Delft logo is permitted.
 %
@@ -36,6 +36,12 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
+\makeatletter
+\renewcommand{\@algocf@capt@plain}{above}
+\makeatother
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{decorations.markings}
 
 \begin{document}
 %
