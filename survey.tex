@@ -525,7 +525,95 @@ with $ Q \geq 0 $ and $ R>0 $ which is similar to that of \acs {LQT}. The possib
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\linewidth]{nonlin_compensator.pdf}
+%	\includegraphics[width=0.8\linewidth]{nonlin_compensator.pdf}
+
+	% Define the layers to draw the diagram
+	\pgfdeclarelayer{background}
+	\pgfdeclarelayer{foreground}
+	\pgfsetlayers{background,main,foreground}
+	
+	% Define distances for bordering
+	\def\blockdist{2.3}
+	\def\edgedist{2.5}
+	\tikzstyle{ur5}=[draw, fill=blue!20, text width=5em, node distance = 2cm,
+	text centered, minimum height=2.5em]
+	\tikzstyle{ur5b}=[draw, fill=blue!20, text width=5em, node distance = 3.5cm,
+	text centered, minimum height=2.5em]
+	\tikzstyle{RL}=[draw, fill=yellow!20, text width=5em, 
+	text centered, minimum height=2.5em]	
+						
+	\tikzstyle{block} = [draw,fill=blue!20,minimum size=2em]
+	\tikzstyle{branch}=[fill,shape=circle,minimum size=3pt,inner sep=0pt]
+	
+	\tikzset{%
+		block/.style    = {draw, thick, rectangle, minimum height = 3em,
+			minimum width = 3em},
+		sum/.style      = {draw, circle, node distance = 2cm, scale=.6}, % Adder
+		sumb/.style      = {draw, circle, node distance = 5cm, scale=.6}, % Adder
+		input/.style    = {coordinate}, % Input
+		output/.style   = {coordinate} % Output
+	}
+	% Defining string as labels of certain blocks.
+	\newcommand{\suma}{\Large$+$}
+	
+	\begin{tikzpicture}	[>=latex']	
+%		\node at (-3,0) (input) {$y_{ref}$};
+%		\node[block, minimum height = 1.4cm, minimum width = 2cm, text width=2cm, align=center]at (0,0) (controller) {Feedback\\Controller};	
+%		\node[block, minimum height = 1.3cm, minimum width = 2cm ] at(3.2,0)  (robot) {Robot};
+%		\node [output] at (5.5,0) (output) {};	
+%		
+%		\node[block, minimum height = 1.3cm, minimum width = 2cm ] at(0,-2.3)  (sam) {\fontsize{13}{4}\selectfont  SAM};
+%		\node[block, minimum height = 1.3cm, minimum width = 2cm ] at(3.2,-2.3)  (rl) {RL Agent};
+
+%	\path (input) -- coordinate (branch) (controller);
+%	
+%	
+		
+
+
+		%	RL block
+		\node (actor) [RL] at (-3,-4.5) {actor};
+		\node (cost) [RL] at (0,-4.5)  {cost};
+		\node (critic) [RL] at (-1.5, -6) {critic};		
+		\node at (-5,-2.5) (ref) {$y_{ref}$};		
+
+		\draw[decoration={markings,mark=at position 1 with {\arrow[ultra thick]{>}}}, postaction={decorate}] (actor) node[auto] {} -- (cost);
+		\draw[decoration={markings,mark=at position 1 with {\arrow[ultra thick]{>}}}, postaction={decorate}] (cost.south) node[below, right] {} |- (critic.east);
+		\draw[decoration={markings,mark=at position 1 with {\arrow[ultra thick]{>}}}, postaction={decorate}] (critic.west) node[below, left] {} -| (actor.south);
+		\path (actor) -- coordinate (branch2) (cost);
+		\node [sum, above of=branch2] (suma1) {\suma};
+		\draw[decoration={markings,mark=at position 1 with {\arrow[ultra thick]{>}}}, postaction={decorate}] (branch2) node[branch] {} -- (suma1.south);					
+		\node [left of=suma1, node distance=1.5cm] (du) {$\Delta u$};
+		\draw[decoration={markings,mark=at position 1 with {\arrow[ultra thick]{>}}}, postaction={decorate}] (du) node[auto] {} -- (suma1.west);							
+		
+		\node[draw=none] at (-1.65,-4.2) {$ u $};
+		\node[draw=none] at (0.4,-5.6) {$ r $};
+		\node[draw=none] at (-3.3,-5.6) {$ \delta $};	
+		
+		
+		% Robot block										
+		\node [sumb, above of=suma1]  (suma2) {\suma};
+		\node (controller) [ur5, right of=suma2, node distance=2.35cm]  {robot controller};
+		\node (robot) [ur5, right of=controller, node distance=3.2cm]  {robot};
+		\node [right of=robot, node distance=2.7cm] (output) {$y$};
+		\node (sensor) [ur5, below of=robot, node distance=1.75cm] {sensor};	
+		
+		\draw[decoration={markings,mark=at position 1 with {\arrow[ultra thick]{>}}}, postaction={decorate}] (controller) -- node [auto] {$u_r$} (robot.west);
+		\path (robot) -- coordinate (branch) (output);
+		\draw[decoration={markings,mark=at position 1 with {\arrow[ultra thick]{>}}}, postaction={decorate}] (robot.east) -- node [auto] {} (output);
+		\draw[decoration={markings,mark=at position 1 with {\arrow[ultra thick]{>}}}, postaction={decorate}] (branch) node[branch] {} |- (sensor.east);		
+		\draw[decoration={markings,mark=at position 1 with {\arrow[ultra thick]{>}}}, postaction={decorate}] (suma2.east) -- node [auto] {$\hat{y}_{ref}$} (controller.west);
+							
+					
+		% Connect the two blocks
+		\draw[decoration={markings,mark=at position 1 with {\arrow[ultra thick]{>}}}, postaction={decorate}] (suma1.north) -- node [auto] {$u_c$} (suma2.south);
+		\path (sensor) -- coordinate (branch3) (cost);
+		\draw[decoration={markings,mark=at position 1 with {\arrow[ultra thick]{>}}}, postaction={decorate}] (sensor.west) -- ++(-1,0) |- node [auto] {$y_m$} (cost.east);
+		\draw[decoration={markings,mark=at position 1 with {\arrow[ultra thick]{>}}}, postaction={decorate}] (branch3) node[branch] --   node [auto] {$y_m$} (actor.west);
+				
+				
+			
+	\end{tikzpicture}
 	\caption{Block diagram of robot with \acs{RL} block acting as an additive compensator}
 	\label{fig:blockdiagram}
 \end{figure}
